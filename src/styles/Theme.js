@@ -14,11 +14,12 @@ const theme = {
     primary: `"Jost", sans-serif`,
     secondary: `"Playfair Display", serif`,
   },
-
-  fontSizes: {
-    small: "1em",
-    medium: "2em",
-    large: "3em",
+  maxWidth: {
+    xs: "479px",
+    s: "768px",
+    m: "1024px",
+    l: "1200px",
+    xl: "1799px",
   },
 }
 
