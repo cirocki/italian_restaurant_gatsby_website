@@ -2,8 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import { mainData } from "../../data/mainData"
 
-const StyledParagraph = styled.p`
-  padding: 1rem;
+const StyledWrapper = styled.div`
+  padding: 1rem 0;
 `
 
 export default function Copyrights() {
@@ -13,13 +13,13 @@ export default function Copyrights() {
   const language = mainData.lang
 
   return (
-    <div>
-      <StyledParagraph>
+    <StyledWrapper>
+      <p>
         © {currentYear} {copyrightsOwner} -{" "}
         {language === "eng"
           ? "All rights reserved."
           : "Wszystkie prawa zastrzeżone."}
-      </StyledParagraph>
-    </div>
+      </p>
+    </StyledWrapper>
   )
 }

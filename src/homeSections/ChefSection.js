@@ -10,21 +10,12 @@ import Img from "gatsby-image"
 // FULL WIDTH SECTION
 const StyledSection = styled.section`
   position: relative;
-  &:before {
-    content: "";
-    position: absolute;
-    top: 120px;
-    bottom: 120px;
-    width: 50%;
-    background: ${props => props.theme.colors.dark};
-  }
   &:after {
     content: "";
     position: absolute;
-    top: 240px;
-    left: 50%;
-    bottom: 0;
-    width: 50%;
+    top: 120px;
+    height: 50%;
+    width: 100%;
     background: ${props => props.theme.colors.light};
   }
 `
@@ -32,34 +23,41 @@ const StyledSection = styled.section`
 const StyledMainGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(5, minmax(120px, auto));
+  grid-template-rows: repeat(6, minmax(120px, auto));
 `
 const StyledGreyDiv = styled.div`
   grid-column: 1/13;
-  grid-row: 3/6;
+  grid-row: 2/6;
   z-index: 2;
   background: ${props => props.theme.colors.light};
 `
 const StyledContentDiv = styled.div`
-  grid-column: 1/8;
-  grid-row: 2/5;
+  grid-column: 2/13;
+  grid-row: 3/8;
   z-index: 3;
   background: ${props => props.theme.colors.dark};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `
 const StyledImageDiv = styled.div`
-  grid-column: 8/12;
-  grid-row: 1/6;
+  grid-column: 1/5;
+  grid-row: 1/7;
   z-index: 4;
 `
 
+const StyledContentGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+`
 const StyledContentWrapper = styled.div`
-  padding: 100px 120px;
+  grid-column: 5/11;
 `
 
-export default function HeroSection() {
+export default function ChefSection() {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "index/mondello-restaurant-history.jpg" }) {
+      file(relativePath: { eq: "index/our-chef.jpg" }) {
         childImageSharp {
           fluid(maxHeight: 660, quality: 100) {
             ...GatsbyImageSharpFluid
@@ -75,24 +73,23 @@ export default function HeroSection() {
         <Lines></Lines>
         <StyledMainGrid>
           <StyledContentDiv>
-            <StyledContentWrapper>
-              <SecondaryHeading>History</SecondaryHeading>
-              <MainParagraph>
-                Our restaurant was established in 1975. Its founder and first
-                chef was Pietro Savastano. Eccentric men with passion for the
-                italian food and italian way of life. His goal was to create a
-                family place with original, traditional food and an informal
-                atmosphere. Years have passed, but we still value the same
-                things and we are proud of it.
-              </MainParagraph>
-            </StyledContentWrapper>
+            <StyledContentGrid>
+              <StyledContentWrapper>
+                <SecondaryHeading>Our Chef</SecondaryHeading>
+                <MainParagraph>
+                  Gennaro - chef of our restaurant loves pizza and spaghetti,
+                  but he can also prepare many more exquisite dishes like his
+                  specialty - bloody steaks. He can create a masterpiece from a
+                  simple products, that will delight even the most demanding
+                  taste buds. He grew up in Palermo, so he understands the local
+                  traditions and the atmosphere of a real Italian restaurant.
+                </MainParagraph>
+              </StyledContentWrapper>
+            </StyledContentGrid>
           </StyledContentDiv>
           <StyledGreyDiv></StyledGreyDiv>
           <StyledImageDiv>
-            <Img
-              fluid={data.file.childImageSharp.fluid}
-              alt="Our restaurant history"
-            />
+            <Img fluid={data.file.childImageSharp.fluid} alt="Our chef" />
           </StyledImageDiv>
         </StyledMainGrid>
       </Container>

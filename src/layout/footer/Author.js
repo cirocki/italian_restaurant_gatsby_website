@@ -3,7 +3,10 @@ import styled from "styled-components"
 import { mainData } from "../../data/mainData"
 
 const StyledParagraph = styled.p`
-  padding: 1rem;
+  padding: 1rem 0;
+`
+const StyledLink = styled.a`
+  color: ${props => props.theme.colors.footerTextColor};
 `
 
 export default function Author() {
@@ -12,7 +15,8 @@ export default function Author() {
   return (
     <div>
       <StyledParagraph>
-        Designed and developed by <a href={authorWebsite}>{author}</a>
+        Designed and developed by{" "}
+        <StyledLink href={authorWebsite}>{author}</StyledLink>
       </StyledParagraph>
     </div>
   )

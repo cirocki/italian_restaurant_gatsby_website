@@ -10,15 +10,17 @@ import Img from "gatsby-image"
 // FULL WIDTH SECTION
 const StyledSection = styled.section`
   position: relative;
+
   &:before {
     content: "";
     position: absolute;
     top: 120px;
     bottom: 120px;
+    left: 50%;
     width: 50%;
     background: ${props => props.theme.colors.dark};
   }
-  &:after {
+  /* &:after {
     content: "";
     position: absolute;
     top: 240px;
@@ -26,7 +28,7 @@ const StyledSection = styled.section`
     bottom: 0;
     width: 50%;
     background: ${props => props.theme.colors.light};
-  }
+  } */
 `
 // MAIN GRID
 const StyledMainGrid = styled.div`
@@ -35,31 +37,30 @@ const StyledMainGrid = styled.div`
   grid-template-rows: repeat(5, minmax(120px, auto));
 `
 const StyledGreyDiv = styled.div`
-  grid-column: 1/13;
+  grid-column: 1/7;
   grid-row: 3/6;
   z-index: 2;
   background: ${props => props.theme.colors.light};
 `
 const StyledContentDiv = styled.div`
-  grid-column: 1/8;
+  grid-column: 6/13;
   grid-row: 2/5;
   z-index: 3;
   background: ${props => props.theme.colors.dark};
 `
 const StyledImageDiv = styled.div`
-  grid-column: 8/12;
-  grid-row: 1/6;
+  grid-column: 2/5;
+  grid-row: 3/6;
   z-index: 4;
 `
 
 const StyledContentWrapper = styled.div`
   padding: 100px 120px;
 `
-
-export default function HeroSection() {
+export default function AboutSection() {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "index/mondello-restaurant-history.jpg" }) {
+      file(relativePath: { eq: "index/about-restaurant.jpg" }) {
         childImageSharp {
           fluid(maxHeight: 660, quality: 100) {
             ...GatsbyImageSharpFluid
@@ -76,14 +77,14 @@ export default function HeroSection() {
         <StyledMainGrid>
           <StyledContentDiv>
             <StyledContentWrapper>
-              <SecondaryHeading>History</SecondaryHeading>
+              <SecondaryHeading>About Us</SecondaryHeading>
               <MainParagraph>
-                Our restaurant was established in 1975. Its founder and first
-                chef was Pietro Savastano. Eccentric men with passion for the
-                italian food and italian way of life. His goal was to create a
-                family place with original, traditional food and an informal
-                atmosphere. Years have passed, but we still value the same
-                things and we are proud of it.
+                We are famous in Sicilia, cause we cook our dishes from the
+                freshest ingredients in traditional way. Local vegetables, fresh
+                fish and own winery. We specialize in homemade classic Italian
+                pizza, pasta, salads, soups and much more. Don't forget to try
+                our Lasagna. We provide excellent taste, great service and warm
+                atmosphere.
               </MainParagraph>
             </StyledContentWrapper>
           </StyledContentDiv>
