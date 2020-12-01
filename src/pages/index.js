@@ -6,6 +6,7 @@ import IntroSection from "../homeSections/IntroSection"
 import PerfectionSection from "../homeSections/PerfectionSection"
 import ChefSection from "../homeSections/ChefSection"
 import AboutSection from "../homeSections/AboutSection"
+import TableSection from "../homeSections/TableSection"
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <AboutSection />
         <PerfectionSection />
         <ChefSection />
+        <TableSection />
       </main>
     </Layout>
   )
