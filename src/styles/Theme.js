@@ -4,11 +4,10 @@ import React from "react"
 const theme = {
   colors: {
     dark: "#16191a",
-    red: "#b52d2d",
-    green: "#208135",
     light: "#f2f2f2",
     white: "#fff",
-    grey: "#828282",
+    grey: "#777",
+    gold: "#968b63",
     footerTextColor: "#16191a",
   },
   fonts: {
