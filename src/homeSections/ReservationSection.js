@@ -52,7 +52,7 @@ export default function ReservationSection() {
             <MainParagraph>
               You can also call to make a reservation.
             </MainParagraph>
-            <h1>+1 224 6787 004</h1>
+            <h1>+1 737 6787 004</h1>
           </StyledMoreWrapper>
         </StyledGrid>
       </Container>
