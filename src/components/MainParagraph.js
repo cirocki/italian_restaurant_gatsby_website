@@ -4,7 +4,7 @@ import styled from "styled-components"
 const StyledParagraph = styled.p`
   color: ${props => props.theme.colors.grey};
   font-size: 1.125rem;
-  line-height: 1.8;
+  line-height: 1.7;
 `
 
 export default function MainParagraph({ children }) {
