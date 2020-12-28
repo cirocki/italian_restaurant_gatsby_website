@@ -45,7 +45,7 @@ export default function ReservationSection() {
             <PrimaryHeading>
               Try our perfect food. Book a table online.
             </PrimaryHeading>
-            <ButtonGhost>Reserve table</ButtonGhost>
+            <ButtonGhost>Reserve a table</ButtonGhost>
           </StyledHeaderWrapper>
           <StyledGreyDiv></StyledGreyDiv>
           <StyledMoreWrapper>
