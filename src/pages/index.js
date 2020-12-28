@@ -7,6 +7,7 @@ import HistorySection from "../homeSections/HistorySection"
 import ChefSection from "../homeSections/ChefSection"
 import WineSection from "../homeSections/WineSection"
 import ReservationSection from "../homeSections/ReservationSection"
+import ContactSection from "../homeSections/ContactSection"
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <ChefSection />
         <WineSection />
         <ReservationSection />
+        <ContactSection />
       </main>
     </Layout>
   )
