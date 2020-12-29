@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import Container from "../container/Container"
 import Branding from "./Branding"
@@ -20,7 +20,7 @@ const StyledNav = styled.nav`
   flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   align-items: center;
-  min-height: 78px;
+  /* min-height: 78px; */
   @media (max-width: 1024px) {
     flex-direction: column;
   }
@@ -31,20 +31,25 @@ const StyledBrandingWrapper = styled.div`
   align-items: center;
   @media (max-width: 1024px) {
     width: 100%;
-    background: plum;
   }
 `
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen)
+  }
+
   return (
     <StyledHeader>
       <Container>
         <StyledNav>
           <StyledBrandingWrapper>
             <Branding />
-            <Hamburger />
+            <Hamburger isOpen={isOpen} toggleMenu={toggleMenu} />
           </StyledBrandingWrapper>
-          <NavLinks />
+          <NavLinks isOpen={isOpen} toggleMenu={toggleMenu} />
         </StyledNav>
       </Container>
     </StyledHeader>
