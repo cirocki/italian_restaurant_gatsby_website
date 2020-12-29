@@ -5,7 +5,7 @@ import styled from "styled-components"
 
 const StyledList = styled.ul`
   display: flex;
-  @media (max-width: 1068px) {
+  @media (max-width: 1024px) {
     flex-direction: column;
   }
 `
@@ -18,8 +18,8 @@ const StyledItem = styled.li`
   &:last-of-type > a {
     padding-right: 0;
   }
-  @media (max-width: 1068px) {
-    margin: 0.5rem 0;
+  @media (max-width: 1200px) {
+    margin: 0.5rem;
   }
 `
 

@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Container from "../container/Container"
 import Branding from "./Branding"
+import Hamburger from "./Hamburger"
 import NavLinks from "./NavLinks"
 
 const StyledHeader = styled.header`
@@ -20,6 +21,18 @@ const StyledNav = styled.nav`
   -ms-flex-wrap: wrap;
   align-items: center;
   min-height: 78px;
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
+`
+const StyledBrandingWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media (max-width: 1024px) {
+    width: 100%;
+    background: plum;
+  }
 `
 
 export default function Header() {
@@ -27,7 +40,10 @@ export default function Header() {
     <StyledHeader>
       <Container>
         <StyledNav>
-          <Branding />
+          <StyledBrandingWrapper>
+            <Branding />
+            <Hamburger />
+          </StyledBrandingWrapper>
           <NavLinks />
         </StyledNav>
       </Container>
