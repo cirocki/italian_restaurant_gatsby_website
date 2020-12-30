@@ -53,7 +53,6 @@ const StyledLink = styled(GatsbyLink)`
   @media (max-width: 1024px) {
     font-size: 1.25rem;
     padding: 1rem 0;
-    margin-left: 2rem;
 
     &:before {
       content: "";
@@ -97,7 +96,12 @@ export default function NavLinks({ toggleMenu, isOpen }) {
       .set(menuRefs.current, { clearProps: "all" })
       .to(wrapperLayer.current, { height: "auto", duration: 0.5 })
       // .to(itemsLayer.current, { autoAlpha: 1 })
-      .to(menuRefs.current, { autoAlpha: 1, stagger: 0.1, ease: "power2" })
+      .to(menuRefs.current, {
+        autoAlpha: 1,
+        x: 30,
+        stagger: 0.1,
+        ease: "power2",
+      })
       .reverse()
   }, [])
 

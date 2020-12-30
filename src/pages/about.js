@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet"
 import styled from "styled-components"
 
 const StyledMainDiv = styled.main`
+  min-height: 120vh;
   padding: 8rem 0;
 `
 

@@ -24,6 +24,9 @@ module.exports = {
         display: "swap",
       },
     },
+
+    `gatsby-plugin-transition-link`,
+
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-react-helmet`,
