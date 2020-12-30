@@ -11,15 +11,12 @@
     color: inherit;
     border: 0;
     background-color: transparent;
-
-
-
 }
 
 .hamburger.is-active .hamburger-inner,
 .hamburger.is-active .hamburger-inner:after,
 .hamburger.is-active .hamburger-inner:before {
-    background-color: #111
+    background-color: #16191a;
 }
 
 .hamburger-box {

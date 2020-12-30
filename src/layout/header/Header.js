@@ -20,8 +20,8 @@ const StyledNav = styled.nav`
   flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   align-items: center;
-  /* min-height: 78px; */
   @media (max-width: 1024px) {
+    align-items: flex-start;
     flex-direction: column;
   }
 `

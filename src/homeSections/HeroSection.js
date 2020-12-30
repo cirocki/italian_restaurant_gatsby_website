@@ -6,8 +6,8 @@ import Container from "../layout/container/Container"
 import heroBg from "../img/index/mondello-hero-image.jpg"
 
 const StyledSection = styled.section`
-  /* margin-top: 80px; */
-  min-height: calc(100vh - 80px);
+  margin-top: 60px;
+  min-height: calc(100vh - 60px);
   max-height: 1040px;
   background: ${props => props.theme.colors.dark};
   background: url(${heroBg});

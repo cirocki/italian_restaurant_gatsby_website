@@ -17,13 +17,18 @@ const StyledList = styled.ul`
   display: flex;
   @media (max-width: 1024px) {
     flex-direction: column;
-    visibility: hidden;
-    opacity: 0;
+    padding: 2rem 0;
+    /* visibility: hidden;
+    opacity: 0; */
   }
 `
 
 const StyledItem = styled.li`
   margin: 0 1.5rem;
+  @media (max-width: 1024px) {
+    visibility: hidden;
+    opacity: 0;
+  }
   &:last-of-type {
     margin-right: 0;
   }
@@ -40,8 +45,26 @@ const StyledLink = styled(GatsbyLink)`
   padding: 1rem;
   color: ${props => props.theme.colors.dark};
   font-size: 1.125rem;
-  @media (max-width: 1068px) {
-    padding: 1rem;
+  transition: color 0.2s ease 0s;
+  position: relative;
+  &:hover {
+    color: ${props => props.theme.colors.gold};
+  }
+  @media (max-width: 1024px) {
+    font-size: 1.25rem;
+    padding: 1rem 0;
+    margin-left: 2rem;
+
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 10px;
+      left: 20px;
+      width: 50vw;
+      height: 15px;
+      background: ${props => props.theme.colors.light};
+      z-index: -1;
+    }
   }
 `
 
@@ -58,12 +81,23 @@ export default function NavLinks({ toggleMenu, isOpen }) {
     })
   )
 
+  // TOMATOS
+  const menuRefs = useRef([])
+  menuRefs.current = []
+
+  const addToRefs = el => {
+    if (el && !menuRefs.current.includes(el)) {
+      menuRefs.current.push(el)
+    }
+  }
+
   useEffect(() => {
     menuTL
       .set(wrapperLayer.current, { clearProps: "all" })
-      .set(itemsLayer.current, { clearProps: "all" })
+      .set(menuRefs.current, { clearProps: "all" })
       .to(wrapperLayer.current, { height: "auto", duration: 0.5 })
-      .to(itemsLayer.current, { autoAlpha: 1 })
+      // .to(itemsLayer.current, { autoAlpha: 1 })
+      .to(menuRefs.current, { autoAlpha: 1, stagger: 0.1, ease: "power2" })
       .reverse()
   }, [])
 
@@ -75,7 +109,7 @@ export default function NavLinks({ toggleMenu, isOpen }) {
     <StyledNavWrapper ref={wrapperLayer}>
       <StyledList ref={itemsLayer}>
         {navItemsData.map(item => (
-          <StyledItem key={item.name}>
+          <StyledItem key={item.name} ref={addToRefs}>
             <StyledLink to={item.path}>{item.name}</StyledLink>
           </StyledItem>
         ))}
