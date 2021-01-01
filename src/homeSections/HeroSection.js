@@ -26,6 +26,10 @@ const StyledSection = styled.section`
     width: 2px;
     height: 240px;
     background: ${props => props.theme.colors.gold};
+    @media (max-width: 768px) {
+      bottom: -60px;
+      height: 120px;
+    }
   }
 `
 const StyledHeaderWrapper = styled.div`

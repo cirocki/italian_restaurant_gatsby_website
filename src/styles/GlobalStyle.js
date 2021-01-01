@@ -17,6 +17,8 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
 
+
+
   /* KEEP FOOTER BOTTOM EVEN IF MAIN CONTENT IS SHORT  */
   #gatsby-focus-wrapper {
     min-height: 100vh;

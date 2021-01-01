@@ -25,7 +25,10 @@ const StyledGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(8, 1fr);
-  min-height: 960px;
+  @media (max-width: 1200px) {
+    display: flex;
+    flex-direction: column;
+  }
 `
 const StyledHeaderWrapper = styled.div`
   grid-column: 1/7;
@@ -54,13 +57,39 @@ const StyledContentWrapper = styled.div`
 const StyledImageWrapper = styled.div`
   grid-column: 2/6;
   grid-row: 5/9;
+  @media (max-width: 1200px) and (min-width: 521px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+  }
+`
+const StyledImage = styled(Img)`
+  @media (max-width: 1200px) and (min-width: 521px) {
+    width: 660px;
+  }
 `
 
 // HEADER
 const StyledHeader = styled.div`
-  padding: 120px;
   display: flex;
   align-items: stretch;
+  padding: 120px;
+  @media (max-width: 1279px) {
+    padding: 80px;
+  }
+  @media (max-width: 1200px) {
+    padding: 120px;
+  }
+  @media (max-width: 768px) {
+    padding: 80px 40px;
+  }
+  @media (max-width: 569px) {
+    padding: 80px 20px;
+  }
+  @media (max-width: 374px) {
+    padding: 80px 0;
+  }
 `
 const StyledHeaderInner = styled.div`
   display: flex;
@@ -70,10 +99,28 @@ const StyledHeaderInner = styled.div`
 
 // CONTENT
 const StyledContent = styled.div`
-  padding: 120px 0 120px 120px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 120px 0 120px 120px;
+  @media (max-width: 1439px) {
+    padding: 120px;
+  }
+  @media (max-width: 1279px) {
+    padding: 80px;
+  }
+  @media (max-width: 1200px) {
+    padding: 120px;
+  }
+  @media (max-width: 768px) {
+    padding: 80px 40px;
+  }
+  @media (max-width: 569px) {
+    padding: 80px 20px;
+  }
+  @media (max-width: 374px) {
+    padding: 80px 0;
+  }
 `
 
 export default function AboutSection() {
@@ -118,7 +165,7 @@ export default function AboutSection() {
             </StyledContent>
           </StyledContentWrapper>
           <StyledImageWrapper>
-            <Img
+            <StyledImage
               fluid={data.file.childImageSharp.fluid}
               alt="About our restaurant"
             />
