@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useRef, useState, useEffect } from "react"
 import styled from "styled-components"
 import MainParagraph from "../components/MainParagraph"
 import PrimaryHeading from "../components/PrimaryHeading"
@@ -7,6 +7,8 @@ import Container from "../layout/container/Container"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import ButtonGhost from "../components/ButtonGhost"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 const StyledSection = styled.section`
   position: relative;
@@ -87,9 +89,6 @@ const StyledHeader = styled.div`
   @media (max-width: 569px) {
     padding: 80px 20px;
   }
-  @media (max-width: 374px) {
-    padding: 80px 0;
-  }
 `
 const StyledHeaderInner = styled.div`
   display: flex;
@@ -118,15 +117,12 @@ const StyledContent = styled.div`
   @media (max-width: 569px) {
     padding: 80px 20px;
   }
-  @media (max-width: 374px) {
-    padding: 80px 0;
-  }
 `
 
 export default function AboutSection() {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "index/mondello-about-us.jpg" }) {
+      file(relativePath: { eq: "index/mondello-about-us3.jpg" }) {
         childImageSharp {
           fluid(maxHeight: 660, quality: 100) {
             ...GatsbyImageSharpFluid
@@ -136,13 +132,41 @@ export default function AboutSection() {
       }
     }
   `)
+
+  // GSAP
+
+  let headingRef = useRef(null)
+
+  const [aboutTL] = useState(gsap.timeline())
+
+  useEffect(() => {
+    gsap.from(headingRef.current, {
+      autoAlpha: 0,
+      y: -100,
+      ease: "power1.inOut",
+      // duration: 0.5,
+      paused: true,
+      pin: true,
+      scrollTrigger: {
+        duration: 0.5,
+        trigger: headingRef.current, // selector or element
+        start: "center center",
+        toggleActions: "play none none none",
+
+        // end: "center top",
+        // scrub: true,
+        // markers: true,
+      },
+    })
+  }, [])
+
   return (
     <StyledSection>
       <Container>
         <StyledGrid>
           <StyledHeaderWrapper>
             <StyledHeader>
-              <StyledHeaderInner>
+              <StyledHeaderInner ref={headingRef}>
                 <SecondaryHeading>About Us</SecondaryHeading>
                 <PrimaryHeading>
                   The kitchen offers delicious specialties of the Sicilian

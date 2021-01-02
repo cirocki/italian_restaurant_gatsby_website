@@ -6,6 +6,9 @@ const StyledDiv = styled.div`
   margin: 0 auto;
   padding: 0 20px;
   position: relative;
+  @media (max-width: 1069px) {
+    padding: 0;
+  }
 `
 
 export default function Container({ children }) {

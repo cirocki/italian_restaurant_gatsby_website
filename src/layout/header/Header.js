@@ -5,6 +5,11 @@ import Branding from "./Branding"
 import Hamburger from "./Hamburger"
 import NavLinks from "./NavLinks"
 
+// REGISTER SCROLL TTIGGER
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+gsap.registerPlugin(ScrollTrigger)
+
 const StyledHeader = styled.header`
   background: ${props => props.theme.colors.white};
   border-bottom: 2px solid ${props => props.theme.colors.light};

@@ -1,11 +1,11 @@
 import React from "react"
 import styled from "styled-components"
-import MainParagraph from "../components/MainParagraph"
-import PrimaryHeading from "../components/PrimaryHeading"
-import SecondaryHeading from "../components/SecondaryHeading"
 import Container from "../layout/container/Container"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
+import MainParagraph from "../components/MainParagraph"
+import PrimaryHeading from "../components/PrimaryHeading"
+import SecondaryHeading from "../components/SecondaryHeading"
 import ButtonGhost from "../components/ButtonGhost"
 
 const StyledSection = styled.section`
@@ -19,13 +19,19 @@ const StyledSection = styled.section`
     height: 50%;
     background: ${props => props.theme.colors.dark};
     z-index: -1;
+    @media (max-width: 1069px) {
+      display: none;
+    }
   }
 `
 const StyledGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(8, 1fr);
-  min-height: 960px;
+  @media (max-width: 1069px) {
+    display: flex;
+    flex-direction: column;
+  }
 `
 
 const StyledHeaderWrapper = styled.div`
@@ -42,29 +48,21 @@ const StyledContentWrapper = styled.div`
   justify-content: center;
 `
 const StyledImageWrapper = styled.div`
-  background: blue;
   grid-column: 9/13;
   grid-row: 2/8;
-  &:before {
-    content: "SINCE";
-    position: absolute;
-    top: 6rem;
-    right: -10rem;
-    z-index: 1;
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: ${props => props.theme.colors.dark};
-    letter-spacing: 4px;
+  @media (max-width: 1219px) {
+    grid-column: 8/13;
   }
-  &:after {
-    content: "1993";
-    position: absolute;
-    top: 5rem;
-    right: -10rem;
-    z-index: 1;
-    font-family: ${props => props.theme.fonts.secondary};
-    font-size: 12rem;
-    color: ${props => props.theme.colors.dark};
+  @media (max-width: 1200px) and (min-width: 521px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+  }
+`
+const StyledImage = styled(Img)`
+  @media (max-width: 1200px) and (min-width: 521px) {
+    width: 660px;
   }
 `
 
@@ -73,6 +71,15 @@ const StyledHeader = styled.div`
   padding: 120px;
   display: flex;
   align-items: stretch;
+  @media (max-width: 1279px) {
+    padding: 80px;
+  }
+  @media (max-width: 768px) {
+    padding: 80px 40px;
+  }
+  @media (max-width: 569px) {
+    padding: 80px 20px;
+  }
 `
 const StyledHeaderInner = styled.div`
   display: flex;
@@ -86,12 +93,21 @@ const StyledContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media (max-width: 1279px) {
+    padding: 80px;
+  }
+  @media (max-width: 768px) {
+    padding: 80px 40px;
+  }
+  @media (max-width: 569px) {
+    padding: 80px 20px;
+  }
 `
 
 export default function HistorySection() {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "index/mondello-history.jpg" }) {
+      file(relativePath: { eq: "index/mondello-history2.jpg" }) {
         childImageSharp {
           fluid(maxHeight: 720, quality: 100) {
             ...GatsbyImageSharpFluid
@@ -131,7 +147,7 @@ export default function HistorySection() {
             </StyledContent>
           </StyledContentWrapper>
           <StyledImageWrapper>
-            <Img
+            <StyledImage
               fluid={data.file.childImageSharp.fluid}
               alt="About our restaurant"
             />
