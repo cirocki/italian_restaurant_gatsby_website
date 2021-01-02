@@ -26,6 +26,9 @@ const StyledItemName = styled.p`
   font-family: ${props => props.theme.fonts.secondary};
   font-size: 1.125rem;
   text-transform: uppercase;
+  @media (max-width: 419px) {
+    font-size: 0.875rem;
+  }
 `
 const StyledItemPrice = styled.p`
   color: ${props => props.theme.colors.white};
@@ -33,6 +36,9 @@ const StyledItemPrice = styled.p`
   background: ${props => props.theme.colors.dark};
   font-size: 1.125rem;
   letter-spacing: 1px;
+  @media (max-width: 419px) {
+    font-size: 0.875rem;
+  }
 `
 export default function ShortMenu() {
   return (

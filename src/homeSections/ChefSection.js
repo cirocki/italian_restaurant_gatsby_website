@@ -1,11 +1,11 @@
 import React from "react"
 import styled from "styled-components"
+import { graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
+import Container from "../layout/container/Container"
 import MainParagraph from "../components/MainParagraph"
 import PrimaryHeading from "../components/PrimaryHeading"
 import SecondaryHeading from "../components/SecondaryHeading"
-import Container from "../layout/container/Container"
-import { graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
 import ButtonGhost from "../components/ButtonGhost"
 import ShortMenu from "../components/menuCard/ShortMenu"
 
@@ -20,6 +20,9 @@ const StyledSection = styled.section`
     height: 480px;
     background: ${props => props.theme.colors.light};
     z-index: -1;
+    @media (max-width: 1069px) {
+      display: none;
+    }
   }
   &:after {
     content: "";
@@ -36,7 +39,10 @@ const StyledGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(11, 1fr);
-  min-height: 960px;
+  @media (max-width: 1069px) {
+    display: flex;
+    flex-direction: column;
+  }
 `
 
 const StyledHeaderWrapper = styled.div`
@@ -61,11 +67,25 @@ const StyledContentWrapper = styled.div`
     background: ${props => props.theme.colors.dark};
     z-index: -1;
   }
+  @media (max-width: 1279px) {
+    grid-column: 6/13;
+    grid-row: 7/12;
+  }
 `
 const StyledImageWrapper = styled.div`
-  background: blue;
   grid-column: 1/5;
   grid-row: 3/9;
+  @media (max-width: 1200px) and (min-width: 521px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+  }
+`
+const StyledImage = styled(Img)`
+  @media (max-width: 1200px) and (min-width: 521px) {
+    width: 660px;
+  }
 `
 
 // HEADER
@@ -73,6 +93,15 @@ const StyledHeader = styled.div`
   padding: 120px;
   display: flex;
   align-items: stretch;
+  @media (max-width: 1279px) {
+    padding: 80px;
+  }
+  @media (max-width: 768px) {
+    padding: 80px 40px;
+  }
+  @media (max-width: 569px) {
+    padding: 80px 20px;
+  }
 `
 const StyledHeaderInner = styled.div`
   display: flex;
@@ -85,6 +114,15 @@ const StyledContent = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
+  @media (max-width: 1279px) {
+    padding: 80px;
+  }
+  @media (max-width: 768px) {
+    padding: 80px 40px;
+  }
+  @media (max-width: 569px) {
+    padding: 80px 20px;
+  }
 `
 
 export default function ChefSection() {
@@ -130,7 +168,7 @@ export default function ChefSection() {
             </StyledContent>
           </StyledContentWrapper>
           <StyledImageWrapper>
-            <Img
+            <StyledImage
               fluid={data.file.childImageSharp.fluid}
               alt="Chef in our restaurant"
             />
