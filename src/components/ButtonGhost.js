@@ -12,6 +12,32 @@ const StyledButton = styled.a`
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
+  display: block;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  &:hover {
+    color: ${props => props.theme.colors.dark};
+    &:after {
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      transition: all 0.35s;
+    }
+  }
+  &:after {
+    background: ${props => props.theme.colors.gold};
+    content: "";
+    display: block;
+    position: absolute;
+    left: -100%;
+    right: 100%;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: all 0.35s;
+  }
 `
 
 export default function ButtonGhost({ children }) {
