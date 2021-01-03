@@ -8,18 +8,38 @@ const StyledGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(3, 1fr);
+  @media (max-width: 1059px) {
+    display: flex;
+    flex-direction: column;
+  }
 `
 const StyledTitleWrapper = styled.div`
   grid-column: 1/6;
   grid-row: 1/4;
   padding: 120px;
-  text-align: center;
-  /* background: red; */
+  @media (max-width: 1279px) {
+    padding: 80px;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+  }
 `
 const StyledContentWrapper = styled.div`
   grid-column: 6/13;
   grid-row: 1/4;
   padding: 120px;
+  @media (max-width: 1279px) {
+    padding: 80px;
+  }
+  @media (max-width: 1059px) {
+    padding: 0 80px 80px 80px;
+  }
+  @media (max-width: 768px) {
+    padding: 0 40px 80px 40px;
+  }
+  @media (max-width: 569px) {
+    padding: 0 20px 80px 20px;
+  }
 `
 const StyledTitleText = styled.h2`
   font-family: ${props => props.theme.fonts.secondary};
@@ -33,16 +53,28 @@ const StyledTitleText = styled.h2`
     z-index: -1;
     font-size: 60px;
     color: ${props => props.theme.colors.gold};
+    @media (max-width: 489px) {
+      top: -2rem;
+      font-size: 36px;
+    }
+  }
+  @media (max-width: 1059px) {
+    margin-left: 2rem;
+  }
+  @media (max-width: 768px) {
+    margin-left: 0;
+  }
+  @media (max-width: 489px) {
+    font-size: 60px;
   }
 `
 
 const StyledImgDiv = styled.div`
-  background: red;
   background: url(${wineBg});
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
-  /* background-attachment: fixed; */
+  background-position: center right;
+  background-attachment: fixed;
   min-height: 480px;
 `
 

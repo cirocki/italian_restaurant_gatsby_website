@@ -20,7 +20,7 @@ const StyledSection = styled.section`
     height: 480px;
     background: ${props => props.theme.colors.light};
     z-index: -1;
-    @media (max-width: 1069px) {
+    @media (max-width: 1189px) {
       display: none;
     }
   }
@@ -39,7 +39,7 @@ const StyledGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(11, 1fr);
-  @media (max-width: 1069px) {
+  @media (max-width: 1189px) {
     display: flex;
     flex-direction: column;
   }
