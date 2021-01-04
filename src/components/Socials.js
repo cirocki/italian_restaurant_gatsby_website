@@ -3,12 +3,12 @@ import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faFacebookSquare,
+  faInstagramSquare,
   faPinterestSquare,
-  faTwitterSquare,
 } from "@fortawesome/free-brands-svg-icons"
 
 const StyledSocialsDiv = styled.div`
-  padding-top: 1.5rem;
+  padding-top: 1.25rem;
 `
 const StyledIcon = styled(FontAwesomeIcon)`
   font-size: 1.5rem;
@@ -30,7 +30,7 @@ export default function Socials() {
         <StyledIcon icon={faFacebookSquare} />
       </StyledLink>
       <StyledLink href="https://www.linkedin.com/in/cirocki/">
-        <StyledIcon icon={faTwitterSquare} />
+        <StyledIcon icon={faInstagramSquare} />
       </StyledLink>
       <StyledLink href="https://www.behance.net/cirocki/">
         <StyledIcon icon={faPinterestSquare} />

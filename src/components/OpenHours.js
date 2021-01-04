@@ -18,7 +18,7 @@ export default function OpenHours() {
       </StyledList>
       <StyledList>
         <dt>Saturday</dt>
-        <dd>8:00 am to 12:00 pm</dd>
+        <dd>8:00 am to 11:30 pm</dd>
       </StyledList>
       <StyledList>
         <dt>Sunday</dt>

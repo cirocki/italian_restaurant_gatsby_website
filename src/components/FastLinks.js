@@ -4,7 +4,7 @@ import { Link as GatsbyLink } from "gatsby"
 import { footerLinksData } from "../data/footerLinks"
 
 const StyledItem = styled.li`
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.625rem;
 `
 
 const StyledLink = styled(GatsbyLink)`

@@ -23,4 +23,8 @@ export const footerLinksData = [
     path: "#",
     name: "Careers",
   },
+  {
+    path: "#",
+    name: "Partners",
+  },
 ]
