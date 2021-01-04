@@ -7,6 +7,7 @@ import Phone from "../components/Phone"
 import Email from "../components/Email"
 import Container from "../layout/container/Container"
 import Socials from "../components/Socials"
+import NewsletterForm from "../components/NewsletterForm"
 
 const StyledSection = styled.section`
   background: ${props => props.theme.colors.dark};
@@ -20,11 +21,11 @@ const StyledContactDetails = styled.div`
   padding: 120px 0;
 `
 const StyledLinks = styled.div`
-  grid-column: 4/7;
+  grid-column: 7/9;
   padding: 120px 0;
 `
 const StyledHours = styled.div`
-  grid-column: 7/10;
+  grid-column: 9/12;
   padding: 120px 0;
 `
 
@@ -52,12 +53,14 @@ export default function ContactSection() {
             </address>
           </StyledContactDetails>
           <StyledLinks>
-            <StyledTitle>LINKS</StyledTitle>
+            <StyledTitle>Links</StyledTitle>
             <FastLinks />
           </StyledLinks>
           <StyledHours>
-            <StyledTitle>hours</StyledTitle>
+            <StyledTitle>Open hours</StyledTitle>
             <OpenHours />
+            <StyledTitle style={{ marginTop: "60px" }}>Newsletter</StyledTitle>
+            <NewsletterForm />
           </StyledHours>
         </StyledGrid>
       </Container>
