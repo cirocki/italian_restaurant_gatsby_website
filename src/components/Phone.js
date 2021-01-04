@@ -7,6 +7,10 @@ const StyledDiv = styled.div`
 const StyledLink = styled.a`
   color: ${props => props.theme.colors.grey};
   line-height: 1.8;
+  transition: color 0.2s ease 0s;
+  &:hover {
+    color: ${props => props.theme.colors.gold};
+  }
 `
 
 export default function Phone() {
