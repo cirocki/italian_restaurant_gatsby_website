@@ -6,6 +6,7 @@ import OpenHours from "../components/OpenHours"
 import Phone from "../components/Phone"
 import Email from "../components/Email"
 import Container from "../layout/container/Container"
+import Socials from "../components/Socials"
 
 const StyledSection = styled.section`
   background: ${props => props.theme.colors.dark};
@@ -45,6 +46,7 @@ export default function ContactSection() {
             <StyledTitle>Contact</StyledTitle>
             <address>
               <Address />
+              <Socials />
               <Phone />
               <Email />
             </address>

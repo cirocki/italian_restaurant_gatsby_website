@@ -1,5 +1,11 @@
 import React from "react"
 import styled from "styled-components"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
+
+const StyledIcon = styled(FontAwesomeIcon)`
+  margin-right: 0.5rem;
+`
 
 const StyledLink = styled.a`
   color: ${props => props.theme.colors.grey};
@@ -14,6 +20,7 @@ export default function Email() {
   return (
     <div>
       <StyledLink href="mailto:info@mondenello.it.com">
+        <StyledIcon icon={faEnvelope} />
         info@mondenello.it.com
       </StyledLink>
     </div>
