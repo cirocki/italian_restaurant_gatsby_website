@@ -6,6 +6,7 @@ const StyledEmailInput = styled.input`
   margin-right: -2px;
   display: inline-block;
   vertical-align: middle;
+  height: 40px;
   width: auto;
   -webkit-appearance: none;
   background-color: ${props => props.theme.colors.dark};
@@ -16,13 +17,14 @@ const StyledEmailInput = styled.input`
   font-family: ${props => props.theme.fonts.primary};
 `
 const StyledSubmitInput = styled.input`
-  padding: 8px 36px;
+  padding: 10px 36px;
   vertical-align: middle;
   background-color: ${props => props.theme.colors.gold};
   color: ${props => props.theme.colors.dark};
   border: none;
   border-radius: 0px;
   font-family: ${props => props.theme.fonts.primary};
+  font-size: 0.875rem;
   letter-spacing: 1px;
   text-transform: uppercase;
   transition: all 0.35s;

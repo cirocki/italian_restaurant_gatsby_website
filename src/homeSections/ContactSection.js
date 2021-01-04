@@ -17,11 +17,11 @@ const StyledGrid = styled.div`
   grid-template-columns: repeat(12, 1fr);
 `
 const StyledContactDetails = styled.div`
-  grid-column: 1/4;
+  grid-column: 2/5;
   padding: 120px 0;
 `
 const StyledLinks = styled.div`
-  grid-column: 7/9;
+  grid-column: 6/8;
   padding: 120px 0;
 `
 const StyledHours = styled.div`
@@ -59,7 +59,7 @@ export default function ContactSection() {
           <StyledHours>
             <StyledTitle>Open hours</StyledTitle>
             <OpenHours />
-            <StyledTitle style={{ marginTop: "60px" }}>Newsletter</StyledTitle>
+            <StyledTitle style={{ marginTop: "70px" }}>Newsletter</StyledTitle>
             <NewsletterForm />
           </StyledHours>
         </StyledGrid>
