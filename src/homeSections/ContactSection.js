@@ -15,18 +15,42 @@ const StyledSection = styled.section`
 const StyledGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  padding: 120px 0 105px 0;
+  @media (max-width: 920px) {
+    display: flex;
+    flex-direction: column;
+    padding: 80px;
+  }
+  @media (max-width: 768px) {
+    padding: 80px 40px;
+  }
+  @media (max-width: 569px) {
+    padding: 80px 20px;
+  }
 `
 const StyledContactDetails = styled.div`
   grid-column: 2/5;
-  padding: 120px 0;
+  @media (max-width: 920px) {
+    padding-bottom: 40px;
+  }
 `
 const StyledLinks = styled.div`
   grid-column: 6/8;
-  padding: 120px 0;
+  @media (max-width: 1090px) {
+    grid-column: 5/7;
+  }
+  @media (max-width: 920px) {
+    padding-bottom: 40px;
+  }
 `
 const StyledHours = styled.div`
   grid-column: 9/12;
-  padding: 120px 0;
+  @media (max-width: 1420px) {
+    grid-column: 8/12;
+  }
+  @media (max-width: 1090px) {
+    grid-column: 7/12;
+  }
 `
 
 // TYPOGRAPHY

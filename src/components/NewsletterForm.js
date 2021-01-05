@@ -1,9 +1,14 @@
 import React from "react"
 import styled from "styled-components"
 
+const StyledForm = styled.form`
+  @media (max-width: 382px) {
+    display: grid;
+  }
+`
+
 const StyledEmailInput = styled.input`
   padding: 6px 12px;
-  margin-right: -2px;
   display: inline-block;
   vertical-align: middle;
   height: 40px;
@@ -15,6 +20,9 @@ const StyledEmailInput = styled.input`
   border-right: none;
   border-radius: 0px;
   font-family: ${props => props.theme.fonts.primary};
+  @media (max-width: 382px) {
+    border: 2px solid ${props => props.theme.colors.grey};
+  }
 `
 const StyledSubmitInput = styled.input`
   padding: 10px 36px;
@@ -39,14 +47,14 @@ export default function NewsletterForm() {
   }
   return (
     <div>
-      <form onSubmit={stopFunction}>
+      <StyledForm onSubmit={stopFunction}>
         <StyledEmailInput
           type="email"
           name="email"
           placeholder="Your email address"
         />
         <StyledSubmitInput type="submit" value="Submit" />
-      </form>
+      </StyledForm>
     </div>
   )
 }

@@ -16,7 +16,7 @@ const StyledLink = styled(GatsbyLink)`
     color: ${props => props.theme.colors.gold};
   }
   @media (max-width: 1068px) {
-    padding: 1rem;
+    padding: 1rem 0;
   }
 `
 
