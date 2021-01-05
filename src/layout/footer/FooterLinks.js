@@ -7,6 +7,9 @@ import Link from "gatsby-plugin-transition-link"
 
 const StyledWrapper = styled.div`
   padding: 1rem 0;
+  @media (max-width: 840px) {
+    display: none;
+  }
 `
 const StyledLink = styled(Link)`
   color: ${props => props.theme.colors.footerTextColor};

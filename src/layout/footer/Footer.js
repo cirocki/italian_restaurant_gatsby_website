@@ -9,10 +9,18 @@ const StyledFooter = styled.footer`
   padding: 0.5rem 0;
   background: ${props => props.theme.colors.gold};
   color: ${props => props.theme.colors.footerTextColor};
+  @media (max-width: 1069px) {
+    padding: 0 1rem;
+  }
 `
 const StyledWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  @media (max-width: 840px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `
 export default function Footer() {
   return (
