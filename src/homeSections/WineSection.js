@@ -74,7 +74,7 @@ const StyledImgDiv = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center right;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   min-height: 480px;
 `
 
