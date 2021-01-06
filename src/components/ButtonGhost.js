@@ -1,7 +1,10 @@
 import React from "react"
 import styled from "styled-components"
+import { Link as GatsbyLink } from "gatsby"
 
-const StyledButton = styled.a`
+const StyledButton = styled(GatsbyLink)`
+  display: block;
+  overflow: hidden;
   margin-top: 2rem;
   padding: 0.625rem 2rem;
   align-self: flex-start;
@@ -12,10 +15,8 @@ const StyledButton = styled.a`
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
-  display: block;
-  position: relative;
   z-index: 1;
-  overflow: hidden;
+  position: relative;
   &:hover {
     color: ${props => props.theme.colors.dark};
     &:after {
@@ -40,6 +41,10 @@ const StyledButton = styled.a`
   }
 `
 
-export default function ButtonGhost({ children }) {
-  return <StyledButton>{children}</StyledButton>
+export default function ButtonGhost({ children, ...rest }) {
+  return <StyledButton {...rest}>{children}</StyledButton>
 }
+
+// INTERNAL AND EXTERNAL LINK
+// <ButtonGhost as="a" href="https://cirocki.pl">external</ButtonGhost>
+// <ButtonGhost to="/about">internal</ButtonGhost>

@@ -1,9 +1,9 @@
 import React, { useRef, useState, useEffect } from "react"
 import styled from "styled-components"
 import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Container from "../layout/container/Container"
 import heroBg from "../img/index/mondello-restaurant-pizza.jpg"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 const StyledSection = styled.section`
   display: flex;
@@ -100,13 +100,12 @@ export default function HeroSection() {
   useEffect(() => {
     gsap.to(headerRef.current, {
       autoAlpha: 0,
-      scale: 0.9,
       y: -100,
       ease: "sine.out",
       scrollTrigger: {
         trigger: headingRef.current,
         start: "bottom 40%",
-        end: "+=50%",
+        end: "+=45%",
         scrub: true,
       },
     })

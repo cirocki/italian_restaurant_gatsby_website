@@ -1,14 +1,14 @@
 import React, { useRef, useState, useEffect } from "react"
-import styled from "styled-components"
-import MainParagraph from "../components/MainParagraph"
-import PrimaryHeading from "../components/PrimaryHeading"
-import SecondaryHeading from "../components/SecondaryHeading"
-import Container from "../layout/container/Container"
 import { graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
-import ButtonGhost from "../components/ButtonGhost"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import Img from "gatsby-image"
+import styled from "styled-components"
+import Container from "../layout/container/Container"
+import MainParagraph from "../components/MainParagraph"
+import ModernHeading from "../components/typography/ModernHeading"
+import OldSchoolHeading from "../components/typography/OldSchoolHeading"
+import ButtonGhost from "../components/ButtonGhost"
 
 const StyledSection = styled.section`
   position: relative;
@@ -75,7 +75,8 @@ const StyledImage = styled(Img)`
 // HEADER
 const StyledHeader = styled.div`
   display: flex;
-  align-items: stretch;
+  flex-direction: column;
+  justify-content: center;
   padding: 120px;
   @media (max-width: 1279px) {
     padding: 80px;
@@ -89,11 +90,6 @@ const StyledHeader = styled.div`
   @media (max-width: 569px) {
     padding: 80px 20px;
   }
-`
-const StyledHeaderInner = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 `
 
 // CONTENT
@@ -122,7 +118,7 @@ const StyledContent = styled.div`
 export default function AboutSection() {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "index/mondello-about-us3.jpg" }) {
+      file(relativePath: { eq: "index/mondello-cooks-at-work.jpg" }) {
         childImageSharp {
           fluid(maxHeight: 660, quality: 100) {
             ...GatsbyImageSharpFluid
@@ -136,7 +132,6 @@ export default function AboutSection() {
   // GSAP
 
   let headingRef = useRef(null)
-
   const [aboutTL] = useState(gsap.timeline())
 
   useEffect(() => {
@@ -165,14 +160,12 @@ export default function AboutSection() {
       <Container>
         <StyledGrid>
           <StyledHeaderWrapper>
-            <StyledHeader>
-              <StyledHeaderInner ref={headingRef}>
-                <SecondaryHeading>About Us</SecondaryHeading>
-                <PrimaryHeading>
-                  The kitchen offers delicious specialties of the Sicilian
-                  tradition, such as Arancini, Caponata, Cannoli and many more.
-                </PrimaryHeading>
-              </StyledHeaderInner>
+            <StyledHeader ref={headingRef}>
+              <ModernHeading>About Us</ModernHeading>
+              <OldSchoolHeading>
+                The kitchen offers delicious specialties of the Sicilian
+                tradition, such as Arancini, Caponata, Cannoli and many more.
+              </OldSchoolHeading>
             </StyledHeader>
           </StyledHeaderWrapper>
           <StyledContentWrapper>
@@ -185,13 +178,13 @@ export default function AboutSection() {
                 our Lasagna. We provide excellent taste, great service and warm
                 atmosphere.
               </MainParagraph>
-              <ButtonGhost>Learn more</ButtonGhost>
+              <ButtonGhost to="/about">Learn more</ButtonGhost>
             </StyledContent>
           </StyledContentWrapper>
           <StyledImageWrapper>
             <StyledImage
               fluid={data.file.childImageSharp.fluid}
-              alt="About our restaurant"
+              alt="Chefs prepare seafood in italian restaurant Mondello"
             />
           </StyledImageWrapper>
         </StyledGrid>
