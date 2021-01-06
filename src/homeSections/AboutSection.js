@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect } from "react"
 import { graphql, useStaticQuery } from "gatsby"
-
 import { fadeBottom } from "../components/animations/Animation"
 import Img from "gatsby-image"
 import styled from "styled-components"

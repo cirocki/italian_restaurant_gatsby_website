@@ -1,11 +1,11 @@
 import React from "react"
 import styled from "styled-components"
-import Container from "../layout/container/Container"
-import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
+import { graphql, useStaticQuery } from "gatsby"
+import Container from "../layout/container/Container"
 import MainParagraph from "../components/MainParagraph"
-import PrimaryHeading from "../components/PrimaryHeading"
-import SecondaryHeading from "../components/SecondaryHeading"
+import ModernHeading from "../components/typography/ModernHeading"
+import OldSchoolHeading from "../components/typography/OldSchoolHeading"
 import ButtonGhost from "../components/ButtonGhost"
 
 const StyledSection = styled.section`
@@ -33,7 +33,6 @@ const StyledGrid = styled.div`
     flex-direction: column;
   }
 `
-
 const StyledHeaderWrapper = styled.div`
   grid-column: 1/8;
   grid-row: 1/5;
@@ -41,11 +40,11 @@ const StyledHeaderWrapper = styled.div`
   justify-content: center;
 `
 const StyledContentWrapper = styled.div`
-  background: ${props => props.theme.colors.dark};
   grid-column: 1/8;
   grid-row: 5/9;
   display: flex;
   justify-content: center;
+  background: ${props => props.theme.colors.dark};
 `
 const StyledImageWrapper = styled.div`
   grid-column: 9/13;
@@ -53,24 +52,21 @@ const StyledImageWrapper = styled.div`
   @media (max-width: 1219px) {
     grid-column: 8/13;
   }
-  @media (max-width: 1200px) and (min-width: 521px) {
+  @media (min-width: 481px) and (max-width: 1200px) {
     display: flex;
     justify-content: center;
-    align-items: center;
     padding-top: 80px;
   }
-`
-const StyledImage = styled(Img)`
-  @media (max-width: 1200px) and (min-width: 521px) {
-    width: 660px;
+  @media (max-width: 480px) {
+    padding-top: 0;
   }
 `
 
-// HEADER
 const StyledHeader = styled.div`
   padding: 120px;
   display: flex;
-  align-items: stretch;
+  flex-direction: column;
+  justify-content: center;
   @media (max-width: 1279px) {
     padding: 80px;
   }
@@ -81,13 +77,7 @@ const StyledHeader = styled.div`
     padding: 80px 20px;
   }
 `
-const StyledHeaderInner = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-`
 
-// CONTENT
 const StyledContent = styled.div`
   padding: 120px;
   display: flex;
@@ -107,7 +97,9 @@ const StyledContent = styled.div`
 export default function HistorySection() {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "index/mondello-history2.jpg" }) {
+      file(
+        relativePath: { eq: "index/mondello-restaurant-outside-tables.jpg" }
+      ) {
         childImageSharp {
           fluid(maxHeight: 720, quality: 100) {
             ...GatsbyImageSharpFluid
@@ -123,14 +115,12 @@ export default function HistorySection() {
         <StyledGrid>
           <StyledHeaderWrapper>
             <StyledHeader>
-              <StyledHeaderInner>
-                <SecondaryHeading>History</SecondaryHeading>
-                <PrimaryHeading>
-                  We try to make everything perfect. The color of the
-                  tablecloths and the selection of spices. Every detail is
-                  important, to make your visit here unforgettable.
-                </PrimaryHeading>
-              </StyledHeaderInner>
+              <ModernHeading>History</ModernHeading>
+              <OldSchoolHeading>
+                We try to make everything perfect. The color of the tablecloths
+                and the selection of spices. Every detail is important, to make
+                your visit here unforgettable.
+              </OldSchoolHeading>
             </StyledHeader>
           </StyledHeaderWrapper>
           <StyledContentWrapper>
@@ -143,13 +133,13 @@ export default function HistorySection() {
                 atmosphere. Years have passed, but we still value the same
                 things and we are proud of it.
               </MainParagraph>
-              <ButtonGhost>Learn more</ButtonGhost>
+              <ButtonGhost to="/history">Learn more</ButtonGhost>
             </StyledContent>
           </StyledContentWrapper>
           <StyledImageWrapper>
-            <StyledImage
+            <Img
               fluid={data.file.childImageSharp.fluid}
-              alt="About our restaurant"
+              alt="Mondello restaurant outside - Via delle Viole"
             />
           </StyledImageWrapper>
         </StyledGrid>
