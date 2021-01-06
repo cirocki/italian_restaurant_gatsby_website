@@ -17,7 +17,9 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
 
-
+  .gatsby-image-wrapper {
+    width: 100%;
+  }
 
   /* KEEP FOOTER BOTTOM EVEN IF MAIN CONTENT IS SHORT  */
   #gatsby-focus-wrapper {

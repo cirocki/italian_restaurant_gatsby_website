@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+import { fadeBottom } from "../components/animations/Animation"
 import Img from "gatsby-image"
 import styled from "styled-components"
 import Container from "../layout/container/Container"
@@ -59,20 +59,16 @@ const StyledContentWrapper = styled.div`
 const StyledImageWrapper = styled.div`
   grid-column: 2/6;
   grid-row: 5/9;
-  @media (max-width: 1200px) and (min-width: 521px) {
+  @media (min-width: 481px) and (max-width: 1200px) {
     display: flex;
     justify-content: center;
-    align-items: center;
     padding-top: 80px;
   }
-`
-const StyledImage = styled(Img)`
-  @media (max-width: 1200px) and (min-width: 521px) {
-    width: 660px;
+  @media (max-width: 480px) {
+    padding-top: 0;
   }
 `
 
-// HEADER
 const StyledHeader = styled.div`
   display: flex;
   flex-direction: column;
@@ -92,7 +88,6 @@ const StyledHeader = styled.div`
   }
 `
 
-// CONTENT
 const StyledContent = styled.div`
   display: flex;
   flex-direction: column;
@@ -130,29 +125,12 @@ export default function AboutSection() {
   `)
 
   // GSAP
-
-  let headingRef = useRef(null)
-  const [aboutTL] = useState(gsap.timeline())
+  let headerRef = useRef(null)
+  let contentRef = useRef(null)
 
   useEffect(() => {
-    gsap.from(headingRef.current, {
-      autoAlpha: 0,
-      y: -100,
-      ease: "power1.inOut",
-      // duration: 0.5,
-      paused: true,
-      pin: true,
-      scrollTrigger: {
-        duration: 0.5,
-        trigger: headingRef.current, // selector or element
-        start: "center center",
-        toggleActions: "play none none none",
-
-        // end: "center top",
-        // scrub: true,
-        // markers: true,
-      },
-    })
+    fadeBottom(headerRef.current, headerRef.current)
+    fadeBottom(contentRef.current, contentRef.current)
   }, [])
 
   return (
@@ -160,7 +138,7 @@ export default function AboutSection() {
       <Container>
         <StyledGrid>
           <StyledHeaderWrapper>
-            <StyledHeader ref={headingRef}>
+            <StyledHeader ref={headerRef}>
               <ModernHeading>About Us</ModernHeading>
               <OldSchoolHeading>
                 The kitchen offers delicious specialties of the Sicilian
@@ -169,7 +147,7 @@ export default function AboutSection() {
             </StyledHeader>
           </StyledHeaderWrapper>
           <StyledContentWrapper>
-            <StyledContent>
+            <StyledContent ref={contentRef}>
               <MainParagraph>
                 We are famous in Sicilia, cause we cook our dishes from the
                 freshest ingredients in traditional way. Local vegetables, fresh
@@ -182,7 +160,7 @@ export default function AboutSection() {
             </StyledContent>
           </StyledContentWrapper>
           <StyledImageWrapper>
-            <StyledImage
+            <Img
               fluid={data.file.childImageSharp.fluid}
               alt="Chefs prepare seafood in italian restaurant Mondello"
             />
