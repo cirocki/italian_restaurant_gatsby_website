@@ -50,9 +50,9 @@ const StyledTitleText = styled.h2`
     position: absolute;
     top: -3rem;
     left: -2rem;
-    z-index: -1;
-    font-size: 60px;
     color: ${props => props.theme.colors.gold};
+    font-size: 60px;
+    z-index: -1;
     @media (max-width: 489px) {
       top: -2rem;
       font-size: 36px;
@@ -74,7 +74,7 @@ const StyledImgDiv = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center right;
-  /* background-attachment: fixed; */
+  background-attachment: fixed;
   min-height: 480px;
 `
 
