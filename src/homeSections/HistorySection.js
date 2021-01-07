@@ -1,7 +1,8 @@
-import React from "react"
+import React, { useRef, useState, useEffect } from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
+import { fadeBottom } from "../components/animations/Animation"
 import Container from "../layout/container/Container"
 import MainParagraph from "../components/MainParagraph"
 import ModernHeading from "../components/typography/ModernHeading"
@@ -109,12 +110,22 @@ export default function HistorySection() {
       }
     }
   `)
+
+  // GSAP
+  let headerRef = useRef(null)
+  let contentRef = useRef(null)
+
+  useEffect(() => {
+    fadeBottom(headerRef.current, headerRef.current)
+    fadeBottom(contentRef.current, contentRef.current)
+  }, [])
+
   return (
     <StyledSection>
       <Container>
         <StyledGrid>
           <StyledHeaderWrapper>
-            <StyledHeader>
+            <StyledHeader ref={headerRef}>
               <ModernHeading>History</ModernHeading>
               <OldSchoolHeading>
                 We try to make everything perfect. The color of the tablecloths
@@ -124,7 +135,7 @@ export default function HistorySection() {
             </StyledHeader>
           </StyledHeaderWrapper>
           <StyledContentWrapper>
-            <StyledContent>
+            <StyledContent ref={contentRef}>
               <MainParagraph>
                 Our restaurant was established in 1975. Its founder and first
                 chef was Pietro Savastano. Eccentric men with passion for the

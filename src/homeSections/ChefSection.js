@@ -138,6 +138,24 @@ export default function ChefSection() {
       }
     }
   `)
+
+  // useEffect(() => {
+  //   gsap.fromTo(
+  //     imageRef.current,
+  //     {
+  //       y: -100,
+  //       scrollTrigger: {
+  //         trigger: imageRef.current,
+  //         start: "center 90%",
+  //         end: "+=150%",
+  //         scrub: true,
+  //         markers: true,
+  //       },
+  //     },
+  //     { y: 100 }
+  //   )
+  // }, [])
+
   return (
     <StyledSection>
       <Container>
