@@ -4,8 +4,8 @@ import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import Container from "../layout/container/Container"
 import MainParagraph from "../components/MainParagraph"
-import PrimaryHeading from "../components/PrimaryHeading"
-import SecondaryHeading from "../components/SecondaryHeading"
+import ModernHeading from "../components/typography/ModernHeading"
+import OldSchoolHeading from "../components/typography/OldSchoolHeading"
 import ButtonGhost from "../components/ButtonGhost"
 import ShortMenu from "../components/menuCard/ShortMenu"
 
@@ -52,10 +52,9 @@ const StyledHeaderWrapper = styled.div`
   justify-content: center;
 `
 const StyledContentWrapper = styled.div`
-  background: ${props => props.theme.colors.dark};
   grid-column: 7/13;
   grid-row: 7/12;
-  display: flex;
+  background: ${props => props.theme.colors.dark};
   position: relative;
   &:before {
     content: "";
@@ -75,24 +74,20 @@ const StyledContentWrapper = styled.div`
 const StyledImageWrapper = styled.div`
   grid-column: 1/5;
   grid-row: 3/9;
-  @media (max-width: 1200px) and (min-width: 521px) {
+  @media (min-width: 481px) and (max-width: 1200px) {
     display: flex;
     justify-content: center;
-    align-items: center;
     padding-top: 80px;
   }
-`
-const StyledImage = styled(Img)`
-  @media (max-width: 1200px) and (min-width: 521px) {
-    width: 660px;
+  @media (max-width: 480px) {
+    padding-top: 0;
   }
 `
 
-// HEADER
 const StyledHeader = styled.div`
   padding: 120px;
   display: flex;
-  align-items: stretch;
+  flex-direction: column;
   @media (max-width: 1279px) {
     padding: 80px;
   }
@@ -103,17 +98,14 @@ const StyledHeader = styled.div`
     padding: 80px 20px;
   }
 `
-const StyledHeaderInner = styled.div`
-  display: flex;
-  flex-direction: column;
+const StyledTextDiv = styled.div`
+  padding-top: 60px;
 `
 
-// CONTENT
 const StyledContent = styled.div`
   padding: 120px;
   display: flex;
   flex-direction: column;
-  flex: 1;
   @media (max-width: 1279px) {
     padding: 80px;
   }
@@ -128,7 +120,7 @@ const StyledContent = styled.div`
 export default function ChefSection() {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "index/mondello-chef.jpg" }) {
+      file(relativePath: { eq: "index/palermo-restaurant-chef-gennaro.jpg" }) {
         childImageSharp {
           fluid(maxHeight: 720, quality: 100) {
             ...GatsbyImageSharpFluid
@@ -162,12 +154,12 @@ export default function ChefSection() {
         <StyledGrid>
           <StyledHeaderWrapper>
             <StyledHeader>
-              <StyledHeaderInner>
-                <SecondaryHeading>Our Chef</SecondaryHeading>
-                <PrimaryHeading margin={60}>
-                  The kitchen offers delicious specialties of the Sicilian
-                  tradition, such as Arancini, Caponata and many more.
-                </PrimaryHeading>
+              <ModernHeading>Our Chef</ModernHeading>
+              <OldSchoolHeading>
+                The kitchen offers delicious specialties of the Sicilian
+                tradition, such as Arancini, Caponata and many more.
+              </OldSchoolHeading>
+              <StyledTextDiv>
                 <MainParagraph>
                   Gennaro - chef of our restaurant, loves pizza and spaghetti,
                   but he can also prepare many more exquisite dishes like his
@@ -176,19 +168,19 @@ export default function ChefSection() {
                   taste buds. He grew up in Palermo, so he understands the local
                   traditions and the atmosphere of a real Italian restaurant.
                 </MainParagraph>
-              </StyledHeaderInner>
+              </StyledTextDiv>
             </StyledHeader>
           </StyledHeaderWrapper>
           <StyledContentWrapper>
             <StyledContent>
               <ShortMenu />
-              <ButtonGhost>Check full menu</ButtonGhost>
+              <ButtonGhost to="/menu">Check full menu</ButtonGhost>
             </StyledContent>
           </StyledContentWrapper>
           <StyledImageWrapper>
-            <StyledImage
+            <Img
               fluid={data.file.childImageSharp.fluid}
-              alt="Chef in our restaurant"
+              alt="Chef in our sicilian restaurant"
             />
           </StyledImageWrapper>
         </StyledGrid>
