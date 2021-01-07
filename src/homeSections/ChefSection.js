@@ -1,6 +1,10 @@
-import React from "react"
+import React, { useRef, useState, useEffect } from "react"
 import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
+import {
+  fadeBottomFaster,
+  fadeBottom,
+} from "../components/animations/Animation"
 import Img from "gatsby-image"
 import Container from "../layout/container/Container"
 import MainParagraph from "../components/MainParagraph"
@@ -131,29 +135,20 @@ export default function ChefSection() {
     }
   `)
 
-  // useEffect(() => {
-  //   gsap.fromTo(
-  //     imageRef.current,
-  //     {
-  //       y: -100,
-  //       scrollTrigger: {
-  //         trigger: imageRef.current,
-  //         start: "center 90%",
-  //         end: "+=150%",
-  //         scrub: true,
-  //         markers: true,
-  //       },
-  //     },
-  //     { y: 100 }
-  //   )
-  // }, [])
+  // GSAP
+  let headerRef = useRef(null)
+  let contentRef = useRef(null)
+  useEffect(() => {
+    fadeBottomFaster(headerRef.current, headerRef.current)
+    fadeBottom(contentRef.current, contentRef.current)
+  }, [])
 
   return (
     <StyledSection>
       <Container>
         <StyledGrid>
           <StyledHeaderWrapper>
-            <StyledHeader>
+            <StyledHeader ref={headerRef}>
               <ModernHeading>Our Chef</ModernHeading>
               <OldSchoolHeading>
                 The kitchen offers delicious specialties of the Sicilian
@@ -172,7 +167,7 @@ export default function ChefSection() {
             </StyledHeader>
           </StyledHeaderWrapper>
           <StyledContentWrapper>
-            <StyledContent>
+            <StyledContent ref={contentRef}>
               <ShortMenu />
               <ButtonGhost to="/menu">Check full menu</ButtonGhost>
             </StyledContent>
