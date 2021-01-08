@@ -1,5 +1,4 @@
 import gsap from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 // FADE IN FROM BOTTOM
 export const fadeBottom = (animatedElem, triggerElem) => {
@@ -27,6 +26,20 @@ export const fadeBottomFaster = (animatedElem, triggerElem) => {
     scrollTrigger: {
       trigger: triggerElem,
       start: "center 90%",
+    },
+  })
+}
+
+export const fadeLeft = (animatedElem, triggerElem) => {
+  gsap.from(animatedElem, {
+    autoAlpha: 0,
+    x: 100,
+    duration: 1,
+    ease: "power4.out",
+    paused: true,
+    scrollTrigger: {
+      trigger: triggerElem,
+      start: "center 70%",
     },
   })
 }

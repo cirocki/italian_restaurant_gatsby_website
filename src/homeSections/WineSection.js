@@ -1,5 +1,6 @@
-import React from "react"
+import React, { useRef, useEffect } from "react"
 import styled from "styled-components"
+import { fadeLeft, fadeBottom } from "../components/animations/Animation"
 import Container from "../layout/container/Container"
 import wineBg from "../img/index/wine-bg.jpg"
 import MainParagraph from "../components/MainParagraph"
@@ -79,14 +80,23 @@ const StyledImgDiv = styled.div`
 `
 
 export default function WineSection() {
+  // GSAP
+  let headerRef = useRef(null)
+  let contentRef = useRef(null)
+
+  useEffect(() => {
+    fadeLeft(headerRef.current, headerRef.current)
+    fadeBottom(contentRef.current, contentRef.current)
+  }, [])
+
   return (
     <section>
       <Container>
         <StyledGrid>
-          <StyledTitleWrapper>
+          <StyledTitleWrapper ref={headerRef}>
             <StyledTitleText>Wines</StyledTitleText>
           </StyledTitleWrapper>
-          <StyledContentWrapper>
+          <StyledContentWrapper ref={contentRef}>
             <MainParagraph>
               We are Sicilians that love the own land so we decided to create
               our special wine describing local dishes prepared by Sicilian
