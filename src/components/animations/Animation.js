@@ -61,7 +61,7 @@ export const fadeFooter = (animatedElem, triggerElem) => {
   gsap.from(animatedElem, {
     autoAlpha: 0,
     y: 100,
-    stagger: 0.5,
+    stagger: 0.3,
     ease: "power4.out",
     paused: true,
     scrollTrigger: {

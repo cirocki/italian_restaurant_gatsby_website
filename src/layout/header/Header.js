@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Container from "../container/Container"
 import Branding from "./Branding"
 import Hamburger from "./Hamburger"
 import NavLinks from "./NavLinks"
-
-// REGISTER SCROLL TRIGGER
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 const StyledHeader = styled.header`
   background: ${props => props.theme.colors.white};
