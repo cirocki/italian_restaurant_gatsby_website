@@ -43,3 +43,17 @@ export const fadeLeft = (animatedElem, triggerElem) => {
     },
   })
 }
+export const jumpBox = (animatedElem, triggerElem) => {
+  gsap.from(animatedElem, {
+    x: -240,
+    y: 120,
+    duration: 1,
+    ease: "power4.out",
+    paused: true,
+    scrollTrigger: {
+      trigger: triggerElem,
+      start: "top 60%",
+      markers: true,
+    },
+  })
+}

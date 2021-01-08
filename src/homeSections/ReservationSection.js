@@ -1,5 +1,6 @@
-import React from "react"
+import React, { useRef, useEffect } from "react"
 import styled from "styled-components"
+import { fadeBottom, jumpBox } from "../components/animations/Animation"
 import Container from "../layout/container/Container"
 import ModernHeading from "../components/typography/ModernHeading"
 import OldSchoolHeading from "../components/typography/OldSchoolHeading"
@@ -80,22 +81,31 @@ const StyledButtonDiv = styled.div`
 `
 
 export default function ReservationSection() {
+  // GSAP
+  let headerRef = useRef(null)
+  let contentRef = useRef(null)
+
+  useEffect(() => {
+    jumpBox(headerRef.current, headerRef.current)
+    fadeBottom(contentRef.current, headerRef.current)
+  }, [])
+
   return (
     <section>
       <Container>
         <StyledGridWrapper>
           <StyledGrid>
-            <StyledHeaderWrapper>
+            <StyledHeaderWrapper ref={headerRef}>
               <ModernHeading>Reservation</ModernHeading>
               <OldSchoolHeading whiteColor>
-                Try our perfect food. Book a table online.
+                Try our new flavours. Book a table online.
               </OldSchoolHeading>
               <StyledButtonDiv>
-                <ButtonGhost to="/reservation">Reserve a table</ButtonGhost>
+                <ButtonGhost to="/reservation">Make reservation</ButtonGhost>
               </StyledButtonDiv>
             </StyledHeaderWrapper>
             <StyledGreyDiv></StyledGreyDiv>
-            <StyledMoreWrapper>
+            <StyledMoreWrapper ref={contentRef}>
               <MainParagraph>
                 You can also call to make a reservation.
               </MainParagraph>
