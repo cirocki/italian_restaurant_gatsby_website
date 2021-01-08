@@ -53,7 +53,20 @@ export const jumpBox = (animatedElem, triggerElem) => {
     scrollTrigger: {
       trigger: triggerElem,
       start: "top 60%",
-      markers: true,
+    },
+  })
+}
+
+export const fadeFooter = (animatedElem, triggerElem) => {
+  gsap.from(animatedElem, {
+    autoAlpha: 0,
+    y: 100,
+    stagger: 0.5,
+    ease: "power4.out",
+    paused: true,
+    scrollTrigger: {
+      trigger: triggerElem,
+      start: "top 70%",
     },
   })
 }

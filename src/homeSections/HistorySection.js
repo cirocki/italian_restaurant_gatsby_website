@@ -4,10 +4,10 @@ import Img from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
 import { fadeBottom } from "../components/animations/Animation"
 import Container from "../layout/container/Container"
-import MainParagraph from "../components/MainParagraph"
+import MainParagraph from "../components/typography/MainParagraph"
 import ModernHeading from "../components/typography/ModernHeading"
 import OldSchoolHeading from "../components/typography/OldSchoolHeading"
-import ButtonGhost from "../components/ButtonGhost"
+import ButtonGhost from "../components/buttons/ButtonGhost"
 
 const StyledSection = styled.section`
   position: relative;

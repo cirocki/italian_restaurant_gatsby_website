@@ -9,7 +9,7 @@ const StyledParagraph = styled.p`
 export default function Address() {
   return (
     <div>
-      <StyledParagraph>Mondenello Ristorante</StyledParagraph>
+      <StyledParagraph>Mondello Ristorante</StyledParagraph>
       <StyledParagraph>Via delle Viole 186</StyledParagraph>
       <StyledParagraph>90100 Palermo PA</StyledParagraph>
     </div>

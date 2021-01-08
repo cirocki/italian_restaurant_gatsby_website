@@ -7,10 +7,10 @@ import {
 } from "../components/animations/Animation"
 import Img from "gatsby-image"
 import Container from "../layout/container/Container"
-import MainParagraph from "../components/MainParagraph"
+import MainParagraph from "../components/typography/MainParagraph"
 import ModernHeading from "../components/typography/ModernHeading"
 import OldSchoolHeading from "../components/typography/OldSchoolHeading"
-import ButtonGhost from "../components/ButtonGhost"
+import ButtonGhost from "../components/buttons/ButtonGhost"
 import ShortMenu from "../components/menuCard/ShortMenu"
 
 const StyledSection = styled.section`

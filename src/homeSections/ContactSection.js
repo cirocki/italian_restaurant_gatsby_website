@@ -1,13 +1,14 @@
-import React from "react"
+import React, { useRef, useEffect } from "react"
 import styled from "styled-components"
-import Address from "../components/Address"
-import FastLinks from "../components/FastLinks"
-import OpenHours from "../components/OpenHours"
-import Phone from "../components/Phone"
-import Email from "../components/Email"
+import { fadeFooter } from "../components/animations/Animation"
 import Container from "../layout/container/Container"
-import Socials from "../components/Socials"
-import NewsletterForm from "../components/NewsletterForm"
+import Address from "../components/contactParts/Address"
+import Socials from "../components/contactParts/Socials"
+import Phone from "../components/contactParts/Phone"
+import Email from "../components/contactParts/Email"
+import FastLinks from "../components/contactParts/FastLinks"
+import OpenHours from "../components/contactParts/OpenHours"
+import NewsletterForm from "../components/contactParts/NewsletterForm"
 
 const StyledSection = styled.section`
   background: ${props => props.theme.colors.dark};
@@ -56,18 +57,33 @@ const StyledHours = styled.div`
 // TYPOGRAPHY
 const StyledTitle = styled.h2`
   padding-bottom: 40px;
-  font-size: 1.125rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
   color: ${props => props.theme.colors.white};
+  font-size: 1.125rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 `
 
 export default function ContactSection() {
+  // GSAP
+  let startRef = useRef(null)
+  const contactRefs = useRef([])
+  contactRefs.current = []
+
+  const addToRefs = el => {
+    if (el && !contactRefs.current.includes(el)) {
+      contactRefs.current.push(el)
+    }
+  }
+
+  useEffect(() => {
+    fadeFooter(contactRefs.current, startRef.current)
+  }, [])
+
   return (
-    <StyledSection>
+    <StyledSection ref={startRef}>
       <Container>
         <StyledGrid>
-          <StyledContactDetails>
+          <StyledContactDetails ref={addToRefs}>
             <StyledTitle>Contact</StyledTitle>
             <address>
               <Address />
@@ -76,11 +92,11 @@ export default function ContactSection() {
               <Email />
             </address>
           </StyledContactDetails>
-          <StyledLinks>
+          <StyledLinks ref={addToRefs}>
             <StyledTitle>Links</StyledTitle>
             <FastLinks />
           </StyledLinks>
-          <StyledHours>
+          <StyledHours ref={addToRefs}>
             <StyledTitle>Open hours</StyledTitle>
             <OpenHours />
             <StyledTitle style={{ marginTop: "70px" }}>Newsletter</StyledTitle>

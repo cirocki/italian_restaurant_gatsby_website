@@ -1,14 +1,13 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import Container from "../container/Container"
 import Branding from "./Branding"
 import Hamburger from "./Hamburger"
 import NavLinks from "./NavLinks"
 
-// REGISTER SCROLL TTIGGER
+// REGISTER SCROLL TRIGGER
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-gsap.registerPlugin(ScrollTrigger)
 
 const StyledHeader = styled.header`
   background: ${props => props.theme.colors.white};
@@ -40,6 +39,14 @@ const StyledBrandingWrapper = styled.div`
 `
 
 export default function Header() {
+  // REGISTER GSAP SCROLLTRIGGER
+  useEffect(() => {
+    if (typeof window !== `undefined`) {
+      gsap.registerPlugin(ScrollTrigger)
+      gsap.core.globals("ScrollTrigger", ScrollTrigger)
+    }
+  })
+
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleMenu = () => {

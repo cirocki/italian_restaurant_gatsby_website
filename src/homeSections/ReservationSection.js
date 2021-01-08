@@ -2,10 +2,10 @@ import React, { useRef, useEffect } from "react"
 import styled from "styled-components"
 import { fadeBottom, jumpBox } from "../components/animations/Animation"
 import Container from "../layout/container/Container"
+import MainParagraph from "../components/typography/MainParagraph"
 import ModernHeading from "../components/typography/ModernHeading"
 import OldSchoolHeading from "../components/typography/OldSchoolHeading"
-import MainParagraph from "../components/MainParagraph"
-import ButtonGhost from "../components/ButtonGhost"
+import ButtonGhost from "../components/buttons/ButtonGhost"
 
 const StyledGridWrapper = styled.div`
   @media (max-width: 1069px) {

@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { fadeLeft, fadeBottom } from "../components/animations/Animation"
 import Container from "../layout/container/Container"
 import wineBg from "../img/index/wine-bg.jpg"
-import MainParagraph from "../components/MainParagraph"
+import MainParagraph from "../components/typography/MainParagraph"
 
 const StyledGrid = styled.div`
   display: grid;

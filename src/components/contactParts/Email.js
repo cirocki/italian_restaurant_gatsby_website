@@ -19,9 +19,9 @@ const StyledLink = styled.a`
 export default function Email() {
   return (
     <div>
-      <StyledLink href="mailto:info@mondenello.it.com">
+      <StyledLink href="mailto:info@mondello.it.com">
         <StyledIcon icon={faEnvelope} />
-        info@mondenello.it.com
+        info@mondello.it.com
       </StyledLink>
     </div>
   )
