@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-const StyledHeading = styled.h2`
+const StyledHeading = styled.h3`
   color: ${props =>
     props.whiteColor ? props.theme.colors.white : props.theme.colors.dark};
   font-family: ${props => props.theme.fonts.secondary};

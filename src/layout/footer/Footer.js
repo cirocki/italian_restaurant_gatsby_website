@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import GoToTopButton from "../../components/buttons/GoToTopButton"
 import Container from "../container/Container"
 import Author from "./Author"
 import Copyrights from "./Copyrights"
@@ -32,6 +33,7 @@ export default function Footer() {
           <Author />
         </StyledWrapper>
       </Container>
+      <GoToTopButton />
     </StyledFooter>
   )
 }
