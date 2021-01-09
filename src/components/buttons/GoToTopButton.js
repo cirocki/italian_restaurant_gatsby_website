@@ -12,8 +12,8 @@ const StyledButton = styled.button`
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   background-color: ${props => props.theme.colors.gold};
   border: none;
   outline: none;

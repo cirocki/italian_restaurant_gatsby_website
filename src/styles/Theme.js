@@ -8,7 +8,7 @@ const theme = {
     white: "#fff",
     grey: "#777",
     gold: "#968b63",
-    footerTextColor: "#16191a",
+    footerTextColor: "#777",
   },
   fonts: {
     primary: `"Jost", sans-serif`,

@@ -8,7 +8,8 @@ import FooterLinks from "./FooterLinks"
 
 const StyledFooter = styled.footer`
   padding: 0.5rem 0;
-  background: ${props => props.theme.colors.light};
+  background: ${props => props.theme.colors.dark};
+  border-top: 1px solid #222;
   color: ${props => props.theme.colors.footerTextColor};
   @media (max-width: 1069px) {
     padding: 0 1rem;
