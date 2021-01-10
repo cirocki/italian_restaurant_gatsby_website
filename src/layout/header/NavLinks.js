@@ -57,8 +57,8 @@ const StyledLink = styled(GatsbyLink)`
       position: absolute;
       bottom: 10px;
       left: 20px;
-      width: 50vw;
-      height: 15px;
+      width: 80vw;
+      height: 20px;
       background: ${props => props.theme.colors.light};
       z-index: -1;
     }
