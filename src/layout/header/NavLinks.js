@@ -18,8 +18,6 @@ const StyledList = styled.ul`
   @media (max-width: 1024px) {
     flex-direction: column;
     padding: 2rem 0;
-    /* visibility: hidden;
-    opacity: 0; */
   }
 `
 
@@ -80,7 +78,6 @@ export default function NavLinks({ toggleMenu, isOpen }) {
     })
   )
 
-  // TOMATOS
   const menuRefs = useRef([])
   menuRefs.current = []
 
@@ -95,7 +92,6 @@ export default function NavLinks({ toggleMenu, isOpen }) {
       .set(wrapperLayer.current, { clearProps: "all" })
       .set(menuRefs.current, { clearProps: "all" })
       .to(wrapperLayer.current, { height: "auto", duration: 0.5 })
-      // .to(itemsLayer.current, { autoAlpha: 1 })
       .to(menuRefs.current, {
         autoAlpha: 1,
         x: 30,
