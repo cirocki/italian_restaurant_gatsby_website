@@ -34,6 +34,9 @@ const StyledBrandingWrapper = styled.div`
   @media (max-width: 1024px) {
     width: 100%;
   }
+  @media (max-width: 1069px) {
+    padding: 0 20px;
+  }
 `
 
 export default function Header() {

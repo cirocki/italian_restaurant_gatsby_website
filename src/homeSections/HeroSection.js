@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect } from "react"
 import styled from "styled-components"
 import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Container from "../layout/container/Container"
 import heroBg from "../img/index/mondello-restaurant-pizza.jpg"
 
