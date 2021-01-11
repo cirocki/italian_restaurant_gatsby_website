@@ -103,7 +103,7 @@ export default function HistorySection() {
       ) {
         childImageSharp {
           fluid(maxHeight: 720, quality: 100) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
             ...GatsbyImageSharpFluidLimitPresentationSize
           }
         }

@@ -115,7 +115,7 @@ export default function AboutSection() {
       file(relativePath: { eq: "index/mondello-cooks-at-work.jpg" }) {
         childImageSharp {
           fluid(maxHeight: 660, quality: 100) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
             ...GatsbyImageSharpFluidLimitPresentationSize
           }
         }

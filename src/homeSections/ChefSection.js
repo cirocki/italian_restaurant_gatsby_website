@@ -127,7 +127,7 @@ export default function ChefSection() {
       file(relativePath: { eq: "index/palermo-restaurant-chef-gennaro.jpg" }) {
         childImageSharp {
           fluid(maxHeight: 720, quality: 100) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
             ...GatsbyImageSharpFluidLimitPresentationSize
           }
         }
