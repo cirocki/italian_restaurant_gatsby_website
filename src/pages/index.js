@@ -13,7 +13,15 @@ import styled from "styled-components"
 export default function Home() {
   return (
     <Layout>
-      <Helmet>
+      <Helmet
+        htmlAttributes={{
+          lang: "en",
+        }}
+      >
+        <meta
+          name="description"
+          content="Mondello Restaurant - We specialize in homemade classic Italian pizza, pasta, salads, soups and much more."
+        ></meta>
         <title>Mondello Restaurant - Napoli</title>
       </Helmet>
       <main>
