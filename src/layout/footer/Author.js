@@ -4,6 +4,12 @@ import { mainData } from "../../data/mainData"
 
 const StyledParagraph = styled.p`
   padding: 1rem 0;
+  @media (max-width: 1069px) {
+    padding-top: 0;
+  }
+  @media (max-width: 400px) {
+    font-size: 0.875rem;
+  }
 `
 const StyledLink = styled.a`
   color: ${props => props.theme.colors.footerTextColor};

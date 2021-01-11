@@ -19,6 +19,9 @@ const StyledButton = styled.button`
   outline: none;
   z-index: 1000;
   cursor: pointer;
+  @media (max-width: 360px) {
+    right: 0px;
+  }
 `
 const StyledIcon = styled(FontAwesomeIcon)`
   font-size: 1.5rem;

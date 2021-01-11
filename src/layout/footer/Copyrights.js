@@ -4,6 +4,9 @@ import { mainData } from "../../data/mainData"
 
 const StyledWrapper = styled.div`
   padding: 1rem 0;
+  @media (max-width: 400px) {
+    font-size: 0.875rem;
+  }
 `
 
 export default function Copyrights() {
