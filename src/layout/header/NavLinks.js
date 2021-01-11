@@ -12,19 +12,21 @@ const StyledNavWrapper = styled.div`
     background: ${props => props.theme.colors.light};
     position: relative;
     @media (min-width: 520px) and (max-width: 1024px) {
-    &:before {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      top: 0;
-      width: 50%;
-      height: 100%;
-      background: ${props => props.theme.colors.white};
-      z-index: 0;
+      &:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        background: ${props => props.theme.colors.white};
+        z-index: 0;
+      }
     }
   }
 `
+
 const StyledList = styled.ul`
   display: flex;
   @media (max-width: 1024px) {
@@ -60,8 +62,8 @@ const StyledLink = styled(GatsbyLink)`
     color: ${props => props.theme.colors.gold};
   }
   @media (max-width: 1024px) {
+    padding: 0.5rem 0;
     font-size: 1.25rem;
-    padding: 0.5rem 3rem;
   }
 `
 
@@ -94,9 +96,8 @@ export default function NavLinks({ toggleMenu, isOpen }) {
       .to(wrapperLayer.current, { height: "auto", duration: 0.5 })
       .to(menuRefs.current, {
         autoAlpha: 1,
-        x: 30,
+        x: 20,
         stagger: 0.1,
-        ease: "power2",
       })
       .reverse()
   }, [])
