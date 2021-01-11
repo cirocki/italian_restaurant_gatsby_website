@@ -40,7 +40,9 @@ export default function GoToTopButton() {
     }
   }
 
-  window.addEventListener("scroll", checkScrollTop)
+  if (typeof window !== `undefined`) {
+    window.addEventListener("scroll", checkScrollTop)
+  }
 
   // GSAP
   let btnTop = useRef(null)
