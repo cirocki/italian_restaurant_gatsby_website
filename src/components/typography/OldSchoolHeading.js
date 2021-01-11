@@ -10,7 +10,7 @@ const StyledHeading = styled.h3`
   @media (max-width: 499px) {
     font-size: 1.25rem;
   }
-  @media (max-width: 404px) {
+  @media (max-width: 374px) {
     font-size: 1.125rem;
   }
 `
