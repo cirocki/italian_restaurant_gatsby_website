@@ -15,19 +15,23 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
         fonts: [
-          `playfair display\:400,400i,700`,
-          `jost`, // you can also specify font weights and styles
+          {
+            family: `Jost`,
+            subsets: [`latin`],
+          },
+          {
+            family: `Playfair Display`,
+            variants: [`400`, `400i`, `700`],
+          },
         ],
-        display: "swap",
       },
     },
 
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-styled-components`,
-
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-react-helmet`,
