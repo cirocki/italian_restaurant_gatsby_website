@@ -5,19 +5,18 @@ import styled from "styled-components"
 import Container from "../layout/container/Container"
 
 const StyledMainDiv = styled.main`
-  min-height: 120vh;
-  padding: 8rem 0;
+  padding: 4rem 0;
 `
 
-export default function AboutPage() {
+export default function HistoryPage() {
   return (
     <Layout>
       <Helmet>
-        <title>Mondello Restaurant - Napoli2</title>
+        <title>Mondello Restaurant - example</title>
       </Helmet>
       <StyledMainDiv>
         <Container>
-          <h1>About page</h1>
+          <h1>History</h1>
         </Container>
       </StyledMainDiv>
     </Layout>
