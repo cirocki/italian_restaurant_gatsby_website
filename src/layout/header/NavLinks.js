@@ -1,16 +1,28 @@
 import React, { useRef, useState, useEffect } from "react"
-import { Link as GatsbyLink } from "gatsby"
-import { navItemsData } from "../../data/navItems"
 import styled from "styled-components"
 import { gsap } from "gsap"
+import { Link as GatsbyLink } from "gatsby"
+import { navItemsData } from "../../data/navItems"
 
 const StyledNavWrapper = styled.div`
   display: flex;
   @media (max-width: 1024px) {
     height: 0;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    background: ${props => props.theme.colors.light};
+    position: relative;
+    @media (min-width: 520px) and (max-width: 1024px) {
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      background: ${props => props.theme.colors.white};
+      z-index: 0;
+    }
   }
 `
 const StyledList = styled.ul`
@@ -44,24 +56,12 @@ const StyledLink = styled(GatsbyLink)`
   color: ${props => props.theme.colors.dark};
   font-size: 1.125rem;
   transition: color 0.2s ease 0s;
-  position: relative;
   &:hover {
     color: ${props => props.theme.colors.gold};
   }
   @media (max-width: 1024px) {
     font-size: 1.25rem;
-    padding: 1rem 0;
-
-    &:before {
-      content: "";
-      position: absolute;
-      bottom: 10px;
-      left: 20px;
-      width: 80vw;
-      height: 20px;
-      background: ${props => props.theme.colors.light};
-      z-index: -1;
-    }
+    padding: 0.5rem 3rem;
   }
 `
 
