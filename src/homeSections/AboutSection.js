@@ -11,7 +11,21 @@ import ButtonGhost from "../components/buttons/ButtonGhost"
 
 const StyledSection = styled.section`
   position: relative;
+  position: relative;
   &:before {
+    content: "";
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    width: 2px;
+    height: 240px;
+    background: ${props => props.theme.colors.gold};
+    @media (max-width: 768px) {
+      top: -60px;
+      height: 120px;
+    }
+  }
+  &:after {
     content: "";
     position: absolute;
     top: 50%;

@@ -1,35 +1,21 @@
 import React, { useRef, useState, useEffect } from "react"
 import styled from "styled-components"
 import { gsap } from "gsap"
+import { graphql, useStaticQuery } from "gatsby"
+import BackgroundImage from "gatsby-background-image"
 import Container from "../layout/container/Container"
-import heroBg from "../img/index/mondello-restaurant-pizza.jpg"
 
-const StyledSection = styled.section`
+const StyledSection = styled(BackgroundImage)`
   display: flex;
   align-items: center;
   margin-top: 60px;
   min-height: calc(100vh - 60px);
   max-height: 1040px;
   background: ${props => props.theme.colors.dark};
-  background: url(${heroBg});
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  position: relative;
-  &:before {
-    content: "";
-    position: absolute;
-    bottom: -120px;
-    left: 50%;
-    width: 2px;
-    height: 240px;
-    background: ${props => props.theme.colors.gold};
-    @media (max-width: 768px) {
-      bottom: -60px;
-      height: 120px;
-    }
-  }
 `
 const StyledHeaderWrapper = styled.div`
   padding: 4rem 0;
@@ -69,6 +55,23 @@ const StyledSubheading = styled.h2`
 `
 
 export default function HeroSection() {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        file(relativePath: { eq: "index/mondello-restaurant-pizza.jpg" }) {
+          childImageSharp {
+            fluid(quality: 90, maxWidth: 1900) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    `
+  )
+
+  // Set ImageData.
+  const imageData = data.file.childImageSharp.fluid
+
   // GSAP
   let headingRef = useRef(null)
   let subheadingRef = useRef(null)
@@ -111,7 +114,7 @@ export default function HeroSection() {
   }, [])
 
   return (
-    <StyledSection>
+    <StyledSection Tag="section" fluid={imageData} backgroundColor={`#040e18`}>
       <Container>
         <StyledHeaderWrapper ref={headerRef}>
           <StyledHeading ref={headingRef}>Mondello</StyledHeading>

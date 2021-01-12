@@ -8,7 +8,6 @@ import ChefSection from "../homeSections/ChefSection"
 import WineSection from "../homeSections/WineSection"
 import ReservationSection from "../homeSections/ReservationSection"
 import ContactSection from "../homeSections/ContactSection"
-import styled from "styled-components"
 
 export default function Home() {
   return (
