@@ -1,8 +1,10 @@
 import React, { useRef, useEffect } from "react"
 import styled from "styled-components"
+import BackgroundImage from "gatsby-background-image"
+import { graphql, useStaticQuery } from "gatsby"
 import { fadeLeft, fadeBottom } from "../components/animations/Animation"
 import Container from "../layout/container/Container"
-import wineBg from "../img/index/wine-bg.jpg"
+
 import MainParagraph from "../components/typography/MainParagraph"
 
 const StyledGrid = styled.div`
@@ -70,8 +72,7 @@ const StyledTitleText = styled.h2`
   }
 `
 
-const StyledImgDiv = styled.div`
-  background: url(${wineBg});
+const StyledImgDiv = styled(BackgroundImage)`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center right;
@@ -80,6 +81,23 @@ const StyledImgDiv = styled.div`
 `
 
 export default function WineSection() {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        file(relativePath: { eq: "index/wine-bg.jpg" }) {
+          childImageSharp {
+            fluid(quality: 90, maxWidth: 1900) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    `
+  )
+
+  // Set ImageData.
+  const imageData = data.file.childImageSharp.fluid
+
   // GSAP
   let headerRef = useRef(null)
   let contentRef = useRef(null)
@@ -107,7 +125,7 @@ export default function WineSection() {
           </StyledContentWrapper>
         </StyledGrid>
       </Container>
-      <StyledImgDiv></StyledImgDiv>
+      <StyledImgDiv Tag="section" fluid={imageData}></StyledImgDiv>
     </section>
   )
 }

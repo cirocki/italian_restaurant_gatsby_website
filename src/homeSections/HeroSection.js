@@ -114,7 +114,7 @@ export default function HeroSection() {
   }, [])
 
   return (
-    <StyledSection Tag="section" fluid={imageData} backgroundColor={`#040e18`}>
+    <StyledSection Tag="section" fluid={imageData}>
       <Container>
         <StyledHeaderWrapper ref={headerRef}>
           <StyledHeading ref={headingRef}>Mondello</StyledHeading>
