@@ -14,20 +14,6 @@ module.exports = {
         path: `${__dirname}/src/img`,
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
-    //   options: {
-    //     fonts: [
-    //       {
-    //         family: `Jost`,
-    //       },
-    //       {
-    //         family: `Playfair Display`,
-    //         variants: [`400`, `400i`, `700`],
-    //       },
-    //     ],
-    //   },
-    // },
 
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-styled-components`,

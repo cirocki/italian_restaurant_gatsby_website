@@ -11,7 +11,7 @@ const StyledSection = styled(BackgroundImage)`
   margin-top: 60px;
   min-height: calc(100vh - 60px);
   max-height: 1040px;
-  background: ${props => props.theme.colors.dark};
+  background: ${props => props.theme.colors.gold};
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -114,7 +114,7 @@ export default function HeroSection() {
   }, [])
 
   return (
-    <StyledSection Tag="section" fluid={imageData}>
+    <StyledSection Tag="section" fluid={imageData} backgroundColor={`#16191a`}>
       <Container>
         <StyledHeaderWrapper ref={headerRef}>
           <StyledHeading ref={headingRef}>Mondello</StyledHeading>

@@ -18,9 +18,9 @@ const StyledLink = styled(Link)`
 export default function FooterLinks() {
   return (
     <StyledWrapper>
-      {/* <AniLink to="/about" cover direction="right" duration={1} bg="#968b63">
+      <AniLink to="/about" cover direction="right" duration={1} bg="#968b63">
         Go to page 2 with a cover right
-      </AniLink> */}
+      </AniLink>
       <StyledLink to="/privacy">Privacy Policy</StyledLink>
       <StyledLink to="/termsofuse">Terms of Use</StyledLink>
     </StyledWrapper>
