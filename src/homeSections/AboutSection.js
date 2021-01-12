@@ -11,8 +11,17 @@ import ButtonGhost from "../components/buttons/ButtonGhost"
 
 const StyledSection = styled.section`
   position: relative;
-  position: relative;
   &:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: calc(50% - 120px);
+    background: ${props => props.theme.colors.gold};
+    z-index: -1;
+  }
+  &:after {
     content: "";
     position: absolute;
     top: -120px;
@@ -24,16 +33,6 @@ const StyledSection = styled.section`
       top: -60px;
       height: 120px;
     }
-  }
-  &:after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: calc(50% - 120px);
-    background: ${props => props.theme.colors.gold};
-    z-index: -1;
   }
 `
 const StyledGrid = styled.div`
