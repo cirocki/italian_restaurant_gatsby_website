@@ -11,7 +11,7 @@ const StyledSection = styled(BackgroundImage)`
   margin-top: 60px;
   min-height: calc(100vh - 60px);
   max-height: 1040px;
-  background: ${props => props.theme.colors.gold};
+  background: ${props => props.theme.colors.dark};
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

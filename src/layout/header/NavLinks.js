@@ -1,8 +1,10 @@
 import React, { useRef, useState, useEffect } from "react"
 import styled from "styled-components"
 import { gsap } from "gsap"
-import { Link as GatsbyLink } from "gatsby"
+// import { Link as GatsbyLink } from "gatsby"
 import { navItemsData } from "../../data/navItems"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
+import Link from "gatsby-plugin-transition-link"
 
 const StyledNavWrapper = styled.div`
   display: flex;
@@ -52,7 +54,7 @@ const StyledItem = styled.li`
   }
 `
 
-const StyledLink = styled(GatsbyLink)`
+const StyledLink = styled(AniLink)`
   display: block;
   padding: 1rem;
   color: ${props => props.theme.colors.dark};
@@ -111,10 +113,21 @@ export default function NavLinks({ toggleMenu, isOpen }) {
       <StyledList ref={itemsLayer}>
         {navItemsData.map(item => (
           <StyledItem key={item.name} ref={addToRefs}>
-            <StyledLink to={item.path}>{item.name}</StyledLink>
+            <StyledLink
+              to={item.path}
+              cover
+              direction="right"
+              duration={1}
+              bg="#968b63"
+            >
+              {item.name}
+            </StyledLink>
           </StyledItem>
         ))}
       </StyledList>
+      {/* <AniLink to="/about" cover direction="right" duration={1} bg="#968b63">
+        Go to page 2 with a cover right
+      </AniLink> */}
     </StyledNavWrapper>
   )
 }
