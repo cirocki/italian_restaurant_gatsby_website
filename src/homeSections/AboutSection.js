@@ -153,8 +153,8 @@ export default function AboutSection() {
             <StyledHeader ref={headerRef}>
               <ModernHeading>About Us</ModernHeading>
               <OldSchoolHeading>
-                The kitchen offers delicious specialties of the Sicilian
-                tradition, such as Arancini, Caponata, Cannoli and many more.
+                We believe that food brings people together, so we care for
+                every detail, to make your visit here unforgettable.
               </OldSchoolHeading>
             </StyledHeader>
           </StyledHeaderWrapper>

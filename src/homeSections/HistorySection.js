@@ -128,9 +128,9 @@ export default function HistorySection() {
             <StyledHeader ref={headerRef}>
               <ModernHeading>History</ModernHeading>
               <OldSchoolHeading>
-                We try to make everything perfect. The color of the tablecloths
-                and the selection of spices. Every detail is important, to make
-                your visit here unforgettable.
+                Since 1975, we build the brand of our restaurant around the idea
+                of authentic traditional Italian food from the best quality
+                products.
               </OldSchoolHeading>
             </StyledHeader>
           </StyledHeaderWrapper>
