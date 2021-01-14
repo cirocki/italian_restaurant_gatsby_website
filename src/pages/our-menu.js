@@ -12,7 +12,7 @@ export default function OurMenuPage() {
   return (
     <Layout>
       <Helmet>
-        <title>Mondello Restaurant - example</title>
+        <title>Our Menu | Mondello Restaurant</title>
       </Helmet>
       <StyledMainDiv>
         <Container>

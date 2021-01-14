@@ -12,7 +12,7 @@ export default function PrivacyPage() {
   return (
     <Layout>
       <Helmet>
-        <title>Mondello Restaurant - Privacy</title>
+        <title>Privacy | Mondello Restaurant</title>
       </Helmet>
       <StyledMainDiv>
         <Container>

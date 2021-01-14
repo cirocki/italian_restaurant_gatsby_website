@@ -12,7 +12,7 @@ export default function ReservationPage() {
   return (
     <Layout>
       <Helmet>
-        <title>Mondello Restaurant - example</title>
+        <title>Reservation | Mondello Restaurant</title>
       </Helmet>
       <StyledMainDiv>
         <Container>

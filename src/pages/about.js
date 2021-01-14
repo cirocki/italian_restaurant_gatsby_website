@@ -13,7 +13,7 @@ export default function AboutPage() {
   return (
     <Layout>
       <Helmet>
-        <title>Mondello Restaurant - Napoli2</title>
+        <title>About Us | Mondello Restaurant</title>
       </Helmet>
       <StyledMainDiv>
         <Container>

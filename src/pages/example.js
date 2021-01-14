@@ -12,7 +12,7 @@ export default function ExamplePage() {
   return (
     <Layout>
       <Helmet>
-        <title>Mondello Restaurant - example</title>
+        <title>Example | Mondello Restaurant</title>
       </Helmet>
       <StyledMainDiv>
         <Container>

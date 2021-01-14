@@ -12,7 +12,7 @@ export default function ContactPage() {
   return (
     <Layout>
       <Helmet>
-        <title>Mondello Restaurant - example</title>
+        <title>Contact | Mondello Restaurant</title>
       </Helmet>
       <StyledMainDiv>
         <Container>

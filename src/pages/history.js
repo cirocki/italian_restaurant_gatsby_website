@@ -12,7 +12,7 @@ export default function HistoryPage() {
   return (
     <Layout>
       <Helmet>
-        <title>Mondello Restaurant - example</title>
+        <title>Our History | Mondello Restaurant</title>
       </Helmet>
       <StyledMainDiv>
         <Container>
