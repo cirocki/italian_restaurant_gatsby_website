@@ -1,5 +1,5 @@
 import React from "react"
-import { Link as GatsbyLink } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 import styled from "styled-components"
 
 const StyledWrapper = styled.div`
@@ -8,7 +8,7 @@ const StyledWrapper = styled.div`
     display: none;
   }
 `
-const StyledLink = styled(GatsbyLink)`
+const StyledLink = styled(AniLink)`
   color: ${props => props.theme.colors.footerTextColor};
   padding: 1rem;
 `
@@ -16,8 +16,24 @@ const StyledLink = styled(GatsbyLink)`
 export default function FooterLinks() {
   return (
     <StyledWrapper>
-      <StyledLink to="/privacy">Privacy Policy</StyledLink>
-      <StyledLink to="/termsofuse">Terms of Use</StyledLink>
+      <StyledLink
+        to="/privacy"
+        cover
+        direction="right"
+        duration={1}
+        bg="#968b63"
+      >
+        Privacy Policy
+      </StyledLink>
+      <StyledLink
+        to="/privacy"
+        cover
+        direction="right"
+        duration={1}
+        bg="#968b63"
+      >
+        Terms of Use
+      </StyledLink>
     </StyledWrapper>
   )
 }

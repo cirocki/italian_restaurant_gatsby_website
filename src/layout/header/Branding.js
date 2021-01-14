@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Link as GatsbyLink } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 import logoImage from "../../img/branding/Mondello Restaurant logo.svg"
 import { globalHistory as history } from "@reach/router"
 import { animateScroll as scroll } from "react-scroll"
@@ -31,9 +31,9 @@ export default function Branding() {
           onClick={() => scroll.scrollTo(0)}
         ></StyledLogo>
       ) : (
-        <GatsbyLink to="/">
+        <AniLink to="/" cover direction="right" duration={1} bg="#968b63">
           <img src={logoImage} alt="Mondello Restaurant logo"></img>
-        </GatsbyLink>
+        </AniLink>
       )}
     </StyledLogoWrapper>
   )
