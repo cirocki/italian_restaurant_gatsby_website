@@ -1,10 +1,9 @@
 import React, { useRef, useState, useEffect } from "react"
 import styled from "styled-components"
 import { gsap } from "gsap"
-// import { Link as GatsbyLink } from "gatsby"
+
 import { navItemsData } from "../../data/navItems"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
-import Link from "gatsby-plugin-transition-link"
 
 const StyledNavWrapper = styled.div`
   display: flex;
