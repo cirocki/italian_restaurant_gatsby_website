@@ -6,7 +6,7 @@ import Container from "../layout/container/Container"
 
 const StyledSection = styled.main`
   margin-top: 60px;
-  min-height: calc(100vh - 60px);
+  min-height: calc(100vh - 120px);
   display: grid;
 `
 const StyledWrapper = styled.div`
@@ -16,7 +16,20 @@ const StyledWrapper = styled.div`
   align-items: center;
 `
 const StyledHeading = styled.h1`
-  font-size: 120px;
+  padding-bottom: 2rem;
+  font-size: 260px;
+  letter-spacing: 10px;
+  @media (max-width: 767px) {
+    font-size: 120px;
+    letter-spacing: 4px;
+  }
+`
+const StyledSubheading = styled.h2`
+  color: ${props => props.theme.colors.gold};
+  font-size: 40px;
+  @media (max-width: 767px) {
+    font-size: 30px;
+  }
 `
 
 export default function PageNotFound() {
@@ -28,7 +41,7 @@ export default function PageNotFound() {
       <StyledSection>
         <StyledWrapper>
           <StyledHeading>404</StyledHeading>
-          <h2>Page Not Found</h2>
+          <StyledSubheading>Page Not Found</StyledSubheading>
         </StyledWrapper>
       </StyledSection>
     </Layout>
