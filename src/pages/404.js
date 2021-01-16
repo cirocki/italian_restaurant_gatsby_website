@@ -4,8 +4,19 @@ import { Helmet } from "react-helmet"
 import styled from "styled-components"
 import Container from "../layout/container/Container"
 
-const StyledMainDiv = styled.main`
-  padding: 4rem 0;
+const StyledSection = styled.main`
+  margin-top: 60px;
+  min-height: calc(100vh - 60px);
+  display: grid;
+`
+const StyledWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
+const StyledHeading = styled.h1`
+  font-size: 120px;
 `
 
 export default function PageNotFound() {
@@ -14,12 +25,12 @@ export default function PageNotFound() {
       <Helmet>
         <title>Page Not Found | Mondello Restaurant</title>
       </Helmet>
-      <StyledMainDiv>
-        <Container>
-          <h1>404</h1>
+      <StyledSection>
+        <StyledWrapper>
+          <StyledHeading>404</StyledHeading>
           <h2>Page Not Found</h2>
-        </Container>
-      </StyledMainDiv>
+        </StyledWrapper>
+      </StyledSection>
     </Layout>
   )
 }
