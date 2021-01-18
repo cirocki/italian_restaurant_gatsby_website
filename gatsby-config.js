@@ -18,11 +18,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "React go",
-        short_name: "Reactgo",
+        name: "Mondello Italian Restaurant",
+        short_name: "Mondello",
         start_url: "/",
-        background_color: "#f7f0eb",
-        theme_color: "#a2466c",
+        background_color: "#ffffff",
+        theme_color: "#16191a",
         display: "standalone",
         icon: "src/img/favicon/mondello-favicon-white.svg",
       },
