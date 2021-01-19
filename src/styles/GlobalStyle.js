@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    color: ${props => props.theme.colors.mainFontColor};
+    color: ${props => props.theme.colors.grey};
     background: ${props => props.theme.colors.white};
     font-family: ${props => props.theme.fonts.primary};
     position: relative;

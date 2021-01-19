@@ -49,7 +49,7 @@ export default function BotPart() {
   const data = useStaticQuery(
     graphql`
       query {
-        file(relativePath: { eq: "subpages/history/palermo-history.jpg" }) {
+        file(relativePath: { eq: "subpages/history/palermo-history2.jpg" }) {
           childImageSharp {
             fluid(quality: 90, maxWidth: 1900) {
               ...GatsbyImageSharpFluid_withWebp

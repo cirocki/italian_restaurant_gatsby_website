@@ -52,10 +52,11 @@ const StyledYearsWrapper = styled.div`
 const StyledItem = styled.div`
   /* text-align: center; */
 `
-const StyledYear = styled.div`
+const StyledYear = styled.h3`
+  font-family: ${props => props.theme.fonts.secondary};
   font-size: 3rem;
   color: ${props => props.theme.colors.gold};
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
 `
 
 export default function TopPart() {
@@ -100,23 +101,21 @@ export default function TopPart() {
               <StyledYear>1975</StyledYear>
               <MainParagraph>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Distinctio laboriosam ipsum molestias rerum quisquam repudiandae
-                voluptatem.
+                Distinctio laboriosam ipsuum molestias.
               </MainParagraph>
             </StyledItem>
             <StyledItem>
               <StyledYear>1989</StyledYear>
               <MainParagraph>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
-                optio repudiandae porro ipsum molestias rerum tempore
-                temporibus.
+                optio repudiandae porro ipsum molestias rerum.
               </MainParagraph>
             </StyledItem>
             <StyledItem>
               <StyledYear>1997</StyledYear>
               <MainParagraph>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rederit
-                nam minus libero, consequatur ipsam? Eaque, obcaecati.
+                Lorem ipsum dolor sit amet consectetur adipisicing elitaris.
+                Rederit nam minus libero, consequatur.
               </MainParagraph>
             </StyledItem>
           </StyledYearsWrapper>
