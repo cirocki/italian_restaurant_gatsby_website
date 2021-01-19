@@ -22,17 +22,6 @@ const StyledTopGrid = styled.div`
     z-index: -10;
   }
 `
-const StyledTopYearsDiv = styled.div`
-  grid-column: 3/13;
-  grid-row: 5/9;
-  background: ${props => props.theme.colors.dark};
-  display: flex;
-`
-const StyledTopImgDiv = styled.div`
-  min-height: 720px;
-  grid-column: 1/5;
-  grid-row: 1/7;
-`
 const StyledTopContentDiv = styled.div`
   grid-column: 5/13;
   grid-row: 1/5;
@@ -40,28 +29,33 @@ const StyledTopContentDiv = styled.div`
   align-items: center;
   padding: 120px;
 `
-
-const StyledYearsGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+const StyledTopImgDiv = styled.div`
+  min-height: 720px;
+  grid-column: 1/5;
+  grid-row: 1/7;
+`
+const StyledTopYearsDiv = styled.div`
+  grid-column: 3/13;
+  grid-row: 5/9;
+  background: ${props => props.theme.colors.dark};
+  display: flex;
 `
 const StyledYearsWrapper = styled.div`
-  grid-column: 4/10;
-  grid-row: 2/4;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-`
+  padding-left: 360px;
+  padding-top: 120px;
 
-const StyledYearsItem = styled.div`
-  display: flex;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 3rem;
 `
-const StyledYear = styled.h3`
-  font-family: ${props => props.theme.fonts.secondary};
-  color: ${props => props.theme.colors.gold};
+const StyledItem = styled.div`
+  /* text-align: center; */
+`
+const StyledYear = styled.div`
   font-size: 3rem;
-  padding-right: 2rem;
+  color: ${props => props.theme.colors.gold};
+  padding-bottom: 1rem;
 `
 
 export default function TopPart() {
@@ -91,43 +85,41 @@ export default function TopPart() {
         </StyledTopImgDiv>
         <StyledTopContentDiv>
           <MainParagraph>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
-            accusamus quasi doloribus, itaque architecto vitae ut blanditiis
-            dolorem! Architecto enim sit ea expedita nihil beatae minus et est
-            distinctio similique a, dolorum dicta aspernatur commodi iure sequi
-            maiores inventore aut ducimus molestias! Qui recusandae laborum
-            dicta officia magni, reiciendis praesentium.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+            molestiae modi quod tempora corporis magnam harum voluptate,
+            voluptatem non earum esse, voluptas provident explicabo vel delectus
+            illum commodi sit! Dolores necessitatibus fuga quos. Dignissimos
+            autem expedita ipsum inventore quo omnis in ducimus magnam molestias
+            culpa id quis itaque tenetur dolor sunt vel repellendus aspernatur
+            esse eligendi iste tempore, hic nulla
           </MainParagraph>
         </StyledTopContentDiv>
         <StyledTopYearsDiv>
-          <StyledYearsGrid>
-            <StyledYearsWrapper>
-              <div>
-                <StyledYearsItem>
-                  <StyledYear>1912</StyledYear>
-                  <MainParagraph>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Cupiditate, aperiam cumque ut, ea
-                  </MainParagraph>
-                </StyledYearsItem>
-                <StyledYearsItem>
-                  <StyledYear>1912</StyledYear>
-                  <MainParagraph>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Cupiditate, aperiam cumque ut, ea mollitia doloremque itaque
-                    suscipit
-                  </MainParagraph>
-                </StyledYearsItem>
-                <StyledYearsItem>
-                  <StyledYear>1912</StyledYear>
-                  <MainParagraph>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Cupiditateea mollitia doloremque.
-                  </MainParagraph>
-                </StyledYearsItem>
-              </div>
-            </StyledYearsWrapper>
-          </StyledYearsGrid>
+          <StyledYearsWrapper>
+            <StyledItem>
+              <StyledYear>1975</StyledYear>
+              <MainParagraph>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Distinctio laboriosam ipsum molestias rerum quisquam repudiandae
+                voluptatem.
+              </MainParagraph>
+            </StyledItem>
+            <StyledItem>
+              <StyledYear>1989</StyledYear>
+              <MainParagraph>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+                optio repudiandae porro ipsum molestias rerum tempore
+                temporibus.
+              </MainParagraph>
+            </StyledItem>
+            <StyledItem>
+              <StyledYear>1997</StyledYear>
+              <MainParagraph>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rederit
+                nam minus libero, consequatur ipsam? Eaque, obcaecati.
+              </MainParagraph>
+            </StyledItem>
+          </StyledYearsWrapper>
         </StyledTopYearsDiv>
       </StyledTopGrid>
     </Container>
