@@ -7,7 +7,7 @@ const StyledButton = styled(GatsbyLink)`
   overflow: hidden;
   margin-top: 2rem;
   padding: 0.625rem 2rem;
-  align-self: flex-start;
+  align-self: ${props => (props.right ? "flex-end" : "flex-start")};
   font-size: 0.875rem;
   font-weight: 400;
   color: ${props => props.theme.colors.gold};
