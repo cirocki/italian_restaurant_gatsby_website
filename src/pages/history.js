@@ -21,8 +21,8 @@ export default function HistoryPage() {
       <StyledMainDiv>
         <HistoryHeader />
         <TopPart />
-        {/* <MidPart />
-        <BotPart /> */}
+        <MidPart />
+        {/* <BotPart /> */}
       </StyledMainDiv>
     </Layout>
   )

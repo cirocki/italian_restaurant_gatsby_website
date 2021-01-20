@@ -1,13 +1,16 @@
 import React from "react"
 import styled from "styled-components"
-import MainParagraph from "../../components/typography/MainParagraph"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import Container from "../../layout/container/Container"
+import MainParagraph from "../../components/typography/MainParagraph"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons"
+import {
+  faCocktail,
+  faLandmark,
+  faPizzaSlice,
+} from "@fortawesome/free-solid-svg-icons"
 
-// MID
 const StyledMidWrapper = styled.div`
   position: relative;
   &:before {
@@ -19,12 +22,19 @@ const StyledMidWrapper = styled.div`
     height: calc(100% - 240px);
     background: ${props => props.theme.colors.light};
     z-index: -10;
+    @media (max-width: 879px) {
+      display: none;
+    }
   }
 `
 const StyledMidGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(6, 1fr);
+  @media (max-width: 879px) {
+    display: flex;
+    flex-direction: column;
+  }
 `
 const StyledMidContentDiv = styled.div`
   grid-column: 2/6;
@@ -32,23 +42,44 @@ const StyledMidContentDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media (max-width: 879px) {
+    padding: 120px;
+  }
+  @media (max-width: 619px) {
+    padding: 60px;
+  }
+  @media (max-width: 429px) {
+    padding: 40px;
+  }
+  @media (max-width: 359px) {
+    padding: 20px;
+  }
 `
 const StyledMidImgDiv = styled.div`
-  min-height: 480px;
   grid-column: 9/13;
   grid-row: 3/7;
+  min-height: 480px;
+  @media (max-width: 879px) {
+    min-height: 0;
+    display: flex;
+    justify-content: center;
+  }
 `
+
 const StyledList = styled.ul`
   padding-top: 2rem;
 `
 const StyledItem = styled.li`
+  display: flex;
   padding: 1rem 0;
   font-size: 1.125rem;
-  display: flex;
 `
 const StyledIcon = styled(FontAwesomeIcon)`
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin: 0 1.5rem;
+  @media (max-width: 359px) {
+    margin-left: 0;
+  }
 `
 
 export default function MidPart() {
@@ -76,21 +107,21 @@ export default function MidPart() {
             </MainParagraph>
             <StyledList>
               <StyledItem>
-                <StyledIcon icon={faChevronRight} />
+                <StyledIcon icon={faCocktail} />
                 <MainParagraph>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed,
                   mollitia aliquid dolor.
                 </MainParagraph>
               </StyledItem>
               <StyledItem>
-                <StyledIcon icon={faChevronRight} />
+                <StyledIcon icon={faLandmark} />
                 <MainParagraph>
                   Lorem ipsum dolor sit amet consectetur elit. Doloribus
                   voluptatum delectus aliquid dolor sed.
                 </MainParagraph>
               </StyledItem>
               <StyledItem>
-                <StyledIcon icon={faChevronRight} />
+                <StyledIcon icon={faPizzaSlice} />
                 <MainParagraph>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Explicabo aliquid dolore eum.
