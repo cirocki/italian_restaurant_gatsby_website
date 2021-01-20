@@ -22,7 +22,7 @@ export default function HistoryPage() {
         <HistoryHeader />
         <TopPart />
         <MidPart />
-        {/* <BotPart /> */}
+        <BotPart />
       </StyledMainDiv>
     </Layout>
   )
