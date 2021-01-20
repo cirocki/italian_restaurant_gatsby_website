@@ -21,6 +21,16 @@ const StyledTopGrid = styled.div`
     background: ${props => props.theme.colors.dark};
     z-index: -10;
   }
+  @media (max-width: 1069px) {
+    grid-template-rows: repeat(5, 1fr);
+    &:before {
+      display: none;
+    }
+  }
+  @media (max-width: 879px) {
+    display: flex;
+    flex-direction: column;
+  }
 `
 const StyledTopContentDiv = styled.div`
   grid-column: 5/13;
@@ -28,35 +38,73 @@ const StyledTopContentDiv = styled.div`
   display: flex;
   align-items: center;
   padding: 120px;
+  @media (max-width: 1069px) {
+    grid-row: 1/4;
+  }
+  @media (max-width: 619px) {
+    padding: 60px;
+  }
+  @media (max-width: 429px) {
+    padding: 40px;
+  }
+  @media (max-width: 359px) {
+    padding: 20px;
+  }
 `
 const StyledTopImgDiv = styled.div`
   min-height: 720px;
   grid-column: 1/5;
   grid-row: 1/7;
+  @media (max-width: 1069px) {
+    grid-row: 1/4;
+    min-height: 360px;
+  }
+  @media (max-width: 879px) {
+    display: flex;
+    justify-content: center;
+  }
 `
 const StyledTopYearsDiv = styled.div`
   grid-column: 3/13;
   grid-row: 5/9;
   background: ${props => props.theme.colors.dark};
   display: flex;
+  @media (max-width: 1069px) {
+    grid-column: 1/13;
+    grid-row: 4/6;
+  }
 `
 const StyledYearsWrapper = styled.div`
   padding-left: 360px;
   padding-top: 120px;
-
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 3rem;
+  @media (max-width: 1239px) {
+    padding: 60px;
+  }
+  @media (max-width: 739px) {
+    display: flex;
+    flex-direction: column;
+    padding: 120px;
+  }
+  @media (max-width: 619px) {
+    padding: 60px;
+  }
+  @media (max-width: 429px) {
+    padding: 40px;
+  }
+  @media (max-width: 359px) {
+    padding: 20px;
+  }
 `
-const StyledItem = styled.div`
-  /* text-align: center; */
-`
+const StyledItem = styled.div``
 const StyledYear = styled.h3`
+  padding-bottom: 2rem;
   font-family: ${props => props.theme.fonts.secondary};
   font-size: 3rem;
   color: ${props => props.theme.colors.gold};
-  padding-bottom: 2rem;
 `
 
 export default function TopPart() {

@@ -20,8 +20,8 @@ export default function HistoryPage() {
       </Helmet>
       <StyledMainDiv>
         <HistoryHeader />
-        {/* <TopPart />
-        <MidPart />
+        <TopPart />
+        {/* <MidPart />
         <BotPart /> */}
       </StyledMainDiv>
     </Layout>
