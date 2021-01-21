@@ -45,6 +45,7 @@ const StyledContentWrapper = styled.div`
   }
 `
 const StyledTitleText = styled.h2`
+  color: ${props => props.theme.colors.dark};
   font-family: ${props => props.theme.fonts.secondary};
   font-size: 100px;
   position: relative;
