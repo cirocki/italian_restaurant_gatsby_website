@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet"
 import styled from "styled-components"
 import Container from "../layout/container/Container"
 import AboutHeader from "../pagesParts/about/AboutHeader"
+import AboutTop from "../pagesParts/about/AboutTop"
 
 const StyledMainDiv = styled.main`
   margin-top: 60px;
@@ -17,6 +18,7 @@ export default function AboutPage() {
       </Helmet>
       <StyledMainDiv>
         <AboutHeader />
+        <AboutTop />
       </StyledMainDiv>
     </Layout>
   )
