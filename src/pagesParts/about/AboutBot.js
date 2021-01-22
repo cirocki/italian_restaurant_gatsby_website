@@ -68,8 +68,8 @@ export default function AboutBot() {
           <StyledHeadingDiv>
             <StyledHeadingWrapper>
               <OldSchoolHeading whiteColor>
-                We believe that food brings people together, so we care for
-                every detail, to make your Make a reservation now.
+                You already know a lot about our team and our priorities. It's
+                time to check our menu and taste real Italian food.
               </OldSchoolHeading>
               <ButtonGhost to="/our-menu" align="center">
                 Check Our Menu

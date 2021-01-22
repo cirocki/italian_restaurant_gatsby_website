@@ -17,6 +17,9 @@ const StyledMainWrapper = styled.div`
     height: calc(50% + 120px);
     background: ${props => props.theme.colors.light};
     z-index: -1;
+    @media (max-width: 989px) {
+      display: none;
+    }
   }
   &:after {
     content: "";
@@ -27,6 +30,9 @@ const StyledMainWrapper = styled.div`
     height: 50%;
     background: ${props => props.theme.colors.dark};
     z-index: -1;
+    @media (max-width: 989px) {
+      display: none;
+    }
   }
 `
 
@@ -34,10 +40,21 @@ const StyledTopGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(8, 1fr);
+  @media (max-width: 989px) {
+    display: flex;
+    flex-direction: column;
+  }
 `
 const StyledImgDiv = styled.div`
   grid-column: 2/6;
   grid-row: 2/8;
+  @media (max-width: 1089px) {
+    grid-column: 1/6;
+  }
+  @media (max-width: 989px) {
+    display: flex;
+    justify-content: center;
+  }
 `
 const StyledHeadingDiv = styled.div`
   grid-column: 8/12;
@@ -48,20 +65,44 @@ const StyledHeadingDiv = styled.div`
 const StyledContentDiv = styled.div`
   grid-column: 7/12;
   grid-row: 5/9;
-  background: ${props => props.theme.colors.dark};
   display: flex;
   align-items: center;
+  background: ${props => props.theme.colors.dark};
+  @media (max-width: 989px) {
+    padding: 120px;
+  }
+  @media (max-width: 619px) {
+    padding: 60px;
+  }
+  @media (max-width: 429px) {
+    padding: 40px;
+  }
+  @media (max-width: 359px) {
+    padding: 20px;
+  }
 `
 
 const StyledHeadingWrapper = styled.div`
   padding: 120px 0;
   text-align: right;
+  @media (max-width: 989px) {
+    padding: 120px;
+  }
+  @media (max-width: 619px) {
+    padding: 60px;
+  }
+  @media (max-width: 429px) {
+    padding: 40px;
+  }
+  @media (max-width: 359px) {
+    padding: 20px;
+  }
 `
 
 export default function AboutTop() {
   const data = useStaticQuery(graphql`
     query {
-      image2: file(
+      image: file(
         relativePath: { eq: "subpages/about/about-us-mondello-team.jpg" }
       ) {
         childImageSharp {
@@ -79,15 +120,15 @@ export default function AboutTop() {
         <StyledTopGrid>
           <StyledImgDiv>
             <Img
-              fluid={data.image2.childImageSharp.fluid}
-              alt="Our restaurant chef in work"
+              fluid={data.image.childImageSharp.fluid}
+              alt="Our restaurant chef shows his passion"
             />
           </StyledImgDiv>
           <StyledHeadingDiv>
             <StyledHeadingWrapper>
               <OldSchoolHeading>
-                We believe that food brings people together, so we care for
-                every detail, to make your Make a reservation now.
+                Our chefs use the freshest and finest seasonal ingredients
+                sourced from both local and continental suppliers
               </OldSchoolHeading>
             </StyledHeadingWrapper>
           </StyledHeadingDiv>
