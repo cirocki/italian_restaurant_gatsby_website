@@ -52,7 +52,7 @@ const StyledMidContentDiv = styled.div`
     padding: 40px;
   }
   @media (max-width: 359px) {
-    padding: 20px;
+    padding: 40px 20px;
   }
 `
 const StyledMidImgDiv = styled.div`

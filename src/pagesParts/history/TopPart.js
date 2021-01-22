@@ -48,7 +48,7 @@ const StyledTopContentDiv = styled.div`
     padding: 40px;
   }
   @media (max-width: 359px) {
-    padding: 20px;
+    padding: 40px 20px;
   }
 `
 const StyledTopImgDiv = styled.div`
@@ -96,7 +96,7 @@ const StyledYearsWrapper = styled.div`
     padding: 40px;
   }
   @media (max-width: 359px) {
-    padding: 20px;
+    padding: 40px 20px;
   }
 `
 const StyledItem = styled.div``

@@ -1,10 +1,9 @@
 import React from "react"
 import styled from "styled-components"
-
-import Container from "../../layout/container/Container"
-import MainParagraph from "../../components/typography/MainParagraph"
 import logoImage from "../../img/branding/Mondello Restaurant logo.svg"
+import Container from "../../layout/container/Container"
 import OldSchoolHeading from "../../components/typography/OldSchoolHeading"
+import MainParagraph from "../../components/typography/MainParagraph"
 import ButtonGhost from "../../components/buttons/ButtonGhost"
 
 const StyledMainWrapper = styled.div`
@@ -18,12 +17,19 @@ const StyledMainWrapper = styled.div`
     height: 50%;
     background: ${props => props.theme.colors.dark};
     z-index: -1;
+    @media (max-width: 879px) {
+      display: none;
+    }
   }
 `
 const StyledBotGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(8, 1fr);
+  @media (max-width: 879px) {
+    display: flex;
+    flex-direction: column;
+  }
 `
 const StyledHeadingDiv = styled.div`
   grid-column: 1/13;
@@ -32,6 +38,19 @@ const StyledHeadingDiv = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: ${props => props.theme.colors.dark};
+  @media (max-width: 879px) {
+    padding: 120px;
+  }
+  @media (max-width: 619px) {
+    padding: 60px;
+  }
+  @media (max-width: 429px) {
+    padding: 40px;
+  }
+  @media (max-width: 359px) {
+    padding: 40px 20px;
+  }
 `
 const StyledBrandingDiv = styled.div`
   grid-column: 1/7;
@@ -40,21 +59,40 @@ const StyledBrandingDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 879px) {
+    min-height: 0;
+    padding: 80px 40px 0 40px;
+  }
+  @media (max-width: 429px) {
+    padding: 60px 40px 0 40px;
+  }
 `
 const StyledContentDiv = styled.div`
   grid-column: 7/12;
   grid-row: 5/9;
   display: flex;
   align-items: center;
+  @media (max-width: 879px) {
+    padding: 120px;
+  }
+  @media (max-width: 619px) {
+    padding: 60px;
+  }
+  @media (max-width: 429px) {
+    padding: 40px;
+  }
+  @media (max-width: 359px) {
+    padding: 40px 20px;
+  }
 `
 
 const StyledHeadingWrapper = styled.div`
   max-width: 720px;
   display: flex;
   flex-direction: column;
-  text-align: center;
   justify-content: center;
   align-items: center;
+  text-align: center;
 `
 const StyledLogo = styled.img`
   max-width: 360px;

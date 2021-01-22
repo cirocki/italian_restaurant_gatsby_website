@@ -21,14 +21,27 @@ const StyledMidGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(8, 1fr);
+  @media (max-width: 879px) {
+    display: flex;
+    flex-direction: column;
+  }
 `
 const StyledBigImgDiv = styled.div`
   grid-column: 1/7;
   grid-row: 3/7;
+  @media (max-width: 879px) {
+    display: flex;
+    justify-content: center;
+  }
 `
 const StyledSmallImgDiv = styled.div`
   grid-column: 8/12;
   grid-row: 2/6;
+  @media (max-width: 879px) {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+  }
 `
 
 export default function AboutMid() {
@@ -64,13 +77,13 @@ export default function AboutMid() {
           <StyledBigImgDiv>
             <Img
               fluid={data.image1.childImageSharp.fluid}
-              alt="Our restaurant chef in work"
+              alt="Our Mondello team at work"
             />
           </StyledBigImgDiv>
           <StyledSmallImgDiv>
             <Img
               fluid={data.image2.childImageSharp.fluid}
-              alt="Our restaurant chef in work"
+              alt="Our best barista"
             />
           </StyledSmallImgDiv>
         </StyledMidGrid>

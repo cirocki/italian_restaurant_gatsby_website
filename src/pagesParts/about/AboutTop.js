@@ -78,7 +78,7 @@ const StyledContentDiv = styled.div`
     padding: 40px;
   }
   @media (max-width: 359px) {
-    padding: 20px;
+    padding: 40px 20px;
   }
 `
 
@@ -95,7 +95,7 @@ const StyledHeadingWrapper = styled.div`
     padding: 40px;
   }
   @media (max-width: 359px) {
-    padding: 20px;
+    padding: 40px 20px;
   }
 `
 
