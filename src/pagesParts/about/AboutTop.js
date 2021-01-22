@@ -23,7 +23,7 @@ const StyledMainWrapper = styled.div`
     position: absolute;
     bottom: 0;
     right: 0;
-    width: calc(50vw + 360px);
+    width: calc(50% + 360px);
     height: 50%;
     background: ${props => props.theme.colors.dark};
     z-index: -1;

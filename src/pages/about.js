@@ -5,6 +5,7 @@ import styled from "styled-components"
 import Container from "../layout/container/Container"
 import AboutHeader from "../pagesParts/about/AboutHeader"
 import AboutTop from "../pagesParts/about/AboutTop"
+import AboutMid from "../pagesParts/about/AboutMid"
 
 const StyledMainDiv = styled.main`
   margin-top: 60px;
@@ -19,6 +20,7 @@ export default function AboutPage() {
       <StyledMainDiv>
         <AboutHeader />
         <AboutTop />
+        <AboutMid />
       </StyledMainDiv>
     </Layout>
   )
