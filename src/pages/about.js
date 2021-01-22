@@ -6,6 +6,7 @@ import Container from "../layout/container/Container"
 import AboutHeader from "../pagesParts/about/AboutHeader"
 import AboutTop from "../pagesParts/about/AboutTop"
 import AboutMid from "../pagesParts/about/AboutMid"
+import AboutBot from "../pagesParts/about/AboutBot"
 
 const StyledMainDiv = styled.main`
   margin-top: 60px;
@@ -21,6 +22,7 @@ export default function AboutPage() {
         <AboutHeader />
         <AboutTop />
         <AboutMid />
+        <AboutBot />
       </StyledMainDiv>
     </Layout>
   )

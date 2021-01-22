@@ -93,7 +93,7 @@ export default function BotPart() {
                 believe in.
               </OldSchoolHeading>
 
-              <ButtonGhost to="/about" right>
+              <ButtonGhost to="/about" align="right">
                 About Us
               </ButtonGhost>
             </StyledContent>

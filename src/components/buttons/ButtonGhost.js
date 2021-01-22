@@ -2,12 +2,23 @@ import React from "react"
 import styled from "styled-components"
 import { Link as GatsbyLink } from "gatsby"
 
+const handleAlignment = align => {
+  switch (align) {
+    case "right":
+      return "flex-end"
+    case "center":
+      return "center"
+    default:
+      return "flex-start"
+  }
+}
+
 const StyledButton = styled(GatsbyLink)`
   display: block;
   overflow: hidden;
   margin-top: 2rem;
   padding: 0.625rem 2rem;
-  align-self: ${props => (props.right ? "flex-end" : "flex-start")};
+  align-self: ${props => handleAlignment(props.align)};
   font-size: 0.875rem;
   font-weight: 400;
   color: ${props => props.theme.colors.gold};
