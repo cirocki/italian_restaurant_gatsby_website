@@ -3,9 +3,11 @@ import Layout from "../layout/Layout"
 import { Helmet } from "react-helmet"
 import styled from "styled-components"
 import Container from "../layout/container/Container"
+import MenuHeader from "../pagesParts/menu/MenuHeader"
+import MenuBody from "../pagesParts/menu/MenuBody"
 
 const StyledMainDiv = styled.main`
-  padding: 4rem 0;
+  margin-top: 60px;
 `
 
 export default function OurMenuPage() {
@@ -15,9 +17,8 @@ export default function OurMenuPage() {
         <title>Our Menu | Mondello Restaurant</title>
       </Helmet>
       <StyledMainDiv>
-        <Container>
-          <h1>Our Menu</h1>
-        </Container>
+        <MenuHeader />
+        <MenuBody />
       </StyledMainDiv>
     </Layout>
   )
