@@ -1,11 +1,12 @@
-import React, { useState } from "react"
+import React, { useState, useRef, useEffect } from "react"
 import styled from "styled-components"
 import Container from "../../layout/container/Container"
 import MenuTabs from "./MenuTabs"
 import MenuItems from "./MenuItems"
+import { fadeBottom } from "../../components/animations/Animation"
+import gsap from "gsap"
 
 const StyledMainWrapper = styled.div`
-  /* position: relative; */
   background: ${props => props.theme.colors.light};
 `
 
@@ -32,6 +33,19 @@ export default function MenuBody() {
     setActiveTab(id)
   }
 
+  // GSAP
+  let contentRef = useRef(null)
+
+  useEffect(() => {
+    gsap.fromTo(
+      contentRef.current,
+      {
+        autoAlpha: 0,
+      },
+      { autoAlpha: 1, ease: "power4.inOut" }
+    )
+  }, [activeTab])
+
   return (
     <StyledMainWrapper>
       <Container>
@@ -40,7 +54,7 @@ export default function MenuBody() {
             <MenuTabs changeTab={changeTab} activeTab={activeTab} />
           </StyledSelectPart>
           <StyledCardPart>
-            <ul>
+            <ul ref={contentRef}>
               <MenuItems activeTab={activeTab} />
             </ul>
           </StyledCardPart>

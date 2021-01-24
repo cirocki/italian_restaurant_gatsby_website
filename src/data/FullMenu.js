@@ -4,46 +4,46 @@ export const menuItemsData = [
     title: "Starters",
     list: [
       {
-        name: "Some Starter",
+        name: "Creamy Ricotta Spaghetti ",
         desc:
           "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
-        price: "23.00 €",
+        price: "19.00 €",
       },
       {
-        name: "Caponata",
+        name: "Caprese Chicken",
         desc:
           "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
         price: "13.00 €",
       },
       {
-        name: "Busiate al pesto Trapanese",
+        name: "Italian Angel Hair Salad",
         desc:
           "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
         price: "46.00 €",
       },
       {
-        name: "Pasta alla Norma",
+        name: "Pasta alla Normandia",
         desc:
           "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
         price: "46.00 €",
       },
       {
-        name: "Sarde a beccafico",
+        name: "Sardenia beccafico",
         desc:
           "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
         price: "23.00 €",
       },
       {
-        name: "Involtini di pesce spade",
+        name: "Involtini Neapoli",
         desc:
           "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
         price: "30.00 €",
       },
       {
-        name: "Cannoli",
+        name: "Cannolito",
         desc:
           "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
-        price: "19.00 €",
+        price: "14.00 €",
       },
     ],
   },
@@ -53,43 +53,43 @@ export const menuItemsData = [
     title: "Breakfast",
     list: [
       {
-        name: "Some Brakfast",
+        name: "Creamy Tuscan Sausage Pasta",
         desc:
           "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
-        price: "23.00 €",
+        price: "15.00 €",
       },
       {
-        name: "Caponata",
+        name: "Summer Panzanella",
         desc:
           "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
-        price: "13.00 €",
+        price: "18.00 €",
       },
       {
-        name: "Busiate al pesto Trapanese",
-        desc:
-          "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
-        price: "46.00 €",
-      },
-      {
-        name: "Pasta alla Norma",
+        name: "Caprese Pasta Salad",
         desc:
           "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
         price: "46.00 €",
       },
       {
-        name: "Sarde a beccafico",
+        name: "Tomato Butter Spaghetti",
+        desc:
+          "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
+        price: "46.00 €",
+      },
+      {
+        name: "Caprese Asparagus",
         desc:
           "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
         price: "23.00 €",
       },
       {
-        name: "Involtini di pesce spade",
+        name: "Easy Carbonara",
         desc:
           "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
         price: "30.00 €",
       },
       {
-        name: "Cannoli",
+        name: "Caprese Zoodles",
         desc:
           "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
         price: "19.00 €",
@@ -101,7 +101,7 @@ export const menuItemsData = [
     title: "Mains",
     list: [
       {
-        name: "Some Main",
+        name: "Italian Chicken Skillet",
         desc:
           "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
         price: "23.00 €",
@@ -137,7 +137,19 @@ export const menuItemsData = [
         price: "30.00 €",
       },
       {
-        name: "Cannoli",
+        name: "Italian Sub Pasta Salad ",
+        desc:
+          "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
+        price: "19.00 €",
+      },
+      {
+        name: "Involtini didere spade",
+        desc:
+          "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
+        price: "30.00 €",
+      },
+      {
+        name: "Caprese Mac and Cheese ",
         desc:
           "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
         price: "19.00 €",
@@ -149,45 +161,45 @@ export const menuItemsData = [
     title: "Sides",
     list: [
       {
-        name: "Soem Side",
+        name: "Texas Toast",
         desc:
-          "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste architecto impedit cumque.",
         price: "23.00 €",
       },
       {
-        name: "Caponata",
+        name: "Best Garlic Bread",
         desc:
-          "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste architecto impedit cumque.",
         price: "13.00 €",
       },
       {
-        name: "Busiate al pesto Trapanese",
+        name: "Caprese Tomatoes",
         desc:
-          "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste architecto impedit cumque.",
         price: "46.00 €",
       },
       {
-        name: "Pasta alla Norma",
+        name: "Sun-Dried Tomatoes",
         desc:
-          "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste architecto impedit cumque.",
         price: "46.00 €",
       },
       {
-        name: "Sarde a beccafico",
+        name: "Garlic Butter Turkey Meatballs",
         desc:
-          "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste architecto impedit cumque.",
         price: "23.00 €",
       },
       {
-        name: "Involtini di pesce spade",
+        name: "Focaccia ",
         desc:
-          "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste architecto impedit cumque.",
         price: "30.00 €",
       },
       {
-        name: "Cannoli",
+        name: "Prosciutto Wrapped Asparagus",
         desc:
-          "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste architecto impedit cumque.",
         price: "19.00 €",
       },
     ],
@@ -197,45 +209,38 @@ export const menuItemsData = [
     title: "Desserts",
     list: [
       {
-        name: "Some desserts",
-        desc:
-          "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
-        price: "23.00 €",
-      },
-      {
-        name: "Caponata",
-        desc:
-          "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
+        name: "Tiramisu",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
         price: "13.00 €",
       },
       {
-        name: "Busiate al pesto Trapanese",
-        desc:
-          "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
-        price: "46.00 €",
+        name: "Sfogliatelle",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+        price: "13.00 €",
       },
       {
-        name: "Pasta alla Norma",
-        desc:
-          "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
-        price: "46.00 €",
+        name: "Gelato",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+        price: "12.00 €",
       },
       {
-        name: "Sarde a beccafico",
-        desc:
-          "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
-        price: "23.00 €",
-      },
-      {
-        name: "Involtini di pesce spade",
-        desc:
-          "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
-        price: "30.00 €",
+        name: "Biscotti",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+        price: "14.00 €",
       },
       {
         name: "Cannoli",
-        desc:
-          "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+        price: "13.00 €",
+      },
+      {
+        name: "Sbrisolona",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+        price: "10.00 €",
+      },
+      {
+        name: "Panna Cotta",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
         price: "19.00 €",
       },
     ],
@@ -246,46 +251,54 @@ export const menuItemsData = [
     title: "Drinks",
     list: [
       {
-        name: "Copa Cabana",
-        desc:
-          "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
-        price: "23.00 €",
+        name: "Margarita",
+        desc: "silver tequila, Cointreau, lime juice",
+        price: "8.00 €",
       },
       {
-        name: "Caponata",
-        desc:
-          "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
-        price: "13.00 €",
+        name: "Cosmopolitan",
+        desc: "whiskey, lemon juice, sugar, egg white, sthg else",
+        price: "12.00 €",
       },
       {
-        name: "Busiate al pesto Trapanese",
-        desc:
-          "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
-        price: "46.00 €",
+        name: "Negroni",
+        desc: "whiskey, lemon juice, sugar, egg white, sthg else",
+        price: "9.00 €",
       },
       {
-        name: "Pasta alla Norma",
-        desc:
-          "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
-        price: "46.00 €",
+        name: "Moscow Mule",
+        desc: "whiskey, lemon juice, sugar, egg white, sthg else",
+        price: "12.00 €",
       },
       {
-        name: "Sarde a beccafico",
-        desc:
-          "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
-        price: "23.00 €",
+        name: "Martini",
+        desc: "whiskey, lemon juice, sugar, egg white, sthg else",
+        price: "12.00 €",
       },
       {
-        name: "Involtini di pesce spade",
-        desc:
-          "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
-        price: "30.00 €",
+        name: "Mojito",
+        desc: "whiskey, lemon juice, sugar, egg white, sthg else",
+        price: "12.00 €",
       },
       {
-        name: "Cannoli",
-        desc:
-          "Green vegetables . spiced bread crumbs . chips or mashed potatoes . french dressing.",
-        price: "19.00 €",
+        name: "Whiskey Sour",
+        desc: "whiskey, lemon juice, sugar, egg white",
+        price: "15.00 €",
+      },
+      {
+        name: "Manhattan",
+        desc: "whiskey, lemon juice, sugar, egg white",
+        price: "10.00 €",
+      },
+      {
+        name: "Spritz",
+        desc: "whiskey, lemon juice, sugar, egg white",
+        price: "12.00 €",
+      },
+      {
+        name: "Daiquiri",
+        desc: "whiskey, lemon juice, sugar, egg white",
+        price: "12.00 €",
       },
     ],
   },
