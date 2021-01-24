@@ -14,10 +14,14 @@ const StyledMainGrid = styled.div`
   padding: 120px 0;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  align-items: start;
 `
 const StyledSelectPart = styled.div`
-  background: ${props => props.theme.colors.dark};
   grid-column: 1/4;
+  background: lime;
+
+  position: sticky;
+  top: 0;
 `
 const StyledCardPart = styled.div`
   background: ${props => props.theme.colors.white};

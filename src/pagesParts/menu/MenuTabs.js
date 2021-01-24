@@ -1,10 +1,35 @@
 import React from "react"
 import styled from "styled-components"
 
+const StyledWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  /* position: relative; */
+  /* position: sticky;
+  top: 0; */
+`
+const StyledList = styled.ul`
+  /* right: 0;  */
+`
+
 const StyledButton = styled.button`
-  background: red;
+  display: block;
+  overflow: hidden;
+  align-self: flex-end;
+  margin-top: 0.5rem;
+  padding: 1rem 2rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  background: ${props => props.theme.colors.dark};
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  z-index: 1;
+  position: relative;
+  width: 100%;
   color: ${props =>
-    props.isActive ? props.theme.colors.white : props.theme.colors.dark};
+    props.isActive ? props.theme.colors.gold : props.theme.colors.white};
 `
 
 export default function MenuTabs({ changeTab, activeTab }) {
@@ -41,8 +66,8 @@ export default function MenuTabs({ changeTab, activeTab }) {
     },
   ]
   return (
-    <div>
-      <ul>
+    <StyledWrapper>
+      <StyledList>
         {tabItems.map(item => (
           <li key={item.id}>
             <StyledButton
@@ -53,7 +78,7 @@ export default function MenuTabs({ changeTab, activeTab }) {
             </StyledButton>
           </li>
         ))}
-      </ul>
-    </div>
+      </StyledList>
+    </StyledWrapper>
   )
 }
