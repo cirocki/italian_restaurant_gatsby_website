@@ -21,15 +21,17 @@ const StyledButton = styled.button`
   font-size: 0.875rem;
   font-weight: 400;
   background: ${props => props.theme.colors.dark};
+  color: ${props => props.theme.colors.white};
   border: none;
+  border-radius: 8px 0 0 24px;
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
   z-index: 1;
   position: relative;
   width: 100%;
-  color: ${props =>
-    props.isActive ? props.theme.colors.gold : props.theme.colors.white};
+  background: ${props =>
+    props.isActive ? props.theme.colors.gold : props.theme.colors.dark};
 `
 
 export default function MenuTabs({ changeTab, activeTab }) {

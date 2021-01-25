@@ -17,11 +17,8 @@ const StyledMainGrid = styled.div`
   align-items: start;
 `
 const StyledSelectPart = styled.div`
+  padding-top: 60px;
   grid-column: 1/4;
-  background: lime;
-
-  position: sticky;
-  top: 0;
 `
 const StyledCardPart = styled.div`
   background: ${props => props.theme.colors.white};
@@ -58,9 +55,9 @@ export default function MenuBody() {
             <MenuTabs changeTab={changeTab} activeTab={activeTab} />
           </StyledSelectPart>
           <StyledCardPart>
-            <ul ref={contentRef}>
+            <div ref={contentRef}>
               <MenuItems activeTab={activeTab} />
-            </ul>
+            </div>
           </StyledCardPart>
         </StyledMainGrid>
       </Container>

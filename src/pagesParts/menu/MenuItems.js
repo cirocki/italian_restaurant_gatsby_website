@@ -2,6 +2,13 @@ import React from "react"
 import styled from "styled-components"
 import { menuItemsData } from "../../data/FullMenu"
 
+const StyledHeading = styled.h2`
+  color: ${props => props.theme.colors.gold};
+  font-family: ${props => props.theme.fonts.secondary};
+  font-size: 2rem;
+  padding-bottom: 3rem;
+  text-align: right;
+`
 const StyledItem = styled.li`
   padding-bottom: 40px;
   &:last-of-type {
@@ -53,16 +60,19 @@ const StyledItemDesc = styled.p`
 
 export default function MenuItems({ activeTab }) {
   return (
-    <>
-      {menuItemsData[activeTab].list.map(item => (
-        <StyledItem key={item.name}>
-          <StyledItemTop>
-            <StyledItemName>{item.name}</StyledItemName>
-            <StyledItemPrice>{item.price}</StyledItemPrice>
-          </StyledItemTop>
-          <StyledItemDesc>{item.desc}</StyledItemDesc>
-        </StyledItem>
-      ))}
-    </>
+    <div>
+      <StyledHeading>{menuItemsData[activeTab].title}</StyledHeading>
+      <ul>
+        {menuItemsData[activeTab].list.map(item => (
+          <StyledItem key={item.name}>
+            <StyledItemTop>
+              <StyledItemName>{item.name}</StyledItemName>
+              <StyledItemPrice>{item.price}</StyledItemPrice>
+            </StyledItemTop>
+            <StyledItemDesc>{item.desc}</StyledItemDesc>
+          </StyledItem>
+        ))}
+      </ul>
+    </div>
   )
 }
