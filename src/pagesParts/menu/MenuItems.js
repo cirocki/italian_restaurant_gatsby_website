@@ -3,12 +3,12 @@ import styled from "styled-components"
 import { menuItemsData } from "../../data/FullMenu"
 
 const StyledHeading = styled.h2`
-  color: ${props => props.theme.colors.gold};
+  color: ${props => props.theme.colors.dark};
   font-family: ${props => props.theme.fonts.secondary};
   font-size: 2rem;
   padding-bottom: 2rem;
   text-align: center;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 `
 const StyledList = styled.ul`
   padding-top: 2rem;

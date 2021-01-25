@@ -21,8 +21,6 @@ const StyledButton = styled.button`
   font-family: ${props => props.theme.fonts.primary};
   font-size: 0.875rem;
   font-weight: 400;
-  background: ${props => props.theme.colors.dark};
-  color: ${props => props.theme.colors.white};
   border: none;
   border-radius: 8px 0 0 8px;
   text-transform: uppercase;
@@ -33,6 +31,10 @@ const StyledButton = styled.button`
   width: 100%;
   background: ${props =>
     props.isActive ? props.theme.colors.gold : props.theme.colors.dark};
+  color: ${props => (props.isActive ? props.theme.colors.white : "#aeaeae")};
+  &:hover {
+    color: ${props => props.theme.colors.white};
+  }
 `
 
 export default function MenuTabs({ changeTab, activeTab }) {

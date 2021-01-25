@@ -24,17 +24,17 @@ const StyledMainGrid = styled.div`
 `
 const StyledSelectPart = styled.div`
   padding-top: 60px;
-  grid-column: 1/4;
+  grid-column: 1/3;
 `
 const StyledCardPart = styled.div`
   background: ${props => props.theme.colors.white};
-  grid-column: 4/12;
+  grid-column: 3/12;
   padding: 120px;
 `
 
 export default function MenuBody() {
   // TABS FUNCTIONALITY
-  const [activeTab, setActiveTab] = useState(0)
+  const [activeTab, setActiveTab] = useState(1)
 
   const changeTab = id => {
     setActiveTab(id)
@@ -56,7 +56,7 @@ export default function MenuBody() {
   const data = useStaticQuery(
     graphql`
       query {
-        file(relativePath: { eq: "subpages/menu/menu-bg-mondello3.jpg" }) {
+        file(relativePath: { eq: "subpages/menu/mondello-menu-bg.jpg" }) {
           childImageSharp {
             fluid(quality: 90, maxWidth: 1900) {
               ...GatsbyImageSharpFluid_withWebp
