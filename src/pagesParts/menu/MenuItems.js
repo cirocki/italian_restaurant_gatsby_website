@@ -6,8 +6,12 @@ const StyledHeading = styled.h2`
   color: ${props => props.theme.colors.gold};
   font-family: ${props => props.theme.fonts.secondary};
   font-size: 2rem;
-  padding-bottom: 3rem;
-  text-align: right;
+  padding-bottom: 2rem;
+  text-align: center;
+  letter-spacing: 2px;
+`
+const StyledList = styled.ul`
+  padding-top: 2rem;
 `
 const StyledItem = styled.li`
   padding-bottom: 40px;
@@ -62,7 +66,7 @@ export default function MenuItems({ activeTab }) {
   return (
     <div>
       <StyledHeading>{menuItemsData[activeTab].title}</StyledHeading>
-      <ul>
+      <StyledList>
         {menuItemsData[activeTab].list.map(item => (
           <StyledItem key={item.name}>
             <StyledItemTop>
@@ -72,7 +76,7 @@ export default function MenuItems({ activeTab }) {
             <StyledItemDesc>{item.desc}</StyledItemDesc>
           </StyledItem>
         ))}
-      </ul>
+      </StyledList>
     </div>
   )
 }

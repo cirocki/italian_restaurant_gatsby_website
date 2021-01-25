@@ -1,13 +1,19 @@
 import React, { useState, useRef, useEffect } from "react"
 import styled from "styled-components"
+import { graphql, useStaticQuery } from "gatsby"
+import BackgroundImage from "gatsby-background-image"
 import Container from "../../layout/container/Container"
 import MenuTabs from "./MenuTabs"
 import MenuItems from "./MenuItems"
+import MenuBottom from "./MenuBottom"
 import { fadeBottom } from "../../components/animations/Animation"
 import gsap from "gsap"
 
-const StyledMainWrapper = styled.div`
+const StyledMainWrapper = styled(BackgroundImage)`
   background: ${props => props.theme.colors.light};
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 100%;
 `
 
 const StyledMainGrid = styled.div`
@@ -47,8 +53,25 @@ export default function MenuBody() {
     )
   }, [activeTab])
 
+  const data = useStaticQuery(
+    graphql`
+      query {
+        file(relativePath: { eq: "subpages/menu/menu-bg-mondello3.jpg" }) {
+          childImageSharp {
+            fluid(quality: 90, maxWidth: 1900) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    `
+  )
+
+  // Set ImageData.
+  const imageData = data.file.childImageSharp.fluid
+
   return (
-    <StyledMainWrapper>
+    <StyledMainWrapper Tag="div" fluid={imageData} backgroundColor={`#ffffff`}>
       <Container>
         <StyledMainGrid>
           <StyledSelectPart>
@@ -61,6 +84,7 @@ export default function MenuBody() {
           </StyledCardPart>
         </StyledMainGrid>
       </Container>
+      <MenuBottom></MenuBottom>
     </StyledMainWrapper>
   )
 }

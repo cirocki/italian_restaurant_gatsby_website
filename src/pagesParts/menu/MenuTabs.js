@@ -18,12 +18,13 @@ const StyledButton = styled.button`
   align-self: flex-end;
   margin-top: 0.5rem;
   padding: 1rem 2rem;
+  font-family: ${props => props.theme.fonts.primary};
   font-size: 0.875rem;
   font-weight: 400;
   background: ${props => props.theme.colors.dark};
   color: ${props => props.theme.colors.white};
   border: none;
-  border-radius: 8px 0 0 24px;
+  border-radius: 8px 0 0 8px;
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
