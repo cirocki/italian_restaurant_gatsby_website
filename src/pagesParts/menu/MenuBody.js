@@ -2,12 +2,11 @@ import React, { useState, useRef, useEffect } from "react"
 import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
+import gsap from "gsap"
 import Container from "../../layout/container/Container"
 import MenuTabs from "./MenuTabs"
 import MenuItems from "./MenuItems"
 import MenuBottom from "./MenuBottom"
-import { fadeBottom } from "../../components/animations/Animation"
-import gsap from "gsap"
 
 const StyledMainWrapper = styled(BackgroundImage)`
   background: ${props => props.theme.colors.light};
@@ -17,19 +16,18 @@ const StyledMainWrapper = styled(BackgroundImage)`
 `
 
 const StyledMainGrid = styled.div`
-  padding: 120px 0;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  align-items: start;
+  padding: 120px 0;
 `
-const StyledSelectPart = styled.div`
-  padding-top: 60px;
+const StyledTabsPart = styled.div`
   grid-column: 1/3;
+  padding-top: 60px;
 `
 const StyledCardPart = styled.div`
-  background: ${props => props.theme.colors.white};
   grid-column: 3/12;
   padding: 120px;
+  background: ${props => props.theme.colors.white};
 `
 
 export default function MenuBody() {
@@ -42,7 +40,6 @@ export default function MenuBody() {
 
   // GSAP
   let contentRef = useRef(null)
-
   useEffect(() => {
     gsap.fromTo(
       contentRef.current,
@@ -71,12 +68,12 @@ export default function MenuBody() {
   const imageData = data.file.childImageSharp.fluid
 
   return (
-    <StyledMainWrapper Tag="div" fluid={imageData} backgroundColor={`#ffffff`}>
+    <StyledMainWrapper Tag="main" fluid={imageData} backgroundColor={`#ffffff`}>
       <Container>
         <StyledMainGrid>
-          <StyledSelectPart>
+          <StyledTabsPart>
             <MenuTabs changeTab={changeTab} activeTab={activeTab} />
-          </StyledSelectPart>
+          </StyledTabsPart>
           <StyledCardPart>
             <div ref={contentRef}>
               <MenuItems activeTab={activeTab} />
@@ -84,7 +81,7 @@ export default function MenuBody() {
           </StyledCardPart>
         </StyledMainGrid>
       </Container>
-      <MenuBottom></MenuBottom>
+      <MenuBottom />
     </StyledMainWrapper>
   )
 }

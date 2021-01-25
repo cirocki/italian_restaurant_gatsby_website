@@ -17,10 +17,10 @@ const StyledHeadingDiv = styled.div`
   @media (max-width: 879px) {
     padding: 120px;
   }
-  @media (max-width: 619px) {
+  @media (max-width: 669px) {
     padding: 60px;
   }
-  @media (max-width: 429px) {
+  @media (max-width: 529px) {
     padding: 40px;
   }
   @media (max-width: 359px) {

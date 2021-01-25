@@ -3,10 +3,10 @@ import styled from "styled-components"
 import { menuItemsData } from "../../data/FullMenu"
 
 const StyledHeading = styled.h2`
+  padding-bottom: 2rem;
   color: ${props => props.theme.colors.dark};
   font-family: ${props => props.theme.fonts.secondary};
   font-size: 2rem;
-  padding-bottom: 2rem;
   text-align: center;
   letter-spacing: 1px;
 `
@@ -20,9 +20,9 @@ const StyledItem = styled.li`
   }
 `
 const StyledItemTop = styled.div`
-  padding: 0.2rem 0;
   display: flex;
   justify-content: space-between;
+  padding: 0.2rem 0;
   z-index: 1;
   position: relative;
   &:before {
@@ -59,6 +59,7 @@ const StyledItemPrice = styled.p`
 `
 
 const StyledItemDesc = styled.p`
+  padding-top: 0.25rem;
   color: ${props => props.theme.colors.grey};
 `
 
