@@ -9,6 +9,9 @@ const StyledHeading = styled.h2`
   font-size: 2rem;
   text-align: center;
   letter-spacing: 1px;
+  @media (max-width: 869px) {
+    padding: 1rem 0;
+  }
 `
 const StyledList = styled.ul`
   padding-top: 2rem;
@@ -43,6 +46,7 @@ const StyledItemName = styled.p`
   font-family: ${props => props.theme.fonts.secondary};
   font-size: 1.125rem;
   text-transform: uppercase;
+  line-height: 1.7;
   @media (max-width: 419px) {
     font-size: 0.875rem;
   }
@@ -53,6 +57,7 @@ const StyledItemPrice = styled.p`
   color: ${props => props.theme.colors.dark};
   font-size: 1.125rem;
   letter-spacing: 1px;
+  min-width: 80px;
   @media (max-width: 419px) {
     font-size: 0.875rem;
   }
@@ -61,6 +66,7 @@ const StyledItemPrice = styled.p`
 const StyledItemDesc = styled.p`
   padding-top: 0.25rem;
   color: ${props => props.theme.colors.grey};
+  line-height: 1.6;
 `
 
 export default function MenuItems({ activeTab }) {

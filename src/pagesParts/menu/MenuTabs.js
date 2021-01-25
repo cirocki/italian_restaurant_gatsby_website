@@ -5,7 +5,22 @@ import { menuItemsData } from "../../data/FullMenu"
 const StyledWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
+  @media (max-width: 869px) {
+    justify-content: center;
+  }
 `
+const StyledList = styled.ul`
+  @media (max-width: 869px) {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    min-width: 100vw;
+  }
+  @media (max-width: 739px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+`
+
 const StyledButton = styled.button`
   display: block;
   overflow: hidden;
@@ -30,12 +45,19 @@ const StyledButton = styled.button`
   &:hover {
     color: ${props => props.theme.colors.white};
   }
+  @media (max-width: 869px) {
+    border-radius: 0;
+    margin: 0;
+  }
+  @media (max-width: 739px) {
+    padding: 1rem;
+  }
 `
 
 export default function MenuTabs({ changeTab, activeTab }) {
   return (
     <StyledWrapper>
-      <ul>
+      <StyledList>
         {menuItemsData.map(item => (
           <li key={item.id}>
             <StyledButton
@@ -46,7 +68,7 @@ export default function MenuTabs({ changeTab, activeTab }) {
             </StyledButton>
           </li>
         ))}
-      </ul>
+      </StyledList>
     </StyledWrapper>
   )
 }

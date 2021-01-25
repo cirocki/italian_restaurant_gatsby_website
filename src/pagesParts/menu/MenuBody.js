@@ -19,15 +19,34 @@ const StyledMainGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   padding: 120px 0;
+  @media (max-width: 869px) {
+    display: flex;
+    flex-direction: column;
+  }
+  @media (max-width: 619px) {
+    padding: 60px 10px;
+  }
 `
 const StyledTabsPart = styled.div`
   grid-column: 1/3;
   padding-top: 60px;
+  @media (max-width: 869px) {
+    padding: 10px 0;
+  }
 `
 const StyledCardPart = styled.div`
   grid-column: 3/12;
   padding: 120px;
   background: ${props => props.theme.colors.white};
+  @media (max-width: 1199px) {
+    grid-column: 3/13;
+  }
+  @media (max-width: 869px) {
+    padding: 60px;
+  }
+  @media (max-width: 429px) {
+    padding: 20px;
+  }
 `
 
 export default function MenuBody() {
