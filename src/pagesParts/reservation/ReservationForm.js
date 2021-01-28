@@ -1,11 +1,8 @@
 import React from "react"
 import { useForm } from "react-hook-form"
 import styled from "styled-components"
-import FormControl from "@material-ui/core/FormControl"
-import FormHelperText from "@material-ui/core/FormHelperText"
-import Input from "@material-ui/core/Input"
-import InputLabel from "@material-ui/core/InputLabel"
-import OutlinedInput from "@material-ui/core/OutlinedInput"
+
+import TextField from "@material-ui/core/TextField"
 
 const StyledFormWrapper = styled.div`
   padding: 4rem;
@@ -15,46 +12,66 @@ export default function ReservationForm() {
   const { register, handleSubmit, errors } = useForm()
   const onSubmit = data => console.log(data)
 
+  let switchErrorMsg = errors => {
+    switch (errors) {
+      case "required":
+        return "This field is required."
+      case "minLength":
+        return "At least 3 characters."
+      default:
+        break
+    }
+  }
   return (
     <StyledFormWrapper>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
-          <label htmlFor="name">Name</label>
-          <input
+          <TextField
+            inputRef={register({ required: true, minLength: 3 })}
             type="text"
             name="name"
             id="name"
-            ref={register({ required: true, minLength: 3 })}
+            label="Name"
+            variant="outlined"
+            color="primary"
+            helperText={switchErrorMsg(errors.name?.type)}
           />
-          {errors.name?.type === "required" && "Your name is required"}
-          {errors.name?.type === "minLength" && "At least 3 characters."}
         </div>
         <div>
-          <label htmlFor="surname">Surname</label>
-          <input
+          <TextField
+            inputRef={register({ required: true, minLength: 3 })}
             type="text"
             name="surname"
             id="surname"
-            ref={register({ required: true, minLength: 3 })}
+            label="Surname"
+            variant="outlined"
+            color="primary"
+            helperText={switchErrorMsg(errors.surname?.type)}
           />
-          {errors.surname?.type === "required" && "Your surname is required"}
-          {errors.surname?.type === "minLength" && "At least 3 characters."}
         </div>
         <div>
-          <label htmlFor="phone">Your phone number</label>
-          <input
-            type="tel"
+          <TextField
+            inputRef={register({ required: true, minLength: 3 })}
+            type="text"
             name="phone"
             id="phone"
-            ref={register({ required: true, minLength: 8 })}
+            label="Phone number"
+            variant="outlined"
+            color="primary"
+            helperText={switchErrorMsg(errors.phone?.type)}
           />
-          {errors.phone?.type === "required" && "Your phone is required"}
-          {errors.phone?.type === "minLength" && "At least 8 characters."}
         </div>
-        <div>
-          <label htmlFor="more">Other info.</label>
-          <textarea name="more" id="more" cols="30" rows="10" ref={register} />
-        </div>
+
+        <TextField
+          inputRef={register}
+          name="more"
+          id="more"
+          label="Additional Info"
+          multiline
+          rows={8}
+          variant="outlined"
+        />
+
         <h1>guests</h1>
         <h1>date time</h1>
         <div>
