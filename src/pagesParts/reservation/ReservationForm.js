@@ -1,5 +1,5 @@
 import React from "react"
-import { useForm } from "react-hook-form"
+import { useForm, Controller } from "react-hook-form"
 import styled from "styled-components"
 
 import TextField from "@material-ui/core/TextField"
@@ -17,7 +17,7 @@ const StyledFormWrapper = styled.div`
 `
 
 export default function ReservationForm() {
-  const { register, handleSubmit, errors } = useForm()
+  const { register, handleSubmit, errors, control } = useForm()
   const onSubmit = data => console.log(data)
 
   let switchErrorMsg = errors => {
@@ -100,19 +100,41 @@ export default function ReservationForm() {
         />
 
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
-          <KeyboardDatePicker
+          <Controller
+            name="date"
+            control={control}
+            as={
+              <KeyboardDatePicker
+                disableToolbar
+                variant="inline"
+                format="dd/MM/yyyy"
+                margin="normal"
+                name="date"
+                id="date"
+                label="Date"
+                value={selectedDate}
+                onChange={handleDateChange}
+                KeyboardButtonProps={{
+                  "aria-label": "change date",
+                }}
+              />
+            }
+          />
+
+          {/* <KeyboardDatePicker
             disableToolbar
             variant="inline"
             format="dd/MM/yyyy"
             margin="normal"
-            id="date-picker-inline"
-            label="Date picker inline"
+            name="date"
+            id="date"
+            label="Date"
             value={selectedDate}
             onChange={handleDateChange}
             KeyboardButtonProps={{
               "aria-label": "change date",
             }}
-          />
+          /> */}
         </MuiPickersUtilsProvider>
 
         <div>
