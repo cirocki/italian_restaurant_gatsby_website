@@ -3,6 +3,14 @@ import { useForm } from "react-hook-form"
 import styled from "styled-components"
 
 import TextField from "@material-ui/core/TextField"
+import "date-fns"
+
+import DateFnsUtils from "@date-io/date-fns"
+import {
+  MuiPickersUtilsProvider,
+  KeyboardTimePicker,
+  KeyboardDatePicker,
+} from "@material-ui/pickers"
 
 const StyledFormWrapper = styled.div`
   padding: 4rem;
@@ -18,9 +26,19 @@ export default function ReservationForm() {
         return "This field is required."
       case "minLength":
         return "At least 3 characters."
+      case "min":
+        return "You can reserve a minimum of 2 places."
+      case "max":
+        return "You can reserve a maximum of 20 places"
       default:
         break
     }
+  }
+
+  const [selectedDate, setSelectedDate] = React.useState(new Date())
+
+  const handleDateChange = date => {
+    setSelectedDate(date)
   }
   return (
     <StyledFormWrapper>
@@ -63,6 +81,15 @@ export default function ReservationForm() {
         </div>
 
         <TextField
+          inputRef={register({ required: true, min: 2, max: 20 })}
+          helperText={switchErrorMsg(errors.guests?.type)}
+          name="guests"
+          id="guests"
+          label="Guests"
+          type="number"
+          variant="outlined"
+        />
+        <TextField
           inputRef={register}
           name="more"
           id="more"
@@ -72,10 +99,24 @@ export default function ReservationForm() {
           variant="outlined"
         />
 
-        <h1>guests</h1>
-        <h1>date time</h1>
+        <MuiPickersUtilsProvider utils={DateFnsUtils}>
+          <KeyboardDatePicker
+            disableToolbar
+            variant="inline"
+            format="dd/MM/yyyy"
+            margin="normal"
+            id="date-picker-inline"
+            label="Date picker inline"
+            value={selectedDate}
+            onChange={handleDateChange}
+            KeyboardButtonProps={{
+              "aria-label": "change date",
+            }}
+          />
+        </MuiPickersUtilsProvider>
+
         <div>
-          <button type="submit">Reserve Table</button>
+          <button type="submit">Make reservation</button>
         </div>
       </form>
     </StyledFormWrapper>
