@@ -3,14 +3,22 @@ import { useForm, Controller } from "react-hook-form"
 import styled from "styled-components"
 
 import TextField from "@material-ui/core/TextField"
+import { makeStyles } from "@material-ui/core/styles"
 import "date-fns"
 
 import DateFnsUtils from "@date-io/date-fns"
 import {
   MuiPickersUtilsProvider,
-  KeyboardTimePicker,
   KeyboardDatePicker,
 } from "@material-ui/pickers"
+
+const useStyles = makeStyles(theme => ({
+  textField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    width: 200,
+  },
+}))
 
 const StyledFormWrapper = styled.div`
   padding: 4rem;
@@ -18,7 +26,20 @@ const StyledFormWrapper = styled.div`
 
 export default function ReservationForm() {
   const { register, handleSubmit, errors, control } = useForm()
-  const onSubmit = data => console.log(data)
+  const onSubmit = data =>
+    alert(
+      `Thank You ${data.name}!
+      \nYou booked a table for ${data.guests} persons. 
+      \nReservation details:
+      \nName: ${data.name},
+      \nSurname: ${data.surname}
+      \nPhone: ${data.phone} 
+      \nGuests: ${data.guests} 
+      \nDate: ${data.date} 
+      \nTime: ${data.time} 
+      \nAdditional Info: ${data.more}   
+      `
+    )
 
   let switchErrorMsg = errors => {
     switch (errors) {
@@ -40,6 +61,8 @@ export default function ReservationForm() {
   const handleDateChange = date => {
     setSelectedDate(date)
   }
+
+  const classes = useStyles()
   return (
     <StyledFormWrapper>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -103,12 +126,13 @@ export default function ReservationForm() {
           <Controller
             name="date"
             control={control}
-            as={
+            defaultValue={new Date()}
+            render={() => (
               <KeyboardDatePicker
                 disableToolbar
-                variant="inline"
                 format="dd/MM/yyyy"
                 margin="normal"
+                inputVariant="outlined"
                 name="date"
                 id="date"
                 label="Date"
@@ -118,24 +142,28 @@ export default function ReservationForm() {
                   "aria-label": "change date",
                 }}
               />
-            }
+            )}
           />
-
-          {/* <KeyboardDatePicker
-            disableToolbar
-            variant="inline"
-            format="dd/MM/yyyy"
-            margin="normal"
-            name="date"
-            id="date"
-            label="Date"
-            value={selectedDate}
-            onChange={handleDateChange}
-            KeyboardButtonProps={{
-              "aria-label": "change date",
-            }}
-          /> */}
         </MuiPickersUtilsProvider>
+
+        <div>
+          <TextField
+            inputRef={register}
+            name="time"
+            id="time"
+            label="Time"
+            type="time"
+            variant="outlined"
+            defaultValue="18:00"
+            className={classes.textField}
+            InputLabelProps={{
+              shrink: true,
+            }}
+            inputProps={{
+              step: 600, // 10 min
+            }}
+          />
+        </div>
 
         <div>
           <button type="submit">Make reservation</button>
