@@ -8,25 +8,17 @@ import {
   KeyboardDatePicker,
 } from "@material-ui/pickers"
 
-const StyledFormWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 100%;
-  padding: 4rem;
+const StyledForm = styled.form`
+  background: ${props => props.theme.colors.white};
+  padding: 40px;
 `
 const StyledInputWrapper = styled.div`
   padding: 10px 0;
-  width: 100%;
 `
-const StyledPersonalDiv = styled.div`
+const StyledInputsGrid = styled.div`
   display: grid;
-  grid-gap: 10px;
   grid-template-columns: 1fr 1fr 1fr;
-`
-const StyledTimeDiv = styled.div`
-  display: grid;
   grid-gap: 10px;
-  grid-template-columns: 1fr 1fr 1fr;
 `
 const StyledButton = styled.button`
   display: block;
@@ -49,13 +41,6 @@ const StyledButton = styled.button`
   transition: all 0.2s ease 0s;
   &:hover {
     background: ${props => props.theme.colors.dark};
-  }
-  @media (max-width: 869px) {
-    border-radius: 0;
-    margin: 0;
-  }
-  @media (max-width: 739px) {
-    padding: 1rem;
   }
 `
 
@@ -97,129 +82,127 @@ export default function ReservationForm() {
   }
 
   return (
-    <StyledFormWrapper>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <StyledPersonalDiv>
-          <StyledInputWrapper>
-            <TextField
-              inputRef={register({ required: true, minLength: 3 })}
-              type="text"
-              name="name"
-              id="name"
-              label="Name"
-              variant="outlined"
-              color="primary"
-              fullWidth={true}
-              helperText={switchErrorMsg(errors.name?.type)}
+    <StyledForm onSubmit={handleSubmit(onSubmit)}>
+      <StyledInputsGrid>
+        <StyledInputWrapper>
+          <TextField
+            inputRef={register({ required: true, minLength: 3 })}
+            type="text"
+            name="name"
+            id="name"
+            label="Name"
+            variant="outlined"
+            color="primary"
+            fullWidth={true}
+            helperText={switchErrorMsg(errors.name?.type)}
+          />
+        </StyledInputWrapper>
+        <StyledInputWrapper>
+          <TextField
+            inputRef={register({ required: true, minLength: 3 })}
+            type="text"
+            name="surname"
+            id="surname"
+            label="Surname"
+            variant="outlined"
+            color="primary"
+            fullWidth={true}
+            helperText={switchErrorMsg(errors.surname?.type)}
+          />
+        </StyledInputWrapper>
+        <StyledInputWrapper>
+          <TextField
+            inputRef={register({ required: true, minLength: 3 })}
+            type="text"
+            name="phone"
+            id="phone"
+            label="Phone"
+            variant="outlined"
+            color="primary"
+            fullWidth={true}
+            helperText={switchErrorMsg(errors.phone?.type)}
+          />
+        </StyledInputWrapper>
+      </StyledInputsGrid>
+      <StyledInputsGrid>
+        <StyledInputWrapper>
+          <MuiPickersUtilsProvider utils={DateFnsUtils}>
+            <Controller
+              name="day"
+              control={control}
+              defaultValue={new Date()}
+              render={({ onChange, value }) => (
+                <KeyboardDatePicker
+                  disableToolbar
+                  format="dd/MM/yyyy"
+                  inputVariant="outlined"
+                  fullWidth={true}
+                  name="day"
+                  id="day"
+                  label="Date"
+                  value={value}
+                  onChange={onChange}
+                  KeyboardButtonProps={{
+                    "aria-label": "change date",
+                  }}
+                />
+              )}
             />
-          </StyledInputWrapper>
-          <StyledInputWrapper>
-            <TextField
-              inputRef={register({ required: true, minLength: 3 })}
-              type="text"
-              name="surname"
-              id="surname"
-              label="Surname"
-              variant="outlined"
-              color="primary"
-              fullWidth={true}
-              helperText={switchErrorMsg(errors.surname?.type)}
-            />
-          </StyledInputWrapper>
-          <StyledInputWrapper>
-            <TextField
-              inputRef={register({ required: true, minLength: 3 })}
-              type="text"
-              name="phone"
-              id="phone"
-              label="Phone"
-              variant="outlined"
-              color="primary"
-              fullWidth={true}
-              helperText={switchErrorMsg(errors.phone?.type)}
-            />
-          </StyledInputWrapper>
-        </StyledPersonalDiv>
-        <StyledTimeDiv>
-          <StyledInputWrapper>
-            <MuiPickersUtilsProvider utils={DateFnsUtils}>
-              <Controller
-                name="day"
-                control={control}
-                defaultValue={new Date()}
-                render={({ onChange, value }) => (
-                  <KeyboardDatePicker
-                    disableToolbar
-                    format="dd/MM/yyyy"
-                    inputVariant="outlined"
-                    name="day"
-                    id="day"
-                    label="Date"
-                    value={value}
-                    onChange={onChange}
-                    KeyboardButtonProps={{
-                      "aria-label": "change date",
-                    }}
-                  />
-                )}
-              />
-            </MuiPickersUtilsProvider>
-          </StyledInputWrapper>
-          <StyledInputWrapper>
-            <TextField
-              inputRef={register}
-              name="time"
-              id="time"
-              label="Time"
-              type="time"
-              variant="outlined"
-              defaultValue="18:00"
-              fullWidth={true}
-              // className={classes.textField}
-              InputLabelProps={{
-                shrink: true,
-              }}
-              inputProps={{
-                step: 600, // 10 min
-              }}
-            />
-          </StyledInputWrapper>
-          <StyledInputWrapper>
-            <TextField
-              defaultValue={2}
-              inputRef={register({ required: true, min: 2, max: 20 })}
-              helperText={switchErrorMsg(errors.guests?.type)}
-              InputProps={{
-                inputProps: {
-                  max: 20,
-                  min: 2,
-                },
-              }}
-              name="guests"
-              id="guests"
-              label="Guests"
-              type="number"
-              variant="outlined"
-              fullWidth={true}
-            />
-          </StyledInputWrapper>
-        </StyledTimeDiv>
-
+          </MuiPickersUtilsProvider>
+        </StyledInputWrapper>
         <StyledInputWrapper>
           <TextField
             inputRef={register}
-            name="more"
-            id="more"
-            label="Additional Info"
-            multiline
-            rows={7}
+            name="time"
+            id="time"
+            label="Time"
+            type="time"
+            variant="outlined"
+            fullWidth={true}
+            defaultValue="18:00"
+            InputLabelProps={{
+              shrink: true,
+            }}
+            inputProps={{
+              step: 600, // 10 min
+            }}
+          />
+        </StyledInputWrapper>
+        <StyledInputWrapper>
+          <TextField
+            defaultValue={2}
+            inputRef={register({ required: true, min: 2, max: 20 })}
+            helperText={switchErrorMsg(errors.guests?.type)}
+            InputProps={{
+              inputProps: {
+                max: 20,
+                min: 2,
+              },
+            }}
+            name="guests"
+            id="guests"
+            label="Guests"
+            type="number"
             variant="outlined"
             fullWidth={true}
           />
         </StyledInputWrapper>
+      </StyledInputsGrid>
 
-        <StyledButton type="submit">Make reservation</StyledButton>
-      </form>
-    </StyledFormWrapper>
+      <StyledInputWrapper>
+        <TextField
+          inputRef={register}
+          name="more"
+          id="more"
+          label="Additional Info"
+          multiline
+          rows={7}
+          variant="outlined"
+          fullWidth={true}
+        />
+      </StyledInputWrapper>
+
+      <StyledButton type="submit">Make reservation</StyledButton>
+    </StyledForm>
   )
 }

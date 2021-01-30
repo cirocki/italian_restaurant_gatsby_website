@@ -3,8 +3,6 @@ import styled from "styled-components"
 import OldSchoolHeading from "../../components/typography/OldSchoolHeading"
 import ButtonGhost from "../../components/buttons/ButtonGhost"
 
-const StyledMainWrapper = styled.div``
-
 const StyledHeadingDiv = styled.div`
   display: flex;
   flex-direction: column;
@@ -27,7 +25,7 @@ const StyledHeadingDiv = styled.div`
 `
 
 const StyledHeadingWrapper = styled.div`
-  max-width: 720px;
+  max-width: 420px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,20 +33,20 @@ const StyledHeadingWrapper = styled.div`
   text-align: center;
 `
 
-export default function MenuBottom() {
+export default function ReservationBottom() {
   return (
-    <StyledMainWrapper>
+    <div>
       <StyledHeadingDiv>
         <StyledHeadingWrapper>
           <OldSchoolHeading whiteColor>
-            We also offer kid's portion and home delivery. Book a table online
-            and check secret menu items in our restaurant.
+            You don't like filling out forms? Contact us in a more traditional
+            way.
           </OldSchoolHeading>
-          <ButtonGhost to="/reservation" align="center">
-            Reservation
+          <ButtonGhost to="/contact" align="center">
+            Contact
           </ButtonGhost>
         </StyledHeadingWrapper>
       </StyledHeadingDiv>
-    </StyledMainWrapper>
+    </div>
   )
 }

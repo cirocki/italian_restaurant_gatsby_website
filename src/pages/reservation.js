@@ -2,12 +2,13 @@ import React from "react"
 import Layout from "../layout/Layout"
 import { Helmet } from "react-helmet"
 import styled from "styled-components"
-import Container from "../layout/container/Container"
 import ReservationHeader from "../pagesParts/reservation/ReservationHeader"
-import ReservationForm from "../pagesParts/reservation/ReservationForm"
+import ReservationMid from "../pagesParts/reservation/ReservationMid"
+import ReservationBottom from "../pagesParts/reservation/ReservationBottom"
 
 const StyledMainDiv = styled.main`
   margin-top: 60px;
+  background: ${props => props.theme.colors.light};
 `
 
 export default function OurMenuPage() {
@@ -18,9 +19,8 @@ export default function OurMenuPage() {
       </Helmet>
       <StyledMainDiv>
         <ReservationHeader />
-        <Container>
-          <ReservationForm />
-        </Container>
+        <ReservationMid />
+        <ReservationBottom />
       </StyledMainDiv>
     </Layout>
   )

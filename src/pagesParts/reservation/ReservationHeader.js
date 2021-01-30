@@ -42,8 +42,8 @@ export default function ReservationHeader() {
           <StyledHeadingsWrapper>
             <ModernHeading>Reservation</ModernHeading>
             <OldSchoolHeading whiteColor>
-              We believe that food brings people together, so we care for every
-              detail, to make your visit here unforgettable.
+              There are always new and exciting food adventures waiting for You.
+              Book your favourite table in Mondello.
             </OldSchoolHeading>
           </StyledHeadingsWrapper>
         </StyledHeaderGrid>
