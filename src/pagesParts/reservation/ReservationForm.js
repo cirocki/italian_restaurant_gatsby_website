@@ -9,18 +9,54 @@ import {
 } from "@material-ui/pickers"
 
 const StyledFormWrapper = styled.div`
-  padding: 4rem;
-  display: flex;
-
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   width: 100%;
+  padding: 4rem;
 `
 const StyledInputWrapper = styled.div`
-  padding: 10px;
+  padding: 10px 0;
   width: 100%;
 `
-const StyledGrid = styled.div`
+const StyledPersonalDiv = styled.div`
   display: grid;
+  grid-gap: 10px;
   grid-template-columns: 1fr 1fr 1fr;
+`
+const StyledTimeDiv = styled.div`
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+`
+const StyledButton = styled.button`
+  display: block;
+  overflow: hidden;
+  align-self: flex-end;
+  margin-top: 0.5rem;
+  padding: 1rem 2rem;
+  font-family: ${props => props.theme.fonts.primary};
+  font-size: 0.875rem;
+  font-weight: 400;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  background: ${props => props.theme.colors.gold};
+  color: ${props => props.theme.colors.white};
+  transition: all 0.2s ease 0s;
+  &:hover {
+    background: ${props => props.theme.colors.dark};
+  }
+  @media (max-width: 869px) {
+    border-radius: 0;
+    margin: 0;
+  }
+  @media (max-width: 739px) {
+    padding: 1rem;
+  }
 `
 
 export default function ReservationForm() {
@@ -63,7 +99,7 @@ export default function ReservationForm() {
   return (
     <StyledFormWrapper>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <StyledGrid>
+        <StyledPersonalDiv>
           <StyledInputWrapper>
             <TextField
               inputRef={register({ required: true, minLength: 3 })}
@@ -103,7 +139,8 @@ export default function ReservationForm() {
               helperText={switchErrorMsg(errors.phone?.type)}
             />
           </StyledInputWrapper>
-
+        </StyledPersonalDiv>
+        <StyledTimeDiv>
           <StyledInputWrapper>
             <MuiPickersUtilsProvider utils={DateFnsUtils}>
               <Controller
@@ -147,11 +184,17 @@ export default function ReservationForm() {
               }}
             />
           </StyledInputWrapper>
-
           <StyledInputWrapper>
             <TextField
+              defaultValue={2}
               inputRef={register({ required: true, min: 2, max: 20 })}
               helperText={switchErrorMsg(errors.guests?.type)}
+              InputProps={{
+                inputProps: {
+                  max: 20,
+                  min: 2,
+                },
+              }}
               name="guests"
               id="guests"
               label="Guests"
@@ -160,21 +203,22 @@ export default function ReservationForm() {
               fullWidth={true}
             />
           </StyledInputWrapper>
+        </StyledTimeDiv>
 
-          <StyledInputWrapper>
-            <TextField
-              inputRef={register}
-              name="more"
-              id="more"
-              label="Additional Info"
-              multiline
-              rows={7}
-              variant="outlined"
-              fullWidth={true}
-            />
-          </StyledInputWrapper>
-        </StyledGrid>
-        <button type="submit">Make reservation</button>
+        <StyledInputWrapper>
+          <TextField
+            inputRef={register}
+            name="more"
+            id="more"
+            label="Additional Info"
+            multiline
+            rows={7}
+            variant="outlined"
+            fullWidth={true}
+          />
+        </StyledInputWrapper>
+
+        <StyledButton type="submit">Make reservation</StyledButton>
       </form>
     </StyledFormWrapper>
   )
