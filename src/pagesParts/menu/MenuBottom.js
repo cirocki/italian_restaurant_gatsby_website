@@ -9,7 +9,6 @@ const StyledHeadingDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   background: ${props => props.theme.colors.dark};
   padding: 120px;
   @media (max-width: 879px) {

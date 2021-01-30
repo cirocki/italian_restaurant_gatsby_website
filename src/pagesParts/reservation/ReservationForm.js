@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import styled from "styled-components"
 import { useForm, Controller } from "react-hook-form"
 import DateFnsUtils from "@date-io/date-fns"
@@ -9,16 +9,27 @@ import {
 } from "@material-ui/pickers"
 
 const StyledForm = styled.form`
-  background: ${props => props.theme.colors.white};
   padding: 40px;
+  max-width: 800px;
+  background: ${props => props.theme.colors.white};
+  @media (max-width: 359px) {
+    padding: 20px;
+  }
 `
 const StyledInputWrapper = styled.div`
-  padding: 10px 0;
+  padding: 20px 0;
+  @media (max-width: 769px) {
+    padding: 10px 0;
+  }
 `
 const StyledInputsGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 10px;
+  grid-gap: 20px;
+  @media (max-width: 769px) {
+    grid-gap: 0px;
+    grid-template-columns: 1fr;
+  }
 `
 const StyledButton = styled.button`
   display: block;

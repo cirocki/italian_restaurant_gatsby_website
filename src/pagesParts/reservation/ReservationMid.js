@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import ReservationForm from "./ReservationForm"
-
 import { graphql, useStaticQuery } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 import Container from "../../layout/container/Container"
@@ -9,13 +8,15 @@ import Container from "../../layout/container/Container"
 const StyledMainWrapper = styled(BackgroundImage)`
   background: ${props => props.theme.colors.light};
   background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
   padding: 80px 0;
+  @media (max-width: 359px) {
+    padding: 0;
+  }
 `
-const StyledGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+const StyledFormWrapper = styled.div`
+  display: flex;
+  justify-content: center;
 `
 
 export default function ReservationMid() {
@@ -36,12 +37,11 @@ export default function ReservationMid() {
   // Set ImageData.
   const imageData = data.file.childImageSharp.fluid
   return (
-    <StyledMainWrapper Tag="main" fluid={imageData} backgroundColor={`#ffffff`}>
+    <StyledMainWrapper Tag="main" fluid={imageData} backgroundColor={`#f2f2f2`}>
       <Container>
-        <StyledGrid>
-          <div></div>
+        <StyledFormWrapper>
           <ReservationForm />
-        </StyledGrid>
+        </StyledFormWrapper>
       </Container>
     </StyledMainWrapper>
   )
