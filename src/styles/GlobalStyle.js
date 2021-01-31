@@ -21,6 +21,7 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
   }
 
+
   /* KEEP FOOTER BOTTOM EVEN IF MAIN CONTENT IS SHORT  */
   #gatsby-focus-wrapper {
     min-height: 100vh;
