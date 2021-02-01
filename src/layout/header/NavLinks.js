@@ -101,10 +101,12 @@ export default function NavLinks({ toggleMenu, isOpen }) {
         stagger: 0.1,
       })
       .reverse()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {
     menuTL.reversed(!isOpen)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen])
 
   return (

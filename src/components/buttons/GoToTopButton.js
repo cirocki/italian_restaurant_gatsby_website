@@ -60,10 +60,12 @@ export default function GoToTopButton() {
     showBtnTL
       .fromTo(btnTop.current, { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0 })
       .reverse()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {
     showBtnTL.reversed(!showButton)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [showButton])
 
   return (

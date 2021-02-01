@@ -97,6 +97,7 @@ export default function HeroSection() {
         ease: "power4.inOut",
         duration: 1,
       })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {

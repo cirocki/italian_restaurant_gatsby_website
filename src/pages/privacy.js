@@ -3,6 +3,7 @@ import Layout from "../layout/Layout"
 import { Helmet } from "react-helmet"
 import styled from "styled-components"
 import Container from "../layout/container/Container"
+import PrivacyHeader from "../pagesParts/privacy/PrivacyHeader"
 
 const StyledMainDiv = styled.main`
   padding: 4rem 0;
@@ -15,9 +16,7 @@ export default function PrivacyPage() {
         <title>Privacy | Mondello Restaurant</title>
       </Helmet>
       <StyledMainDiv>
-        <Container>
-          <h1>Privacy</h1>
-        </Container>
+        <PrivacyHeader />
       </StyledMainDiv>
     </Layout>
   )
