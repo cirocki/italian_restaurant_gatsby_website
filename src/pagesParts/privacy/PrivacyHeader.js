@@ -42,8 +42,8 @@ export default function PrivacyHeader() {
           <StyledHeadingsWrapper>
             <ModernHeading>Privacy Policy</ModernHeading>
             <OldSchoolHeading whiteColor>
-              Since 1975, we build the brand of our restaurant around the idea
-              of authentic traditional Italian food.
+              We make every effort to ensure that your data is fully secure.
+              Privacy details listed below.
             </OldSchoolHeading>
           </StyledHeadingsWrapper>
         </StyledHeaderGrid>
