@@ -5,6 +5,9 @@ import styled from "styled-components"
 import Container from "../../layout/container/Container"
 import MainParagraph from "../../components/typography/MainParagraph"
 import OpenHours from "../../components/contactParts/OpenHours"
+import Address from "../../components/contactParts/Address"
+import Socials from "../../components/contactParts/Socials"
+import Phone from "../../components/contactParts/Phone"
 
 const StyledMainWrapper = styled.div`
   padding: 120px 0;
@@ -45,6 +48,7 @@ const StyledInfoDiv = styled.div`
   grid-column: 1/9;
   grid-row: 3/6;
   background: ${props => props.theme.colors.dark};
+  padding: 120px;
 `
 const StyledGoldDiv = styled.div`
   grid-column: 2/9;
@@ -81,7 +85,9 @@ export default function MyMap() {
       <Container>
         <StyledMainGrid>
           <StyledInfoDiv>
-            <h1>mondello</h1>
+            <Address />
+            <Socials />
+            <Phone />
           </StyledInfoDiv>
           <StyledGoldDiv></StyledGoldDiv>
           <StyledFindDiv>
