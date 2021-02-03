@@ -3,6 +3,8 @@ import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
 import Container from "../../layout/container/Container"
+import MainParagraph from "../../components/typography/MainParagraph"
+import OpenHours from "../../components/contactParts/OpenHours"
 
 const StyledMainWrapper = styled.div`
   padding: 120px 0;
@@ -49,6 +51,15 @@ const StyledGoldDiv = styled.div`
   grid-row: 6/7;
   background: ${props => props.theme.colors.gold};
 `
+// TYPOGRAPHY
+
+const StyledHeading = styled.h3`
+  padding-bottom: 1.5rem;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: ${props => props.theme.colors.gold};
+  text-transform: uppercase;
+`
 
 export default function MyMap() {
   const data = useStaticQuery(graphql`
@@ -74,20 +85,16 @@ export default function MyMap() {
           </StyledInfoDiv>
           <StyledGoldDiv></StyledGoldDiv>
           <StyledFindDiv>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
-              blanditiis, tenetur animi deleniti dolorem quas omnis eius
-              delectus quibusdam culpa alias accusantium quisquam repudiandae
-              velit! Ipsam sequi ullam optio impedit?
-            </p>
+            <StyledHeading>How to find us</StyledHeading>
+
+            <MainParagraph>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit omnia.
+              Quia blanditiis, tenetur animi deleniti dolorem quas omnis.
+            </MainParagraph>
           </StyledFindDiv>
           <StyledHoursDiv>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
-              blanditiis, tenetur animi deleniti dolorem quas omnis eius
-              delectus quibusdam culpa alias accusantium quisquam repudiandae
-              velit! Ipsam sequi ullam optio impedit?
-            </p>
+            <StyledHeading>Opening hours</StyledHeading>
+            <OpenHours />
           </StyledHoursDiv>
           <StyledImgDiv>
             <Img
