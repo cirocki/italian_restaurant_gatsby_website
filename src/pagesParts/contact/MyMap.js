@@ -8,18 +8,32 @@ import OpenHours from "../../components/contactParts/OpenHours"
 import Address from "../../components/contactParts/Address"
 import Socials from "../../components/contactParts/Socials"
 import Phone from "../../components/contactParts/Phone"
+import Email from "../../components/contactParts/Email"
+import ButtonGhost from "../../components/buttons/ButtonGhost"
 
 const StyledMainWrapper = styled.div`
-  padding: 120px 0;
   position: relative;
   &:before {
     content: "";
     position: absolute;
-    top: 0;
+    bottom: 0;
     right: 0;
     width: calc(50% - 360px);
-    height: 100%;
+    height: calc(100% - 360px);
     background: ${props => props.theme.colors.light};
+    z-index: -1;
+    @media (max-width: 1069px) {
+      display: none;
+    }
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 480px;
+    left: 0;
+    width: calc(50% + 120px);
+    height: 360px;
+    background: ${props => props.theme.colors.gold};
     z-index: -1;
     @media (max-width: 1069px) {
       display: none;
@@ -30,31 +44,31 @@ const StyledMainWrapper = styled.div`
 const StyledMainGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-rows: repeat(12, 1fr);
 `
 const StyledImgDiv = styled.div`
-  grid-column: 9/13;
-  grid-row: 1/7;
+  grid-column: 8/12;
+  grid-row: 5/11;
 `
 const StyledFindDiv = styled.div`
-  grid-column: 1/4;
-  grid-row: 1/2;
+  grid-column: 1/7;
+  grid-row: 9/13;
+  padding: 120px;
+  display: flex;
+  flex-direction: column;
 `
 const StyledHoursDiv = styled.div`
-  grid-column: 5/8;
-  grid-row: 1/2;
+  grid-column: 7/13;
+  grid-row: 1/4;
+  padding: 120px 240px 60px 120px;
 `
 const StyledInfoDiv = styled.div`
-  grid-column: 1/9;
-  grid-row: 3/6;
+  grid-column: 3/7;
+  grid-row: 2/7;
   background: ${props => props.theme.colors.dark};
   padding: 120px;
 `
-const StyledGoldDiv = styled.div`
-  grid-column: 2/9;
-  grid-row: 6/7;
-  background: ${props => props.theme.colors.gold};
-`
+
 // TYPOGRAPHY
 
 const StyledHeading = styled.h3`
@@ -85,18 +99,24 @@ export default function MyMap() {
       <Container>
         <StyledMainGrid>
           <StyledInfoDiv>
+            <StyledHeading>Contact details</StyledHeading>
             <Address />
             <Socials />
             <Phone />
+            <Email />
           </StyledInfoDiv>
-          <StyledGoldDiv></StyledGoldDiv>
           <StyledFindDiv>
             <StyledHeading>How to find us</StyledHeading>
 
             <MainParagraph>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit omnia.
-              Quia blanditiis, tenetur animi deleniti dolorem quas omnis.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+              optio dolorum distinctio facere quas cumque rem. Officiis nemo ea
+              quae voluptas quidem, repellendus itaque iste recusandae possimus
+              praesentium.
             </MainParagraph>
+            <ButtonGhost as="a" href="https://cirocki.pl">
+              external
+            </ButtonGhost>
           </StyledFindDiv>
           <StyledHoursDiv>
             <StyledHeading>Opening hours</StyledHeading>
