@@ -4,12 +4,10 @@ import Img from "gatsby-image"
 import styled from "styled-components"
 import Container from "../../layout/container/Container"
 import MainParagraph from "../../components/typography/MainParagraph"
-import OpenHours from "../../components/contactParts/OpenHours"
 import Address from "../../components/contactParts/Address"
 import Socials from "../../components/contactParts/Socials"
 import Phone from "../../components/contactParts/Phone"
 import Email from "../../components/contactParts/Email"
-import ButtonGhost from "../../components/buttons/ButtonGhost"
 
 const StyledMainWrapper = styled.div`
   position: relative;
@@ -17,23 +15,10 @@ const StyledMainWrapper = styled.div`
     content: "";
     position: absolute;
     bottom: 0;
-    right: 0;
-    width: calc(50% - 360px);
-    height: calc(100% - 360px);
-    background: ${props => props.theme.colors.light};
-    z-index: -1;
-    @media (max-width: 1069px) {
-      display: none;
-    }
-  }
-  &:after {
-    content: "";
-    position: absolute;
-    bottom: 480px;
     left: 0;
-    width: calc(50% + 120px);
-    height: 360px;
-    background: ${props => props.theme.colors.gold};
+    width: calc(50% - 360px);
+    height: 100%;
+    background: ${props => props.theme.colors.light};
     z-index: -1;
     @media (max-width: 1069px) {
       display: none;
@@ -44,27 +29,23 @@ const StyledMainWrapper = styled.div`
 const StyledMainGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(12, 1fr);
+  grid-template-rows: repeat(9, 1fr);
 `
 const StyledImgDiv = styled.div`
-  grid-column: 8/12;
-  grid-row: 5/11;
+  grid-column: 6/12;
+  grid-row: 2/6;
 `
 const StyledFindDiv = styled.div`
-  grid-column: 1/7;
-  grid-row: 9/13;
+  grid-column: 6/12;
+  grid-row: 6/10;
   padding: 120px;
   display: flex;
   flex-direction: column;
 `
-const StyledHoursDiv = styled.div`
-  grid-column: 7/13;
-  grid-row: 1/4;
-  padding: 120px 240px 60px 120px;
-`
+
 const StyledInfoDiv = styled.div`
-  grid-column: 3/7;
-  grid-row: 2/7;
+  grid-column: 1/5;
+  grid-row: 3/8;
   background: ${props => props.theme.colors.dark};
   padding: 120px;
 `
@@ -83,10 +64,12 @@ export default function MyMap() {
   const data = useStaticQuery(graphql`
     query {
       image2: file(
-        relativePath: { eq: "subpages/contact/mondello-contact-image.jpg" }
+        relativePath: {
+          eq: "subpages/contact/mondello-restaurant-outside-tables.jpg"
+        }
       ) {
         childImageSharp {
-          fluid(maxHeight: 720, quality: 100) {
+          fluid(maxHeight: 480, quality: 100) {
             ...GatsbyImageSharpFluid_withWebp
             ...GatsbyImageSharpFluidLimitPresentationSize
           }
@@ -109,19 +92,12 @@ export default function MyMap() {
             <StyledHeading>How to find us</StyledHeading>
 
             <MainParagraph>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-              optio dolorum distinctio facere quas cumque rem. Officiis nemo ea
-              quae voluptas quidem, repellendus itaque iste recusandae possimus
-              praesentium.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Praesentium, quo molestiae. Unde facere cum eius fugiat aliquid
+              doloribus accusamus, error, ad reiciendis quas officia animi
+              dignissimos cupiditate itaque dicta enim.
             </MainParagraph>
-            <ButtonGhost as="a" href="https://cirocki.pl">
-              external
-            </ButtonGhost>
           </StyledFindDiv>
-          <StyledHoursDiv>
-            <StyledHeading>Opening hours</StyledHeading>
-            <OpenHours />
-          </StyledHoursDiv>
           <StyledImgDiv>
             <Img
               fluid={data.image2.childImageSharp.fluid}
