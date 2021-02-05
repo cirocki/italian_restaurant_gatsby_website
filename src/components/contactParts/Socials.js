@@ -11,7 +11,7 @@ const StyledSocialsDiv = styled.div`
   padding-top: 1.25rem;
 `
 const StyledIcon = styled(FontAwesomeIcon)`
-  font-size: 1.5rem;
+  font-size: ${props => (props.mysize === "lg" ? "1.75rem" : "1.5rem")};
   margin-right: 0.75rem;
 `
 const StyledLink = styled.a`
@@ -23,17 +23,17 @@ const StyledLink = styled.a`
   }
 `
 
-export default function Socials() {
+export default function Socials({ mysize }) {
   return (
     <StyledSocialsDiv>
       <StyledLink href="https://www.facebook.com/cirockipl/">
-        <StyledIcon icon={faFacebookSquare} />
+        <StyledIcon icon={faFacebookSquare} mysize={mysize} />
       </StyledLink>
       <StyledLink href="https://www.linkedin.com/in/cirocki/">
-        <StyledIcon icon={faInstagramSquare} />
+        <StyledIcon icon={faInstagramSquare} mysize={mysize} />
       </StyledLink>
       <StyledLink href="https://www.behance.net/cirocki/">
-        <StyledIcon icon={faPinterestSquare} />
+        <StyledIcon icon={faPinterestSquare} mysize={mysize} />
       </StyledLink>
     </StyledSocialsDiv>
   )
