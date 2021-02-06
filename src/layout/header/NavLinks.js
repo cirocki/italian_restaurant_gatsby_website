@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect } from "react"
 import styled from "styled-components"
 import { gsap } from "gsap"
-
 import { navItemsData } from "../../data/navItems"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 
@@ -126,9 +125,6 @@ export default function NavLinks({ toggleMenu, isOpen }) {
           </StyledItem>
         ))}
       </StyledList>
-      {/* <AniLink to="/about" cover direction="right" duration={1} bg="#968b63">
-        Go to page 2 with a cover right
-      </AniLink> */}
     </StyledNavWrapper>
   )
 }

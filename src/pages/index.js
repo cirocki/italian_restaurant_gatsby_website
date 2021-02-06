@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../layout/Layout"
-import { Helmet } from "react-helmet"
+import SEO from "../components/seo/seo"
 import HeroSection from "../homeSections/HeroSection"
 import AboutSection from "../homeSections/AboutSection"
 import HistorySection from "../homeSections/HistorySection"
@@ -12,17 +12,10 @@ import ContactSection from "../homeSections/ContactSection"
 export default function Home() {
   return (
     <Layout>
-      <Helmet
-        htmlAttributes={{
-          lang: "en",
-        }}
-      >
-        <meta
-          name="description"
-          content="Mondello Restaurant - We specialize in homemade classic Italian pizza, pasta, salads, soups and much more."
-        ></meta>
-        <title>Mondello Restaurant - Napoli</title>
-      </Helmet>
+      <SEO
+        title="Home"
+        description="Mondello Restaurant - We specialize in homemade classic Italian pizza, pasta, salads, soups and much more.."
+      />
       <main>
         <HeroSection />
         <AboutSection />

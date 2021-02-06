@@ -31,11 +31,11 @@ const StyledBrandingWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @media (max-width: 1024px) {
-    width: 100%;
-  }
   @media (max-width: 1069px) {
     padding: 0 20px;
+  }
+  @media (max-width: 1024px) {
+    width: 100%;
   }
 `
 
