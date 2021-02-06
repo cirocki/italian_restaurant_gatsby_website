@@ -4,7 +4,7 @@ import { mainData } from "../../data/mainData"
 
 const StyledParagraph = styled.p`
   padding: 1rem 0;
-  @media (max-width: 1069px) {
+  @media (max-width: 840px) {
     padding-top: 0;
   }
   @media (max-width: 400px) {

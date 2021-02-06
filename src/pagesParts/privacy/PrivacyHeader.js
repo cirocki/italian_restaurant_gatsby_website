@@ -43,7 +43,7 @@ export default function PrivacyHeader() {
             <ModernHeading>Privacy Policy</ModernHeading>
             <OldSchoolHeading whiteColor>
               We make every effort to ensure that your data is fully secure.
-              Privacy details listed below.
+              Privacy policy terms of service listed below.
             </OldSchoolHeading>
           </StyledHeadingsWrapper>
         </StyledHeaderGrid>

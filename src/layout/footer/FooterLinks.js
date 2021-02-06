@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 const StyledWrapper = styled.div`
   padding: 1rem 0;
-  @media (max-width: 840px) {
+  @media (max-width: 1024px) {
     display: none;
   }
 `
