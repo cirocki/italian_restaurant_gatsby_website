@@ -6,6 +6,11 @@
 const path = require(`path`)
 
 module.exports = {
+  siteMetadata: {
+    title: `Mondello Italian Restaurant - Gatsby website`,
+    description: `Website of a traditional Italian restaurant. `,
+    author: `Marcin Cirocki`,
+  },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -27,6 +32,7 @@ module.exports = {
         icon: "src/img/favicon/mondello-favicon-white.svg",
       },
     },
+    `gatsby-plugin-offline`,
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sharp`,
