@@ -26,13 +26,22 @@ const StyledLink = styled.a`
 export default function Socials({ mysize }) {
   return (
     <StyledSocialsDiv>
-      <StyledLink href="https://www.facebook.com/cirockipl/">
+      <StyledLink
+        href="https://www.facebook.com/cirockipl/"
+        aria-label="Facebook"
+      >
         <StyledIcon icon={faFacebookSquare} mysize={mysize} />
       </StyledLink>
-      <StyledLink href="https://www.linkedin.com/in/cirocki/">
+      <StyledLink
+        href="https://www.linkedin.com/in/cirocki/"
+        aria-label="LinkedIn"
+      >
         <StyledIcon icon={faInstagramSquare} mysize={mysize} />
       </StyledLink>
-      <StyledLink href="https://www.behance.net/cirocki/">
+      <StyledLink
+        href="https://www.behance.net/cirocki/"
+        aria-label="Pinterest"
+      >
         <StyledIcon icon={faPinterestSquare} mysize={mysize} />
       </StyledLink>
     </StyledSocialsDiv>

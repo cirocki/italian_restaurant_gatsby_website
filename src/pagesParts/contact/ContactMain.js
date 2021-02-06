@@ -20,7 +20,7 @@ const StyledMainWrapper = styled.div`
     height: 100%;
     background: ${props => props.theme.colors.light};
     z-index: -1;
-    @media (max-width: 1069px) {
+    @media (max-width: 1119px) {
       display: none;
     }
   }
@@ -45,8 +45,8 @@ const StyledInfoDiv = styled.div`
   grid-column: 1/5;
   grid-row: 3/8;
   padding: 120px;
-  font-size: 1.125rem;
   background: ${props => props.theme.colors.dark};
+  font-size: 1.125rem;
   @media (max-width: 619px) {
     padding: 60px;
   }
@@ -89,8 +89,6 @@ const StyledAddressDiv = styled.div`
   padding-bottom: 2rem;
   font-size: 1.125rem;
 `
-
-// TYPOGRAPHY
 
 const StyledHeading = styled.h3`
   padding-bottom: 1.5rem;

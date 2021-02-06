@@ -32,19 +32,19 @@ const StyledHeadingsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media (max-width: 374px) {
+    min-height: 200px;
+  }
 `
 
-export default function ContactHeader() {
+export default function PageHeader({ heading, subheading }) {
   return (
     <StyledHeader>
       <Container>
         <StyledHeaderGrid>
           <StyledHeadingsWrapper>
-            <ModernHeading>Contact</ModernHeading>
-            <OldSchoolHeading whiteColor>
-              There are many great restaurants in Palermo, but only one is
-              famous in the entire Apennine peninsula.
-            </OldSchoolHeading>
+            <ModernHeading>{heading}</ModernHeading>
+            <OldSchoolHeading whiteColor>{subheading}</OldSchoolHeading>
           </StyledHeadingsWrapper>
         </StyledHeaderGrid>
       </Container>
