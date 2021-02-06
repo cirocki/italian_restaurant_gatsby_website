@@ -42,9 +42,6 @@ const StyledCardPart = styled.div`
     grid-column: 3/13;
   }
   @media (max-width: 869px) {
-    padding: 60px;
-  }
-  @media (max-width: 429px) {
     padding: 20px;
   }
 `

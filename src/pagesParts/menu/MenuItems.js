@@ -48,16 +48,17 @@ const StyledItemName = styled.p`
   text-transform: uppercase;
   line-height: 1.7;
   @media (max-width: 419px) {
-    font-size: 0.875rem;
+    font-size: 1rem;
   }
 `
 const StyledItemPrice = styled.p`
   padding: 0.5rem 0 0.5rem 1rem;
+  min-width: 80px;
   background: ${props => props.theme.colors.white};
   color: ${props => props.theme.colors.dark};
   font-size: 1.125rem;
   letter-spacing: 1px;
-  min-width: 80px;
+  line-height: 1.7;
   @media (max-width: 419px) {
     font-size: 0.875rem;
   }
