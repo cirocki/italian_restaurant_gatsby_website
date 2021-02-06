@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../layout/Layout"
-import { Helmet } from "react-helmet"
+import SEO from "../components/seo/seo"
 import styled from "styled-components"
 import ContactHeader from "../pagesParts/contact/ContactHeader"
 import ContactMain from "../pagesParts/contact/ContactMain"
@@ -12,9 +12,10 @@ const StyledMainDiv = styled.main`
 export default function ContactPage() {
   return (
     <Layout>
-      <Helmet>
-        <title>Contact | Mondello Restaurant</title>
-      </Helmet>
+      <SEO
+        title="Contact"
+        description="There are many great restaurants in Palermo, but only one is famous in the entire Apennine peninsula."
+      />
       <StyledMainDiv>
         <ContactHeader />
         <ContactMain />

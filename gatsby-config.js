@@ -7,7 +7,7 @@ const path = require(`path`)
 
 module.exports = {
   siteMetadata: {
-    title: `Mondello Italian Restaurant - Gatsby website`,
+    title: `Mondello Restaurant`,
     description: `Website of a traditional Italian restaurant. `,
     author: `Marcin Cirocki`,
   },
