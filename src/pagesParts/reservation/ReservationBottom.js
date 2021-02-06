@@ -3,15 +3,12 @@ import styled from "styled-components"
 import OldSchoolHeading from "../../components/typography/OldSchoolHeading"
 import ButtonGhost from "../../components/buttons/ButtonGhost"
 
-const StyledHeadingDiv = styled.div`
+const StyledMainWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   background: ${props => props.theme.colors.dark};
   padding: 120px;
-  @media (max-width: 879px) {
-    padding: 120px;
-  }
   @media (max-width: 669px) {
     padding: 60px;
   }
@@ -23,29 +20,25 @@ const StyledHeadingDiv = styled.div`
   }
 `
 
-const StyledHeadingWrapper = styled.div`
+const StyledInnerWrapper = styled.div`
   max-width: 420px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center;
 `
 
 export default function ReservationBottom() {
   return (
-    <div>
-      <StyledHeadingDiv>
-        <StyledHeadingWrapper>
-          <OldSchoolHeading whiteColor>
-            You don't like filling out forms? Contact us in a more traditional
-            way.
-          </OldSchoolHeading>
-          <ButtonGhost to="/contact" align="center">
-            Contact
-          </ButtonGhost>
-        </StyledHeadingWrapper>
-      </StyledHeadingDiv>
-    </div>
+    <StyledMainWrapper>
+      <StyledInnerWrapper>
+        <OldSchoolHeading whiteColor>
+          You don't like filling out forms? Contact us in a more traditional
+          way.
+        </OldSchoolHeading>
+        <ButtonGhost to="/contact" align="center">
+          Contact Us
+        </ButtonGhost>
+      </StyledInnerWrapper>
+    </StyledMainWrapper>
   )
 }

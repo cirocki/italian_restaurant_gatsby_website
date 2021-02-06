@@ -7,6 +7,7 @@ import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker,
 } from "@material-ui/pickers"
+import SubmitButton from "../../components/buttons/SubmitButton"
 
 const StyledForm = styled.form`
   padding: 40px;
@@ -29,29 +30,6 @@ const StyledInputsGrid = styled.div`
   @media (max-width: 769px) {
     grid-gap: 0px;
     grid-template-columns: 1fr;
-  }
-`
-const StyledButton = styled.button`
-  display: block;
-  overflow: hidden;
-  align-self: flex-end;
-  margin-top: 0.5rem;
-  padding: 1rem 2rem;
-  font-family: ${props => props.theme.fonts.primary};
-  font-size: 0.875rem;
-  font-weight: 400;
-  border: none;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  cursor: pointer;
-  z-index: 1;
-  position: relative;
-  width: 100%;
-  background: ${props => props.theme.colors.gold};
-  color: ${props => props.theme.colors.white};
-  transition: all 0.2s ease 0s;
-  &:hover {
-    background: ${props => props.theme.colors.dark};
   }
 `
 
@@ -212,8 +190,7 @@ export default function ReservationForm() {
           fullWidth={true}
         />
       </StyledInputWrapper>
-
-      <StyledButton type="submit">Make reservation</StyledButton>
+      <SubmitButton>Make reservation</SubmitButton>
     </StyledForm>
   )
 }

@@ -5,7 +5,7 @@ import styled from "styled-components"
 import ContactMain from "../pagesParts/contact/ContactMain"
 import PageHeader from "../components/pageHeader/PageHeader"
 
-const StyledMainDiv = styled.main`
+const StyledMainWrapper = styled.main`
   margin-top: 60px;
 `
 
@@ -14,15 +14,17 @@ export default function ContactPage() {
     <Layout>
       <SEO
         title="Contact"
-        description="There are many great restaurants in Palermo, but only one is famous in the entire Apennine peninsula."
+        description="There are many great restaurants in Palermo, 
+        but only one is famous in the entire Apennine peninsula."
       />
-      <StyledMainDiv>
+      <StyledMainWrapper>
         <PageHeader
           heading="Contact"
-          subheading="There are many great restaurants in Palermo, but only one is famous in the entire Apennine peninsula."
+          subheading="There are many great restaurants in Palermo, 
+          but only one is famous in the entire Apennine peninsula."
         />
         <ContactMain />
-      </StyledMainDiv>
+      </StyledMainWrapper>
     </Layout>
   )
 }

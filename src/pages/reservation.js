@@ -1,12 +1,12 @@
 import React from "react"
 import Layout from "../layout/Layout"
-import { Helmet } from "react-helmet"
+import SEO from "../components/seo/seo"
 import styled from "styled-components"
-import ReservationHeader from "../pagesParts/reservation/ReservationHeader"
+import PageHeader from "../components/pageHeader/PageHeader"
 import ReservationMid from "../pagesParts/reservation/ReservationMid"
 import ReservationBottom from "../pagesParts/reservation/ReservationBottom"
 
-const StyledMainDiv = styled.main`
+const StyledMainWrapper = styled.main`
   margin-top: 60px;
   background: ${props => props.theme.colors.light};
 `
@@ -14,14 +14,20 @@ const StyledMainDiv = styled.main`
 export default function OurMenuPage() {
   return (
     <Layout>
-      <Helmet>
-        <title>Reservation | Mondello Restaurant</title>
-      </Helmet>
-      <StyledMainDiv>
-        <ReservationHeader />
+      <SEO
+        title="Reservation"
+        description="There are always new and exciting food adventures waiting for You.
+        Book your favourite table in Mondello."
+      />
+      <StyledMainWrapper>
+        <PageHeader
+          heading="Reservation"
+          subheading="There are always new and exciting food adventures waiting for You.
+          Book your favourite table in Mondello."
+        />
         <ReservationMid />
         <ReservationBottom />
-      </StyledMainDiv>
+      </StyledMainWrapper>
     </Layout>
   )
 }

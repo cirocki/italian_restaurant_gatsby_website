@@ -1,16 +1,16 @@
 import React from "react"
 import styled from "styled-components"
-import ReservationForm from "./ReservationForm"
 import { graphql, useStaticQuery } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 import Container from "../../layout/container/Container"
+import ReservationForm from "./ReservationForm"
 
 const StyledMainWrapper = styled(BackgroundImage)`
   background: ${props => props.theme.colors.light};
   background-position: center;
   background-size: cover;
-  padding: 80px 0;
-  @media (max-width: 359px) {
+  padding: 120px 0;
+  @media (max-width: 559px) {
     padding: 0;
   }
 `
@@ -37,7 +37,11 @@ export default function ReservationMid() {
   // Set ImageData.
   const imageData = data.file.childImageSharp.fluid
   return (
-    <StyledMainWrapper Tag="main" fluid={imageData} backgroundColor={`#f2f2f2`}>
+    <StyledMainWrapper
+      Tag="section"
+      fluid={imageData}
+      backgroundColor={`#f2f2f2`}
+    >
       <Container>
         <StyledFormWrapper>
           <ReservationForm />
