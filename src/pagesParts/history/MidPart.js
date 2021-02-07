@@ -11,7 +11,7 @@ import {
   faPizzaSlice,
 } from "@fortawesome/free-solid-svg-icons"
 
-const StyledMidWrapper = styled.div`
+const StyledMainWrapper = styled.div`
   position: relative;
   &:before {
     content: "";
@@ -27,7 +27,7 @@ const StyledMidWrapper = styled.div`
     }
   }
 `
-const StyledMidGrid = styled.div`
+const StyledGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(6, 1fr);
@@ -36,7 +36,7 @@ const StyledMidGrid = styled.div`
     flex-direction: column;
   }
 `
-const StyledMidContentDiv = styled.div`
+const StyledContentDiv = styled.div`
   grid-column: 2/6;
   grid-row: 1/7;
   display: flex;
@@ -55,7 +55,7 @@ const StyledMidContentDiv = styled.div`
     padding: 40px 20px;
   }
 `
-const StyledMidImgDiv = styled.div`
+const StyledImageDiv = styled.div`
   grid-column: 9/13;
   grid-row: 3/7;
   min-height: 480px;
@@ -77,7 +77,7 @@ const StyledItem = styled.li`
 const StyledIcon = styled(FontAwesomeIcon)`
   font-size: 2rem;
   margin: 0 1.5rem;
-  @media (max-width: 359px) {
+  @media (max-width: 619px) {
     margin-left: 0;
   }
 `
@@ -85,7 +85,7 @@ const StyledIcon = styled(FontAwesomeIcon)`
 export default function MidPart() {
   const data = useStaticQuery(graphql`
     query {
-      image2: file(relativePath: { eq: "subpages/history/italian-mask.jpg" }) {
+      image: file(relativePath: { eq: "subpages/history/italian-mask.jpg" }) {
         childImageSharp {
           fluid(maxHeight: 480, quality: 100) {
             ...GatsbyImageSharpFluid_withWebp
@@ -96,10 +96,10 @@ export default function MidPart() {
     }
   `)
   return (
-    <StyledMidWrapper>
+    <StyledMainWrapper>
       <Container>
-        <StyledMidGrid>
-          <StyledMidContentDiv>
+        <StyledGrid>
+          <StyledContentDiv>
             <MainParagraph>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio,
               autem pariatur dolor, met consectetur adip aliquid dolor inventore
@@ -128,15 +128,15 @@ export default function MidPart() {
                 </MainParagraph>
               </StyledItem>
             </StyledList>
-          </StyledMidContentDiv>
-          <StyledMidImgDiv>
+          </StyledContentDiv>
+          <StyledImageDiv>
             <Img
-              fluid={data.image2.childImageSharp.fluid}
+              fluid={data.image.childImageSharp.fluid}
               alt="Italian Traditional mask"
             />
-          </StyledMidImgDiv>
-        </StyledMidGrid>
+          </StyledImageDiv>
+        </StyledGrid>
       </Container>
-    </StyledMidWrapper>
+    </StyledMainWrapper>
   )
 }

@@ -6,16 +6,16 @@ import BackgroundImage from "gatsby-background-image"
 import OldSchoolHeading from "../../components/typography/OldSchoolHeading"
 import ButtonGhost from "../../components/buttons/ButtonGhost"
 
-const StyledBotWrapper = styled(BackgroundImage)`
+const StyledMainWrapper = styled(BackgroundImage)`
   background-position: 0 100px;
   background-repeat: no-repeat;
 `
-const StyledBotGrid = styled.div`
+const StyledGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(6, 1fr);
 `
-const StyledBotContentWrapper = styled.div`
+const StyledContentWrapper = styled.div`
   grid-column: 1/7;
   grid-row: 1/5;
   display: flex;
@@ -82,10 +82,10 @@ export default function BotPart() {
   const imageData = data.file.childImageSharp.fluid
 
   return (
-    <StyledBotWrapper Tag="div" fluid={imageData} backgroundColor={`#ffffff`}>
+    <StyledMainWrapper Tag="div" fluid={imageData} backgroundColor={`#ffffff`}>
       <Container>
-        <StyledBotGrid>
-          <StyledBotContentWrapper>
+        <StyledGrid>
+          <StyledContentWrapper>
             <StyledContent>
               <OldSchoolHeading whiteColor>
                 The kitchen offers delicious specialties of the Sicilian
@@ -97,9 +97,9 @@ export default function BotPart() {
                 About Us
               </ButtonGhost>
             </StyledContent>
-          </StyledBotContentWrapper>
-        </StyledBotGrid>
+          </StyledContentWrapper>
+        </StyledGrid>
       </Container>
-    </StyledBotWrapper>
+    </StyledMainWrapper>
   )
 }
