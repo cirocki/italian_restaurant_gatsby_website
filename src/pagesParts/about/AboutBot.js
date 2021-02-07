@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import logoImage from "../../img/branding/Mondello Restaurant logo.svg"
 import Container from "../../layout/container/Container"
+import logoImage from "../../img/branding/Mondello Restaurant logo.svg"
 import OldSchoolHeading from "../../components/typography/OldSchoolHeading"
 import MainParagraph from "../../components/typography/MainParagraph"
 import ButtonGhost from "../../components/buttons/ButtonGhost"
@@ -22,7 +22,7 @@ const StyledMainWrapper = styled.div`
     }
   }
 `
-const StyledBotGrid = styled.div`
+const StyledGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(8, 1fr);
@@ -102,7 +102,7 @@ export default function AboutBot() {
   return (
     <StyledMainWrapper>
       <Container>
-        <StyledBotGrid>
+        <StyledGrid>
           <StyledHeadingDiv>
             <StyledHeadingWrapper>
               <OldSchoolHeading whiteColor>
@@ -128,7 +128,7 @@ export default function AboutBot() {
               nisi ut aliquip ex ea commodo consequat.
             </MainParagraph>
           </StyledContentDiv>
-        </StyledBotGrid>
+        </StyledGrid>
       </Container>
     </StyledMainWrapper>
   )

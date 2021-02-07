@@ -36,7 +36,7 @@ const StyledMainWrapper = styled.div`
   }
 `
 
-const StyledTopGrid = styled.div`
+const StyledGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(8, 1fr);
@@ -117,11 +117,11 @@ export default function AboutTop() {
   return (
     <StyledMainWrapper>
       <Container>
-        <StyledTopGrid>
+        <StyledGrid>
           <StyledImgDiv>
             <Img
               fluid={data.image.childImageSharp.fluid}
-              alt="Our restaurant chef shows his passion"
+              alt="Our restaurant chef and his attention to details"
             />
           </StyledImgDiv>
           <StyledHeadingDiv>
@@ -142,7 +142,7 @@ export default function AboutTop() {
               corrupti quos aliquam, laudantium amet voluptatem id illo.
             </MainParagraph>
           </StyledContentDiv>
-        </StyledTopGrid>
+        </StyledGrid>
       </Container>
     </StyledMainWrapper>
   )

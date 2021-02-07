@@ -17,7 +17,7 @@ const StyledMainWrapper = styled.div`
     z-index: -1;
   }
 `
-const StyledMidGrid = styled.div`
+const StyledGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(8, 1fr);
@@ -73,11 +73,11 @@ export default function AboutMid() {
   return (
     <StyledMainWrapper>
       <Container>
-        <StyledMidGrid>
+        <StyledGrid>
           <StyledBigImgDiv>
             <Img
               fluid={data.image1.childImageSharp.fluid}
-              alt="Our Mondello team at work"
+              alt="Mondello team at work"
             />
           </StyledBigImgDiv>
           <StyledSmallImgDiv>
@@ -86,7 +86,7 @@ export default function AboutMid() {
               alt="Our best barista"
             />
           </StyledSmallImgDiv>
-        </StyledMidGrid>
+        </StyledGrid>
       </Container>
     </StyledMainWrapper>
   )
