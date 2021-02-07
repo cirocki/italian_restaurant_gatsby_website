@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { menuItemsData } from "../../data/MenuWithPrices"
+import { menuItemsData } from "../../data/FullMenu"
 
 const StyledItem = styled.li`
   padding: 0.2rem 0;
@@ -41,9 +41,10 @@ const StyledItemPrice = styled.p`
   }
 `
 export default function ShortMenu() {
+  console.log(menuItemsData)
   return (
     <ul>
-      {menuItemsData.map(item => (
+      {menuItemsData[1].list.map(item => (
         <StyledItem key={item.name}>
           <StyledItemName>{item.name}</StyledItemName>
           <StyledItemPrice>{item.price}</StyledItemPrice>

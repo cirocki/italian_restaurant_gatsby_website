@@ -169,7 +169,7 @@ export default function ChefSection() {
           <StyledContentWrapper>
             <StyledContent ref={contentRef}>
               <ShortMenu />
-              <ButtonGhost to="/menu">Check full menu</ButtonGhost>
+              <ButtonGhost to="/our-menu">Check full menu</ButtonGhost>
             </StyledContent>
           </StyledContentWrapper>
           <StyledImageWrapper>

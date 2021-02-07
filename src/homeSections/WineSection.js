@@ -4,7 +4,6 @@ import BackgroundImage from "gatsby-background-image"
 import { graphql, useStaticQuery } from "gatsby"
 import { fadeLeft, fadeBottom } from "../components/animations/Animation"
 import Container from "../layout/container/Container"
-
 import MainParagraph from "../components/typography/MainParagraph"
 
 const StyledGrid = styled.div`
@@ -74,11 +73,11 @@ const StyledTitleText = styled.h2`
 `
 
 const StyledImgDiv = styled(BackgroundImage)`
+  min-height: 480px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center right;
   background-attachment: fixed;
-  min-height: 480px;
 `
 
 export default function WineSection() {

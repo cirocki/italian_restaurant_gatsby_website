@@ -1,30 +1,30 @@
 export const footerLinksData = [
   {
-    path: "#",
+    path: "/privacy",
     name: "Privacy Policy",
   },
   {
-    path: "#",
+    path: "/about",
     name: "About Us",
   },
   {
-    path: "#",
+    path: "/our-menu",
     name: "Our Menu",
   },
   {
-    path: "#",
+    path: "/our-menu",
     name: "Catering",
   },
   {
-    path: "#",
+    path: "/reservation",
     name: "Reservations",
   },
   {
-    path: "#",
+    path: "/contact",
     name: "Careers",
   },
   {
-    path: "#",
+    path: "/history",
     name: "Partners",
   },
 ]

@@ -41,7 +41,7 @@ const StyledMainGrid = styled.div`
     flex-direction: column;
   }
 `
-const StyledInfoDiv = styled.div`
+const StyledInfoDiv = styled.address`
   grid-column: 1/5;
   grid-row: 3/8;
   padding: 120px;
