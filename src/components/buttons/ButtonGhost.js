@@ -1,7 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import { Link as GatsbyLink } from "gatsby"
-
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const handleAlignment = align => {
