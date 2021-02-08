@@ -19,4 +19,4 @@ This is my first larger project with Gatsby.js. I dive deeper into styled compon
 
 ## Photos
 
-Photos by Rawpixel.com, Rene Asmussen, Fineas Anton, Taryn Elliott, Jill Wellington, Elle Hughes, Tirachard Kumtanom, Aigars Jansons, Jackie Jabson, Rachel Claire, jaymantri, pixabay, skitterphoto, from pexels.com.
+Photos by Rawpixel.com, Rene Asmussen, Fineas Anton, Taryn Elliott, Jill Wellington, Elle Hughes, Tirachard Kumtanom, Aigars Jansons, Jackie Jabson, Rachel Claire, jaymantri, pixabay, skitterphoto from pexels.com.
