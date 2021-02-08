@@ -15,7 +15,7 @@ This is my first larger project with Gatsby.js. I dive deeper into styled compon
 
 ##
 
-![Website screen](https://raw.githubusercontent.com/cirocki/Barbershop-Landing-Page/master/src/img/Sweeney%20Todd%20Barber%20Website.jpg)
+![Website screen](https://raw.githubusercontent.com/cirocki/italian_restaurant_gatsby_website/master/src/img/screen/mondello-restaurant-website-homepage-screen.jpg)
 
 ## Photos
 
