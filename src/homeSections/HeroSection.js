@@ -58,7 +58,7 @@ export default function HeroSection() {
   const data = useStaticQuery(
     graphql`
       query {
-        file(relativePath: { eq: "index/mondello-restaurant-pizza.jpg" }) {
+        file(relativePath: { eq: "index/mondello-restaurant-hero-image.jpg" }) {
           childImageSharp {
             fluid(quality: 90, maxWidth: 1900) {
               ...GatsbyImageSharpFluid_withWebp
