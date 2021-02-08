@@ -2,6 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import { Link as GatsbyLink } from "gatsby"
 
+import AniLink from "gatsby-plugin-transition-link/AniLink"
+
 const handleAlignment = align => {
   switch (align) {
     case "right":
@@ -13,7 +15,7 @@ const handleAlignment = align => {
   }
 }
 
-const StyledButton = styled(GatsbyLink)`
+const StyledButton = styled(AniLink)`
   display: block;
   overflow: hidden;
   margin-top: 2rem;
@@ -53,7 +55,11 @@ const StyledButton = styled(GatsbyLink)`
 `
 
 export default function ButtonGhost({ children, ...rest }) {
-  return <StyledButton {...rest}>{children}</StyledButton>
+  return (
+    <StyledButton {...rest} cover direction="right" duration={1} bg="#968b63">
+      {children}
+    </StyledButton>
+  )
 }
 
 // INTERNAL AND EXTERNAL LINK
