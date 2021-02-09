@@ -78,7 +78,6 @@ export default function HeroSection() {
   let headerRef = useRef(null)
   const [heroTL] = useState(
     gsap.timeline({
-      delay: 0.5,
       defaults: {
         autoAlpha: 0,
       },
@@ -90,7 +89,7 @@ export default function HeroSection() {
       .from(headingRef.current, {
         y: -100,
         ease: "power1.inOut",
-        duration: 0.5,
+        duration: 1,
       })
       .from(subheadingRef.current, {
         y: 50,
