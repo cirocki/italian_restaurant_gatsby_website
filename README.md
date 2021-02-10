@@ -6,7 +6,7 @@ https://mondello.netlify.app/
 
 ## Design
 
-Website of a traditional Italian restaurant. Black, white and gold are probably not associated with food, but I wanted to deviate a bit from the standards in this design.
+Website of a traditional Italian restaurant. Black, white and gold colors are probably not strongly associated with food, but I wanted to deviate a bit from the standards in this project.
 My goal was to design a modern website layout (at least resembles webdesign 3.0). At the same time, with the help of typography and a few small elements, I wanted to maintain the traditional and elegant character of the restaurant.
 
 ## Coding
