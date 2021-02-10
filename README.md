@@ -11,7 +11,7 @@ My goal was to design a modern website layout (at least resembles webdesign 3.0)
 
 ## Coding
 
-This is my first larger project with Gatsby.js. I dive deeper into styled components and Material UI. I also add some fireworks with GSAP 3 and ScrollTrigger plugin. Plus very simple transition using gatsby-plugin-transition-link. I did a little form validation with react-hook-form. In next Gatsby project i will try to make blog with dynamic page creation.
+This is my first larger project with Gatsby.js. I dive deeper into styled components and Material UI. I also add some fireworks with GSAP 3 and ScrollTrigger plugin. Plus very simple transition using gatsby-plugin-transition-link. I did a little form validation with react-hook-form. Already after a short adventure with GatsbyJS, I agree that it is a useful, powerful tool and also enjoyable experience for developers. In next Gatsby project i will try to make blog with dynamic page creation.
 
 ##
 
