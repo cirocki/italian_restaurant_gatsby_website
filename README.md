@@ -9,6 +9,10 @@ https://mondello.netlify.app/
 Website of a traditional Italian restaurant. Black, white and gold colors are probably not strongly associated with food, but I wanted to deviate a bit from the standards in this project.
 My goal was to design a modern website layout (at least resembles webdesign 3.0). At the same time, with the help of typography and a few small elements, I wanted to maintain the traditional and elegant character of the restaurant.
 
+## Project on Behance
+
+https://www.behance.net/gallery/113762737/Italian-Restaurant-Mondello-webdesign-concept
+
 ## Coding
 
 This is my first larger project with Gatsby.js. I dive deeper into styled components and Material UI. I also add some fireworks with GSAP 3 and ScrollTrigger plugin. Plus very simple transition using gatsby-plugin-transition-link. I did a little form validation with react-hook-form. Already after a short adventure with GatsbyJS, I agree that it is a useful, powerful tool and also enjoyable experience for developers. In next Gatsby project i will try to make blog with dynamic page creation.

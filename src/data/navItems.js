@@ -8,18 +8,6 @@ export const navItemsData = [
     name: "About",
   },
   {
-    path: "/history",
-    name: "History",
-  },
-  {
-    path: "/our-menu",
-    name: "Our Menu",
-  },
-  {
-    path: "/reservation",
-    name: "Reservation",
-  },
-  {
     path: "/contact",
     name: "Contact",
   },
